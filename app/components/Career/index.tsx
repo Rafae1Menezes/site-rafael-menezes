@@ -1,0 +1,194 @@
+type CareerEntry = {
+  id: number;
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  tags: string[];
+  current?: boolean;
+};
+
+const CAREER: CareerEntry[] = [
+  {
+    id: 1,
+    company: "NTT DATA",
+    role: "Tech Lead",
+    period: "dez 2025 – presente · 5 meses",
+    description:
+      "Decisões arquiteturais, padrões frontend, governança de qualidade e mentoria. Gestão de riscos técnicos e colaboração direta com cliente.",
+    tags: ["Liderança técnica", "Mentoria"],
+    current: true,
+  },
+  {
+    id: 2,
+    company: "C6 Bank · via NTT DATA",
+    role: "Senior Frontend Engineer",
+    period: "jul 2024 – presente · 1 ano 10 meses",
+    description:
+      "Time de Prevenção de Fraudes. Autenticação crítica, SDKs internos de analytics e reconhecimento facial, refatorações do sistema de login.",
+    tags: ["TypeScript", "React", "Next.js", "Vite", "Security"],
+  },
+  {
+    id: 3,
+    company: "XP Inc. · via NTT DATA",
+    role: "Senior Frontend Engineer",
+    period: "out 2023 – jul 2024 · 10 meses",
+    description:
+      "Aplicações web para gestão de clientes em cartão de crédito e banco digital. Componentes compartilhados, micro-frontends e qualidade de entrega.",
+    tags: ["React", "Module Federation", "TypeScript", "Gatsby"],
+  },
+  {
+    id: 4,
+    company: "Studio Sol · PalcoMP3",
+    role: "Frontend Engineer",
+    period: "mar 2022 – set 2023 · 1 ano 7 meses",
+    description:
+      "Plataforma musical com 3M usuários mensais. Features de alto desempenho, design system, Storybook, SEO, acessibilidade e testes automatizados.",
+    tags: ["React", "Next.js", "GraphQL", "Redux", "Jest"],
+  },
+  {
+    id: 5,
+    company: "Freelance",
+    role: "Web Developer",
+    period: "2020 – fev 2022 · 2 anos",
+    description:
+      "Desenvolvimento e manutenção de sites e aplicativos web para clientes diversos.",
+    tags: ["React", "Next.js", "TypeScript", "WordPress"],
+  },
+  {
+    id: 6,
+    company: "Corpo de Bombeiros MG",
+    role: "Bombeiro Militar",
+    period: "mar 2017 – fev 2022 · 5 anos",
+    description:
+      "Atendimento de ocorrências de resgate clínico e traumático, salvamento e socorro. Atuação no operacional.",
+    tags: ["Resgate", "Trabalho sob pressão"],
+  },
+  {
+    id: 7,
+    company: "Freelance",
+    role: "Designer",
+    period: "2009 – fev 2022 · 13 anos",
+    description:
+      "UI/UX para web e mobile, identidade visual, wireframes e concept design.",
+    tags: ["Figma", "UI/UX", "Branding"],
+  },
+  {
+    id: 8,
+    company: "Faculdades Doctum",
+    role: "Desenvolvedor Fullstack",
+    period: "2007 – 2008 · 1 ano",
+    description:
+      "Sistema de gestão acadêmica ADX para 15 mil alunos em 14 unidades. Sites, portais e intranet.",
+    tags: ["PHP", "MySQL", "JavaScript", "Drupal"],
+  },
+];
+
+const CareerCard = ({ entry }: { entry: CareerEntry }) => (
+  <div
+    className={`
+      w-full max-w-sm rounded-2xl p-px
+      animate-rotate-border
+      bg-transparent
+      hover:bg-conic/[from_var(--border-angle)]
+      from-zinc-200 via-green-400 to-zinc-200
+      from-0%  to-100%
+      transition-all duration-300 ease-out
+      hover:-translate-y-1.5
+      hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
+      dark:hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2)]
+    `}
+  >
+    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 w-full">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-0.5">
+        {entry.company}
+      </p>
+      <p className="text-[13px] font-bold text-zinc-900 dark:text-zinc-50 leading-snug">
+        {entry.role}
+      </p>
+      <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-0.5 mb-2">
+        {entry.period}
+      </p>
+      <p className="text-[12px] text-zinc-500 dark:text-zinc-400 leading-relaxed">
+        {entry.description}
+      </p>
+      <div className="flex flex-wrap gap-1 mt-2.5">
+        {entry.current && (
+          <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300">
+            Atual
+          </span>
+        )}
+        {entry.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-700/60 text-zinc-500 dark:text-zinc-400"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+export const Career = () => {
+  return (
+   <section className="w-full bg-zinc-50 dark:bg-zinc-900 py-12 pb-[130px]  relative overflow-hidden">
+      
+      {/* Dot grid background */}
+      <svg aria-hidden className="pointer-events-none select-none absolute inset-0 w-full h-full">
+        <defs>
+          <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="1" className="fill-zinc-300 dark:fill-zinc-700" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#dot-grid)" />
+      </svg>
+
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        {/* Header */}
+        <div className="mb-12">
+          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+            Trajetória
+          </p>
+          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+            Carreira
+          </h2>
+        </div>
+
+        {/* Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+
+          {/* Vertical line */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-700/50 -translate-x-1/2" />
+
+          {CAREER.map((entry, i) => {
+          const isLeft = i % 2 === 0;
+          return (
+            <div
+              key={entry.id}
+              className={`flex items-center mb-[-70px] ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+            >
+              {/* Card side */}
+              <div className={`w-[calc(50%-28px)] flex-shrink-0 py-4 flex ${isLeft ? "justify-end" : "justify-start"}`}>
+                <CareerCard entry={entry} />
+              </div>
+
+              {/* Dot */}
+              <div className="w-14 flex-shrink-0 flex justify-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#B9F8BD] border-2 border-[#7FA885] z-10" />
+              </div>
+
+              {/* Empty side */}
+              <div className="w-[calc(50%-28px)] flex-shrink-0" />
+            </div>
+          );
+        })}
+        </div>
+
+      </div>
+    </section>
+  );
+};
