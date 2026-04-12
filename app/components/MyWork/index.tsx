@@ -135,9 +135,22 @@ export const MyWork = () => {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {shown.map((project) => (
+            <a href="#" key={project.id}
+    className={`
+      w-full h-full max-w-sm rounded-2xl
+
+      bg-transparent
+
+      from-0%  to-100%
+      transition-all duration-300 ease-out
+      hover:-translate-y-1.5
+      hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
+      dark:hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2)]
+    `}
+  >
             <article
-              key={project.id}
-              className="group flex flex-col bg-white dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors"
+              
+              className="group h-full flex flex-col bg-white dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors"
             >
               {/* Top row */}
               <div className="flex items-start justify-between gap-3 mb-4">
@@ -172,7 +185,10 @@ export const MyWork = () => {
                   </span>
                 ))}
               </div>
+            
+            
             </article>
+                </a>
           ))}
         </div>
 

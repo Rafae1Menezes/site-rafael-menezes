@@ -55,15 +55,7 @@ const EducationCard = ({ entry }: { entry: EducationEntry }) => (
 <div
     className={`
       w-full max-w-sm rounded-2xl p-px
-      animate-rotate-border
-      bg-transparent
-      hover:bg-conic/[from_var(--border-angle)]
-      from-zinc-200 via-green-400 to-zinc-200
-      from-0%  to-100%
-      transition-all duration-300 ease-out
-      hover:-translate-y-1.5
-      hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
-      dark:hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2)]
+     
     `}
   >
     <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 w-full" >

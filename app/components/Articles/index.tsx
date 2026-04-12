@@ -106,7 +106,18 @@ export const Articles = () => {
         {/* List */}
         <div className="divide-y divide-zinc-200 dark:divide-zinc-700/50 border-t border-zinc-200 dark:border-zinc-700/50">
           {shown.map((article) => (
-            <div key={article.id} className="group flex items-center gap-3 py-2.5 cursor-pointer">
+            <div
+  key={article.id}
+  className="group flex items-center gap-3 py-2.5 cursor-pointer
+    rounded-xl px-2 -mx-2
+    transition-all duration-200 ease-out
+    hover:-translate-y-0.5
+    hover:bg-white dark:hover:bg-zinc-800/60
+    hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)]
+    dark:hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.3),0_1px_4px_-1px_rgba(0,0,0,0.2)]
+    hover:border-transparent
+  "
+>
               <Thumbnail tag={article.tag} />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 mb-0.5">

@@ -54,12 +54,13 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button className="inline-flex items-center gap-2     border border-[#727272] dark:text-zinc-900 text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-200 transition-colors">
-                View my work
-              </button>
-              <button className="inline-flex items-center gap-2 text-sm font-medium  bg-[#B9F8BD] text-[#415C4A] dark:text-zinc-400 border border-[#7FA885] dark:border-zinc-800 px-5 py-2.5 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-colors">
-                Download CV
-              </button>
+            <button className="cursor-pointer inline-flex items-center gap-2 border border-[#727272] text-zinc-700 dark:text-zinc-300 dark:border-zinc-600 text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-colors">
+  View my work
+</button>
+
+<button className="cursor-pointer inline-flex items-center gap-2 text-sm font-medium bg-[#B9F8BD] text-[#415C4A] border border-[#7FA885] px-5 py-2.5 rounded-lg hover:bg-[#a3f0a8] hover:border-[#5a8f65] transition-colors">
+  Download CV
+</button>
             </div>
           </div>
 
