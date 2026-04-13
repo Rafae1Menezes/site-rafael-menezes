@@ -1,6 +1,6 @@
 import Image from "next/image";
 import foto from "./foto.png";
-import { Button } from "../../Botton";
+import { Button } from "../../components/Button";
 
 export const Hero = () => {
   const tags = ["React", "TypeScript", "Fintech", "Performance", "Security", "Architecture"];

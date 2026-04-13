@@ -87,7 +87,7 @@ const CAREER: CareerEntry[] = [
 const CareerCard = ({ entry }: { entry: CareerEntry }) => (
   <div
     className={`
-      w-full max-w-sm rounded-2xl p-px
+      w-full rounded-2xl p-px
       animate-rotate-border
       bg-transparent
       hover:bg-conic/[from_var(--border-angle)]
@@ -132,59 +132,66 @@ const CareerCard = ({ entry }: { entry: CareerEntry }) => (
 
 export const Career = () => {
   return (
-   <section className="w-full bg-zinc-50  py-12 pb-[130px]  relative overflow-hidden">
-      
+    <section className="w-full bg-zinc-50 py-12 pb-[130px] relative overflow-hidden">
+
       {/* Dot grid background */}
       <svg aria-hidden className="pointer-events-none select-none absolute inset-0 w-full h-full">
         <defs>
           <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" className="fill-zinc-300 " />
+            <circle cx="1" cy="1" r="1" className="fill-zinc-300" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#dot-grid)" />
       </svg>
 
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">
+          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 mb-2">
             Trajetória
           </p>
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 ">
+          <h2 className="text-4xl font-bold tracking-tight text-zinc-900">
             Carreira
           </h2>
         </div>
 
-        {/* Timeline */}
-        <div className="relative max-w-4xl mx-auto">
+        {/* ── MOBILE timeline: linha à esquerda, cards à direita ── */}
+        <div className="relative md:hidden">
+          <div className="absolute left-3 top-0 bottom-0 w-px bg-zinc-200" />
 
-          {/* Vertical line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-200  -translate-x-1/2" />
-
-          {CAREER.map((entry, i) => {
-          const isLeft = i % 2 === 0;
-          return (
-            <div
-              key={entry.id}
-              className={`flex items-center mb-[-70px] ${isLeft ? "flex-row" : "flex-row-reverse"}`}
-            >
-              {/* Card side */}
-              <div className={`w-[calc(50%-28px)] flex-shrink-0 py-4 flex ${isLeft ? "justify-end" : "justify-start"}`}>
+          <div className="flex flex-col gap-6 pl-10">
+            {CAREER.map((entry) => (
+              <div key={entry.id} className="relative">
+                {/* dot */}
+                <div className="absolute -left-[32px] top-5 w-2.5 h-2.5 rounded-full bg-[#B9F8BD] border-2 border-[#7FA885] z-10" />
                 <CareerCard entry={entry} />
               </div>
+            ))}
+          </div>
+        </div>
 
-              {/* Dot */}
-              <div className="w-14 flex-shrink-0 flex justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#B9F8BD] border-2 border-[#7FA885] z-10" />
+        {/* ── DESKTOP timeline: alternado esquerda/direita ── */}
+        <div className="relative max-w-4xl mx-auto hidden md:block">
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-200 -translate-x-1/2" />
+
+          {CAREER.map((entry, i) => {
+            const isLeft = i % 2 === 0;
+            return (
+              <div
+                key={entry.id}
+                className={`flex items-center mb-[-70px] ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+              >
+                <div className={`w-[calc(50%-28px)] flex-shrink-0 py-4 flex ${isLeft ? "justify-end" : "justify-start"}`}>
+                  <CareerCard entry={entry} />
+                </div>
+                <div className="w-14 flex-shrink-0 flex justify-center">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#B9F8BD] border-2 border-[#7FA885] z-10" />
+                </div>
+                <div className="w-[calc(50%-28px)] flex-shrink-0" />
               </div>
-
-              {/* Empty side */}
-              <div className="w-[calc(50%-28px)] flex-shrink-0" />
-            </div>
-          );
-        })}
+            );
+          })}
         </div>
 
       </div>

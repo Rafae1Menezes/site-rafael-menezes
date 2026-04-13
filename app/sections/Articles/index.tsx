@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import { Button } from "../../components/Button";
 
 type Article = {
   id: number;
@@ -114,6 +115,7 @@ export const Articles = () => {
     hover:-translate-y-0.5
     hover:bg-white 
     hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)]
+    active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]
     hover:border-transparent
   "
 >
@@ -138,15 +140,13 @@ export const Articles = () => {
         {/* Load more */}
         {hasMore && (
           <div className="flex justify-center mt-5">
-            <button
-              onClick={() => setVisible((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600  border border-zinc-200  px-5 py-2 rounded-lg hover:bg-zinc-100  transition-colors"
-            >
+          
+            <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>
               Load more
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
+            </Button>
           </div>
         )}
 

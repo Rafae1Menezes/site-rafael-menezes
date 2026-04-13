@@ -1,25 +1,25 @@
-import { Articles } from "./components/sections/Articles";
-import { Career } from "./components/sections/Career";
-import { Contact } from "./components/sections/Contact";
-import { Education } from "./components/sections/Education";
+import { Articles } from "./sections/Articles";
+import { Career } from "./sections/Career";
+import { Contact } from "./sections/Contact";
+import { Education } from "./sections/Education";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/sections/Hero";
-import { MyWork } from "./components/sections/MyWork";
+import { Hero } from "./sections/Hero";
+import { MyWork } from "./sections/MyWork";
 import { Navbar } from "./components/Navbar";
-import { Stack } from "./components/Stack";
+import { Stack } from "./sections/Stack";
 
 export default function Home() {
   return (
     <>
-     <Navbar />
-     <Hero />
-     <MyWork />
-     <Articles />
-     <Career />
-    <Education />
-    <Stack />
-    <Contact />
-    <Footer />
-      </>
+      <Navbar />
+      <Hero />
+      <MyWork />
+      <Articles />
+      <Career />
+      <Education />
+      <Stack />
+      <Contact />
+      <Footer />
+    </>
   );
 }

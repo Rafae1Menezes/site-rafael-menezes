@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import { Button } from "../../components/Button";
 
 type Project = {
   id: number;
@@ -142,7 +143,6 @@ export const MyWork = () => {
                 from-0%  to-100%
                 transition-all duration-300 ease-out
                 hover:-translate-y-1.5
-                active:translate-y-0.5
                 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
                 active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]
               `}
@@ -194,11 +194,9 @@ export const MyWork = () => {
         {/* Load more */}
         {hasMore && (
           <div className="flex justify-center mt-12">
-            <button
-              onClick={() => setVisible((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600  border border-zinc-200  px-6 py-2.5 rounded-lg hover:bg-zinc-100  transition-colors"
-            >
-              Load more projects
+            
+            <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}  >Load more projects
+
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path
                   d="M7 2v10M2 7l5 5 5-5"
@@ -208,7 +206,7 @@ export const MyWork = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Button>
           </div>
         )}
 
