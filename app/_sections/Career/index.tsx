@@ -1,4 +1,4 @@
-import { CareerCard } from "@/app/components/CareerCard";
+import { CareerCard } from "@/app/_components/CareerCard";
 
 type CareerEntry = {
   id: number;
@@ -90,7 +90,7 @@ const CAREER: CareerEntry[] = [
 
 export const Career = () => {
   return (
-    <section className="w-full bg-zinc-50 py-12 pb-[130px] relative overflow-hidden">
+    <section id="carrer" className="w-full bg-zinc-50 py-12 pb-[130px] relative overflow-hidden  scroll-mt-14">
 
       {/* Dot grid background */}
       <svg aria-hidden className="pointer-events-none select-none absolute inset-0 w-full h-full">

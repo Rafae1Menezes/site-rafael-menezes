@@ -1,4 +1,4 @@
-import { StackCard } from "@/app/components/StackCard";
+import { StackCard } from "@/app/_components/StackCard";
 
 type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
 
@@ -86,7 +86,7 @@ const STACK: SkillGroup[] = [
 
 export const Stack = () => {
   return (
-    <section className="w-full bg-zinc-50  py-24 relative overflow-hidden">
+    <section id="stack" className="w-full bg-zinc-50  py-24 relative overflow-hidden  scroll-mt-14">
 
       <svg aria-hidden className="pointer-events-none select-none absolute inset-0 w-full h-full opacity-50">
         <defs>

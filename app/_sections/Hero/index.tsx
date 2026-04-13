@@ -1,12 +1,12 @@
 import Image from "next/image";
 import foto from "./foto.png";
-import { Button } from "../../components/Button";
+import { Button } from "../../_components/Button";
 
 export const Hero = () => {
   const tags = ["React", "TypeScript", "Fintech", "Performance", "Security", "Architecture"];
 
   return (
-    <section className="min-h-screen w-full flex items-center bg-[#FEFEFE]">
+    <section id="start" className="min-h-screen w-full flex items-center bg-[#FEFEFE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24">
 
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">

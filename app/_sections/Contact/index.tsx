@@ -1,7 +1,7 @@
 
 import Image from 'next/image';
 import foto from './foto.jpg'
-import { Button } from '../../components/Button';
+import { Button } from '../../_components/Button';
 
 export const Contact = () => {
   const links = [
@@ -40,7 +40,7 @@ export const Contact = () => {
   ];
 
   return (
-    <section className="w-full bg-white  py-24 relative overflow-hidden">
+    <section id="contact" className="w-full bg-white  py-24 relative overflow-hidden  scroll-mt-14">
 
     
 

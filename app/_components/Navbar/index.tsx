@@ -5,7 +5,38 @@ import { useState, useEffect } from "react"
 import icon from "./icon.svg"
 import globo from "./globo.svg"
 
-const navItems = ["Início", "Meu trabalho", "Artigos", "Carreira", "Formação", "Stack", "Contato"]
+
+
+const navItems = [
+  {
+    label: "Início",
+    anchor: "#start"
+  },
+  {
+    label: "Meu trabalho",
+    anchor: "#my-work"
+  },
+  {
+    label: "Artigos",
+    anchor: "#articles"
+  },
+  {
+    label: "Carreira",
+    anchor: "#carrer"
+  },
+  {
+    label: "Formação",
+    anchor: "#education"
+  },
+  {
+    label: "Stack",
+    anchor: "#stack"
+  },
+  {
+    label: "Contato",
+    anchor: "#contact"
+  },
+]
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,9 +64,9 @@ export const Navbar = () => {
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
-                <a key={item} href="#"
+                <a key={item.label} href={item.anchor}
                   className="relative text-sm text-gray-500 hover:text-gray-900 transition-colors py-0.5 highlight-link">
-                  {item}
+                  {item.label}
                 </a>
               ))}
               <a href="#" className="text-sm text-gray-500 hover:text-gray-900 transition-colors border border-b-blue-950 py-1 px-3 rounded-full flex flex-row gap-1 items-center">
@@ -73,14 +104,14 @@ export const Navbar = () => {
 
         {navItems.map((item, i) => (
           <a
-            key={item}
-            href="#"
+            key={item.label}
+            href={item.anchor}
             onClick={() => setIsOpen(false)}
             className={`text-2xl font-semibold text-gray-700 hover:text-black transition-all duration-300
               ${isOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
             style={{ transitionDelay: isOpen ? `${i * 50 + 50}ms` : "0ms" }}
           >
-            {item}
+            {item.label}
           </a>
         ))}
 

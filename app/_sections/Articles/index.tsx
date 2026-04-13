@@ -1,8 +1,8 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
-import { Button } from "../../components/Button";
-import { Thumbnail } from "@/app/components/Thumbnail";
-import { ArticleCard } from "@/app/components/ArticleCard";
+import { Button } from "../../_components/Button";
+import { Thumbnail } from "@/app/_components/Thumbnail";
+import { ArticleCard } from "@/app/_components/ArticleCard";
 
 type Article = {
   id: number;
@@ -40,7 +40,7 @@ export const Articles = () => {
   };
 
   return (
-    <section className="w-full bg-[#FEFEFE] py-12">
+    <section id="articles" className="w-full bg-[#FEFEFE] py-12 scroll-mt-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

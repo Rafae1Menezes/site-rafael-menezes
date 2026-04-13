@@ -1,7 +1,7 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
-import { Button } from "../../components/Button";
-import { ProjectCard } from "../../components/ProjectCard";
+import { Button } from "../../_components/Button";
+import { ProjectCard } from "../../_components/ProjectCard";
 
 type Project = {
   id: number;
@@ -107,7 +107,7 @@ export const MyWork = () => {
   };
 
   return (
-    <section className="w-full bg-zinc-50 py-12">
+    <section id="my-work" className="w-full bg-zinc-50 py-12  scroll-mt-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">

@@ -1,4 +1,4 @@
-import { EducationCard } from "@/app/components/EducationCard";
+import { EducationCard } from "@/app/_components/EducationCard";
 
 type EducationEntry = {
   id: number;
@@ -42,7 +42,7 @@ const EDUCATION: EducationEntry[] = [
 
 export const Education = () => {
   return (
-    <section className="w-full bg-white  py-24 relative overflow-hidden">
+    <section id="education" className="w-full bg-white  py-24 relative overflow-hidden  scroll-mt-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
