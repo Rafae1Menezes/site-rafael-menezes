@@ -136,17 +136,17 @@ export const MyWork = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {shown.map((project) => (
             <a href="#" key={project.id}
-    className={`
-      w-full h-full max-w-sm rounded-2xl
-
-      bg-transparent
-
-      from-0%  to-100%
-      transition-all duration-300 ease-out
-      hover:-translate-y-1.5
-      hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
-    `}
-  >
+              className={`
+                w-full h-full  rounded-2xl
+                bg-transparent
+                from-0%  to-100%
+                transition-all duration-300 ease-out
+                hover:-translate-y-1.5
+                active:translate-y-0.5
+                hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
+                active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]
+              `}
+            >
             <article
               
               className="group h-full flex flex-col bg-white  border-zinc-200  rounded-2xl p-6 hover:border-zinc-300  transition-colors"
