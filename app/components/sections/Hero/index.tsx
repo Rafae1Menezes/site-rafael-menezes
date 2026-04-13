@@ -19,14 +19,14 @@ export const Hero = () => {
 
 {/* Photo */}
           <div className="flex justify-center absolute right-0">
-            <Image src={foto} width={750} height={400} alt="foto" />
+            <Image src={foto} width={700} height={400} alt="foto" />
           </div>
 
           {/* Text content */}
           <div className="flex flex-col gap-6 absolute">
             {/* Name + title */}
             <div className="flex flex-col gap-2">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900  leading-[1.1]">
+              <h1 className="text-6xl sm:text-6xl font-bold tracking-tight text-zinc-900  leading-[1.1]">
                 Senior Frontend
                 <br />
                 <span className="highlight-word relative inline-block">Engineer</span>
