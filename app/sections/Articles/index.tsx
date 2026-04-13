@@ -1,6 +1,8 @@
 "use client"
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "../../components/Button";
+import { Thumbnail } from "@/app/components/Thumbnail";
+import { ArticleCard } from "@/app/components/ArticleCard";
 
 type Article = {
   id: number;
@@ -24,66 +26,18 @@ const ALL_ARTICLES: Article[] = [
 
 const PAGE_SIZE = 5;
 
-const tagColors: Record<string, string> = {
-  Architecture: "bg-green-50 text-green-700",
-  Performance:  "bg-amber-50 text-amber-700",
-  React:        "bg-blue-50 text-blue-700",
-  Security:     "bg-red-50 text-red-700",
-  DX:           "bg-purple-50 text-purple-700",
-};
-
-const Thumbnail = ({ tag }: { tag: string }) => {
-  const bg: Record<string, string> = {
-    Architecture: "bg-green-50",
-    Performance:  "bg-amber-50",
-    React:        "bg-blue-50",
-    Security:     "bg-red-50",
-    DX:           "bg-purple-50",
-  };
-
-  const icons: Record<string, React.ReactNode> = {
-    Architecture: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-green-600 opacity-60">
-        <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
-        <rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v7M14 17.5h7"/>
-      </svg>
-    ),
-    Performance: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-amber-600 opacity-60">
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-      </svg>
-    ),
-    React: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-blue-600 opacity-60">
-        <circle cx="12" cy="12" r="2"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)"/>
-        <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(120 12 12)"/>
-      </svg>
-    ),
-    Security: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-red-600 opacity-60">
-        <path d="M12 2l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V5l7-3z"/>
-      </svg>
-    ),
-    DX: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-purple-600 opacity-60">
-        <path d="M8 6l-4 6 4 6M16 6l4 6-4 6M14 4l-4 16"/>
-      </svg>
-    ),
-  };
-
-  return (
-    <div className={`w-14 h-10 rounded-md flex-shrink-0 flex items-center justify-center ${bg[tag] ?? "bg-zinc-100"}`}>
-      {icons[tag]}
-    </div>
-  );
-};
-
 export const Articles = () => {
   const [visible, setVisible] = useState(PAGE_SIZE);
+  // guarda o índice a partir do qual os itens são "novos"
+  const [newFrom, setNewFrom] = useState<number>(Infinity);
+
   const shown = ALL_ARTICLES.slice(0, visible);
   const hasMore = visible < ALL_ARTICLES.length;
+
+  const handleLoadMore = () => {
+    setNewFrom(visible);
+    setVisible((v) => v + PAGE_SIZE);
+  };
 
   return (
     <section className="w-full bg-[#FEFEFE] py-12">
@@ -92,56 +46,35 @@ export const Articles = () => {
         {/* Header */}
         <div className="flex items-end justify-between mb-6">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-1">
+            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 mb-1">
               Writing
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 ">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900">
               Articles
             </h2>
           </div>
-          <p className="text-xs text-zinc-400 ">
+          <p className="text-xs text-zinc-400">
             {shown.length} of {ALL_ARTICLES.length}
           </p>
         </div>
 
         {/* List */}
-        <div className="divide-y divide-zinc-200  border-t border-zinc-200 ">
-          {shown.map((article) => (
-            <div
-  key={article.id}
-  className="group flex items-center gap-3 py-2.5 cursor-pointer
-    rounded-xl px-2 -mx-2
-    transition-all duration-200 ease-out
-    hover:-translate-y-0.5
-    hover:bg-white 
-    hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)]
-    active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]
-    hover:border-transparent
-  "
->
-              <Thumbnail tag={article.tag} />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <span className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${tagColors[article.tag] ?? "bg-zinc-100 text-zinc-600"}`}>
-                    {article.tag}
-                  </span>
-                </div>
-                <p className="text-[13px] font-semibold text-zinc-900  truncate leading-snug">
-                  {article.title}
-                </p>
-                <p className="text-[11px] text-zinc-400  mt-0.5">
-                  {article.readTime} read · {article.year}
-                </p>
-              </div>
-            </div>
+        <div className="divide-y divide-zinc-200 border-t border-zinc-200">
+          {shown.map((article, i) => (
+            <ArticleCard
+              key={article.id}
+              article={article}
+              isNew={i >= newFrom}
+              // índice relativo dentro do novo batch para o stagger
+              index={i >= newFrom ? i - newFrom : 0}
+            />
           ))}
         </div>
 
         {/* Load more */}
         {hasMore && (
           <div className="flex justify-center mt-5">
-          
-            <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>
+            <Button onClick={handleLoadMore}>
               Load more
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M7 2v10M2 7l5 5 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>

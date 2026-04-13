@@ -49,7 +49,7 @@ export const Hero = () => {
 
             <div className="flex flex-wrap items-center gap-3 pt-2 justify-center md:justify-start">
               <Button >View my work</Button>
-              <Button variant="primary">View my work</Button>
+              <Button variant="primary">Download CV</Button>
             </div>
           </div>
 
