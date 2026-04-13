@@ -112,11 +112,11 @@ export const MyWork = () => {
     };
 
     return (
-        <section id="my-work" className="w-full bg-zinc-50 py-12  scroll-mt-14">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <section id="my-work" className="w-full scroll-mt-14 bg-zinc-50 py-12">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                     <div>
-                        <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 mb-2">Portfolio</p>
+                        <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Portfolio</p>
                         <h2 className="text-4xl font-bold tracking-tight text-zinc-900">My work</h2>
                     </div>
                     <p className="text-sm text-zinc-400">
@@ -124,7 +124,7 @@ export const MyWork = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     {shown.map((project, i) => (
                         <ProjectCard
                             key={project.id}
@@ -136,7 +136,7 @@ export const MyWork = () => {
                 </div>
 
                 {hasMore && (
-                    <div className="flex justify-center mt-12">
+                    <div className="mt-12 flex justify-center">
                         <Button onClick={handleLoadMore}>
                             Load more projects
                             <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

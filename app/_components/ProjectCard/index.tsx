@@ -49,27 +49,24 @@ export const ProjectCard = ({ project, isNew, index }: { project: Project; isNew
         <a
             ref={ref}
             href="#"
-            className="w-full h-full rounded-2xl transition-all duration-300 ease-out
-        hover:-translate-y-1.5
-        hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
-        active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
+            className="h-full w-full rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
         >
-            <article className="group h-full flex flex-col bg-white border border-zinc-200 rounded-2xl p-6 hover:border-zinc-300 transition-colors">
-                <div className="flex items-start justify-between gap-3 mb-4">
+            <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-300">
+                <div className="mb-4 flex items-start justify-between gap-3">
                     <span
-                        className={`inline-flex text-xs font-medium px-2.5 py-1 rounded-md ${typeColors[project.type] ?? "bg-zinc-100 text-zinc-600"}`}
+                        className={`inline-flex rounded-md px-2.5 py-1 text-xs font-medium ${typeColors[project.type] ?? "bg-zinc-100 text-zinc-600"}`}
                     >
                         {project.type}
                     </span>
-                    <span className="text-xs text-zinc-400 tabular-nums mt-0.5">{project.year}</span>
+                    <span className="mt-0.5 text-xs text-zinc-400 tabular-nums">{project.year}</span>
                 </div>
 
-                <h3 className="text-base font-semibold text-zinc-900 mb-2 leading-snug">{project.title}</h3>
-                <p className="text-sm text-zinc-500 leading-relaxed flex-1">{project.description}</p>
+                <h3 className="mb-2 text-base leading-snug font-semibold text-zinc-900">{project.title}</h3>
+                <p className="flex-1 text-sm leading-relaxed text-zinc-500">{project.description}</p>
 
-                <div className="flex flex-wrap gap-1.5 mt-5">
+                <div className="mt-5 flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
-                        <span key={tag} className="text-xs text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded">
+                        <span key={tag} className="rounded bg-zinc-100 px-2 py-0.5 text-xs text-zinc-500">
                             {tag}
                         </span>
                     ))}

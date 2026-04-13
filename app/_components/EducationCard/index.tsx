@@ -43,31 +43,26 @@ const icons = {
 };
 
 export const EducationCard = ({ entry }: { entry: EducationEntry }) => (
-    <div
-        className={`
-      w-full max-w-sm rounded-2xl p-px
-     
-    `}
-    >
-        <div className="bg-white  border border-zinc-200  rounded-2xl p-4 w-full">
+    <div className={`w-full max-w-sm rounded-2xl p-px`}>
+        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4">
             {/* Icon + type badge */}
-            <div className="flex items-center justify-between mb-3">
-                <div className="w-8 h-8 rounded-lg bg-green-50  text-green-700  flex items-center justify-center">
+            <div className="mb-3 flex items-center justify-between">
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-700">
                     {icons[entry.type]}
                 </div>
-                <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-100  text-zinc-500">
+                <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium text-zinc-500">
                     {entry.type === "postgrad" ? "Pós-graduação" : "Bacharelado"}
                 </span>
             </div>
 
             {/* Field */}
-            <p className="text-[15px] font-bold text-zinc-900  leading-snug mb-1">{entry.field}</p>
+            <p className="mb-1 text-[15px] leading-snug font-bold text-zinc-900">{entry.field}</p>
 
             {/* Institution */}
-            <p className="text-[12px] text-zinc-400  mb-0.5">{entry.institution}</p>
+            <p className="mb-0.5 text-[12px] text-zinc-400">{entry.institution}</p>
 
             {/* Period */}
-            <p className="text-[11px] text-zinc-400 ">{entry.period}</p>
+            <p className="text-[11px] text-zinc-400">{entry.period}</p>
         </div>
     </div>
 );

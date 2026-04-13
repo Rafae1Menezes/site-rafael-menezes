@@ -87,7 +87,7 @@ export const Thumbnail = ({ tag }: { tag: string }) => {
     };
 
     return (
-        <div className={`w-14 h-10 rounded-md flex-shrink-0 flex items-center justify-center ${bg[tag] ?? "bg-zinc-100"}`}>
+        <div className={`flex h-10 w-14 flex-shrink-0 items-center justify-center rounded-md ${bg[tag] ?? "bg-zinc-100"}`}>
             {icons[tag]}
         </div>
     );

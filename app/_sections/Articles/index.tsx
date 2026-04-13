@@ -40,12 +40,12 @@ export const Articles = () => {
     };
 
     return (
-        <section id="articles" className="w-full bg-[#FEFEFE] py-12 scroll-mt-14">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="articles" className="w-full scroll-mt-14 bg-[#FEFEFE] py-12">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
-                <div className="flex items-end justify-between mb-6">
+                <div className="mb-6 flex items-end justify-between">
                     <div>
-                        <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 mb-1">Writing</p>
+                        <p className="mb-1 text-xs font-medium tracking-widest text-zinc-400 uppercase">Writing</p>
                         <h2 className="text-3xl font-bold tracking-tight text-zinc-900">Articles</h2>
                     </div>
                     <p className="text-xs text-zinc-400">
@@ -68,7 +68,7 @@ export const Articles = () => {
 
                 {/* Load more */}
                 {hasMore && (
-                    <div className="flex justify-center mt-5">
+                    <div className="mt-5 flex justify-center">
                         <Button onClick={handleLoadMore}>
                             Load more
                             <svg width="12" height="12" viewBox="0 0 14 14" fill="none">

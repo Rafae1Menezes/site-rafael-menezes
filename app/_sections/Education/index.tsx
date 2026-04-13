@@ -38,16 +38,16 @@ const EDUCATION: EducationEntry[] = [
 
 export const Education = () => {
     return (
-        <section id="education" className="w-full bg-white  py-24 relative overflow-hidden  scroll-mt-14">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="education" className="relative w-full scroll-mt-14 overflow-hidden bg-white py-24">
+            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="mb-12">
-                    <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">Acadêmico</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-zinc-900 ">Formação</h2>
+                    <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Acadêmico</p>
+                    <h2 className="text-4xl font-bold tracking-tight text-zinc-900">Formação</h2>
                 </div>
 
                 {/* Cards grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 ">
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {EDUCATION.map((entry) => (
                         <EducationCard key={entry.id} entry={entry} />
                     ))}

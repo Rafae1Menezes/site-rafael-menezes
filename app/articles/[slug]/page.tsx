@@ -20,10 +20,10 @@ export default async function ArticlePage({ params }: Props) {
     const contentHtml = processedContent.toString();
 
     return (
-        <main className="max-w-3xl mx-auto p-6">
-            <h1 className="text-4xl font-bold mb-4">{article.title}</h1>
+        <main className="mx-auto max-w-3xl p-6">
+            <h1 className="mb-4 text-4xl font-bold">{article.title}</h1>
 
-            <p className="text-gray-500 mb-8">{article.date}</p>
+            <p className="mb-8 text-gray-500">{article.date}</p>
 
             <article className="prose prose-zinc" dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </main>

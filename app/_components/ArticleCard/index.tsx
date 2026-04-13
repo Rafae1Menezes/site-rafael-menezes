@@ -46,25 +46,19 @@ export const ArticleCard = ({ article, isNew, index }: { article: Article; isNew
     return (
         <div
             ref={ref}
-            className="group flex items-center gap-3 py-2.5 cursor-pointer
-        rounded-xl px-2 -mx-2
-        transition-[background,box-shadow,transform] duration-200 ease-out
-        hover:-translate-y-0.5
-        hover:bg-white
-        hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)]
-        active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]"
+            className="group -mx-2 flex cursor-pointer items-center gap-3 rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]"
         >
             <Thumbnail tag={article.tag} />
-            <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-1.5 mb-0.5">
+            <div className="min-w-0 flex-1">
+                <div className="mb-0.5 flex items-center gap-1.5">
                     <span
-                        className={`text-[10px] font-medium px-1.5 py-0.5 rounded ${tagColors[article.tag] ?? "bg-zinc-100 text-zinc-600"}`}
+                        className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${tagColors[article.tag] ?? "bg-zinc-100 text-zinc-600"}`}
                     >
                         {article.tag}
                     </span>
                 </div>
-                <p className="text-[13px] font-semibold text-zinc-900 truncate leading-snug">{article.title}</p>
-                <p className="text-[11px] text-zinc-400 mt-0.5">
+                <p className="truncate text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
+                <p className="mt-0.5 text-[11px] text-zinc-400">
                     {article.readTime} read · {article.year}
                 </p>
             </div>

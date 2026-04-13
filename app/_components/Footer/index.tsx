@@ -12,16 +12,13 @@ export const Footer = () => {
     ];
 
     return (
-        <footer className="w-full bg-zinc-50  relative">
-            {/* Green line top */}
-            <div className="h-px bg-gradient-to-r from-transparent via-green-400/50 to-transparent" />
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <footer className="relative w-full border-t border-zinc-200 bg-zinc-50">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
                     {/* Left — name + tagline */}
-                    <div className="flex flex-col items-center sm:items-start gap-0.5">
-                        <span className="text-sm font-semibold text-zinc-800 ">Rafael Menezes</span>
-                        <span className="text-xs text-zinc-400 ">Senior Frontend Engineer · Tech Lead</span>
+                    <div className="flex flex-col items-center gap-0.5 sm:items-start">
+                        <span className="text-sm font-semibold text-zinc-800">Rafael Menezes</span>
+                        <span className="text-xs text-zinc-400">Senior Frontend Engineer · Tech Lead</span>
                     </div>
 
                     {/* Center — nav */}
@@ -30,7 +27,7 @@ export const Footer = () => {
                             <a
                                 key={link.label}
                                 href={link.href}
-                                className="text-xs text-zinc-400  hover:text-zinc-700  transition-colors"
+                                className="text-xs text-zinc-400 transition-colors hover:text-zinc-700"
                             >
                                 {link.label}
                             </a>
@@ -38,7 +35,7 @@ export const Footer = () => {
                     </nav>
 
                     {/* Right — copyright */}
-                    <p className="text-xs text-zinc-400 shrink-0">© {year}</p>
+                    <p className="shrink-0 text-xs text-zinc-400">© {year}</p>
                 </div>
             </div>
         </footer>

@@ -47,44 +47,44 @@ export const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="w-full bg-white  py-24 relative overflow-hidden  scroll-mt-14">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="max-w-4xl mx-auto">
-                    <div className="bg-zinc-50  border border-zinc-200  rounded-3xl p-8 sm:p-12">
-                        <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
+        <section id="contact" className="relative w-full scroll-mt-14 overflow-hidden bg-white py-24">
+            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-4xl">
+                    <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-12">
+                        <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
                             {/* Photo */}
                             <div className="flex-shrink-0">
-                                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-zinc-200 ">
+                                <div className="h-28 w-28 overflow-hidden rounded-2xl border border-zinc-200 sm:h-36 sm:w-36">
                                     <Image
                                         width={300}
                                         height={300}
                                         src={foto}
                                         alt="Rafael Menezes"
-                                        className="w-full h-full object-cover"
+                                        className="h-full w-full object-cover"
                                     />
                                 </div>
                             </div>
 
                             {/* Content */}
                             <div className="flex-1 text-center sm:text-left">
-                                <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">Contato</p>
-                                <h2 className="text-3xl font-bold tracking-tight text-zinc-900  mb-3">Vamos conversar</h2>
-                                <p className="text-sm text-zinc-500  leading-relaxed mb-8 max-w-md">
+                                <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Contato</p>
+                                <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900">Vamos conversar</h2>
+                                <p className="mb-8 max-w-md text-sm leading-relaxed text-zinc-500">
                                     Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou
                                     colaborações em produtos financeiros de alto impacto.
                                 </p>
 
                                 {/* Links */}
-                                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                                <div className="flex flex-col flex-wrap gap-3 sm:flex-row">
                                     {links.map((link) => (
                                         <Button as="link" key={link.label} href={link.href} target="_blank">
-                                            <span className="text-zinc-400 ">{link.icon}</span>
+                                            <span className="text-zinc-400">{link.icon}</span>
                                             {link.label}
                                             <svg
                                                 width="10"
                                                 height="10"
                                                 viewBox="0 0 10 10"
-                                                className="text-zinc-300 "
+                                                className="text-zinc-300"
                                                 fill="none"
                                             >
                                                 <path
