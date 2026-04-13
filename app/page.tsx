@@ -9,17 +9,17 @@ import { Navbar } from "./_components/Navbar";
 import { Stack } from "./_sections/Stack";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <MyWork />
-      <Articles />
-      <Career />
-      <Education />
-      <Stack />
-      <Contact />
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <Navbar />
+            <Hero />
+            <MyWork />
+            <Articles />
+            <Career />
+            <Education />
+            <Stack />
+            <Contact />
+            <Footer />
+        </>
+    );
 }
