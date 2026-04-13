@@ -39,20 +39,20 @@ export const Contact = () => {
   ];
 
   return (
-    <section className="w-full bg-white dark:bg-zinc-950 py-24 relative overflow-hidden">
+    <section className="w-full bg-white  py-24 relative overflow-hidden">
 
     
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-8 sm:p-12">
+          <div className="bg-zinc-50  border border-zinc-200  rounded-3xl p-8 sm:p-12">
 
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
 
               {/* Photo */}
               <div className="flex-shrink-0">
-                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-700">
+                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl overflow-hidden border border-zinc-200 ">
                   <Image
                     width={300}
                     height={300}
@@ -66,13 +66,13 @@ export const Contact = () => {
               {/* Content */}
               <div className="flex-1 text-center sm:text-left">
 
-                <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+                <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">
                   Contato
                 </p>
-                <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 mb-3">
+                <h2 className="text-3xl font-bold tracking-tight text-zinc-900  mb-3">
                   Vamos conversar
                 </h2>
-                <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-8 max-w-md">
+                <p className="text-sm text-zinc-500  leading-relaxed mb-8 max-w-md">
                   Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou colaborações em produtos financeiros de alto impacto.
                 </p>
 
@@ -87,20 +87,19 @@ export const Contact = () => {
                       className="
                         inline-flex items-center gap-2.5
                         text-sm font-medium
-                        text-zinc-700 dark:text-zinc-300
-                        bg-white dark:bg-zinc-800
-                        border border-zinc-200 dark:border-zinc-700
+                        text-zinc-700 
+                        bg-white 
+                        border border-zinc-200 
                         px-4 py-2.5 rounded-xl
                         hover:-translate-y-0.5
                         hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.08)]
-                        dark:hover:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.3)]
-                        hover:border-zinc-300 dark:hover:border-zinc-600
+                        hover:border-zinc-300 
                         transition-all duration-200 cursor-pointer
                       "
                     >
-                      <span className="text-zinc-400 dark:text-zinc-500">{link.icon}</span>
+                      <span className="text-zinc-400 ">{link.icon}</span>
                       {link.label}
-                      <svg width="10" height="10" viewBox="0 0 10 10" className="text-zinc-300 dark:text-zinc-600" fill="none">
+                      <svg width="10" height="10" viewBox="0 0 10 10" className="text-zinc-300 " fill="none">
                         <path d="M2 8L8 2M8 2H4M8 2v4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
                       </svg>
                     </a>

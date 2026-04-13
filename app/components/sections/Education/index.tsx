@@ -58,32 +58,32 @@ const EducationCard = ({ entry }: { entry: EducationEntry }) => (
      
     `}
   >
-    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 w-full" >
+    <div className="bg-white  border border-zinc-200  rounded-2xl p-4 w-full" >
 
   
       
       {/* Icon + type badge */}
       <div className="flex items-center justify-between mb-3">
-        <div className="w-8 h-8 rounded-lg bg-green-50 dark:bg-green-950 text-green-700 dark:text-green-300 flex items-center justify-center">
+        <div className="w-8 h-8 rounded-lg bg-green-50  text-green-700  flex items-center justify-center">
           {icons[entry.type]}
         </div>
-        <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400">
+        <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-zinc-100  text-zinc-500">
           {entry.type === "postgrad" ? "Pós-graduação" : "Bacharelado"}
         </span>
       </div>
 
       {/* Field */}
-      <p className="text-[15px] font-bold text-zinc-900 dark:text-zinc-50 leading-snug mb-1">
+      <p className="text-[15px] font-bold text-zinc-900  leading-snug mb-1">
         {entry.field}
       </p>
 
       {/* Institution */}
-      <p className="text-[12px] text-zinc-400 dark:text-zinc-500 mb-0.5">
+      <p className="text-[12px] text-zinc-400  mb-0.5">
         {entry.institution}
       </p>
 
       {/* Period */}
-      <p className="text-[11px] text-zinc-400 dark:text-zinc-500">
+      <p className="text-[11px] text-zinc-400 ">
         {entry.period}
       </p>
     
@@ -93,15 +93,15 @@ const EducationCard = ({ entry }: { entry: EducationEntry }) => (
 
 export const Education = () => {
   return (
-    <section className="w-full bg-white dark:bg-zinc-950 py-24 relative overflow-hidden">
+    <section className="w-full bg-white  py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">
             Acadêmico
           </p>
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 ">
             Formação
           </h2>
         </div>

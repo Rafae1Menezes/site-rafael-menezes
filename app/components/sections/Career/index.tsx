@@ -96,32 +96,31 @@ const CareerCard = ({ entry }: { entry: CareerEntry }) => (
       transition-all duration-300 ease-out
       hover:-translate-y-1.5
       hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
-      dark:hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2)]
     `}
   >
-    <div className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-4 w-full">
-      <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 mb-0.5">
+    <div className="bg-white  border border-zinc-200 d rounded-2xl p-4 w-full">
+      <p className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400  mb-0.5">
         {entry.company}
       </p>
-      <p className="text-[13px] font-bold text-zinc-900 dark:text-zinc-50 leading-snug">
+      <p className="text-[13px] font-bold text-zinc-900  leading-snug">
         {entry.role}
       </p>
-      <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-0.5 mb-2">
+      <p className="text-[11px] text-zinc-400  mt-0.5 mb-2">
         {entry.period}
       </p>
-      <p className="text-[12px] text-zinc-500 dark:text-zinc-400 leading-relaxed">
+      <p className="text-[12px] text-zinc-500  leading-relaxed">
         {entry.description}
       </p>
       <div className="flex flex-wrap gap-1 mt-2.5">
         {entry.current && (
-          <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300">
+          <span className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-green-50 text-green-700 =">
             Atual
           </span>
         )}
         {entry.tags.map((tag) => (
           <span
             key={tag}
-            className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-zinc-100 dark:bg-zinc-700/60 text-zinc-500 dark:text-zinc-400"
+            className="text-[10px] font-medium px-1.5 py-0.5 rounded bg-zinc-100  text-zinc-500 "
           >
             {tag}
           </span>
@@ -133,13 +132,13 @@ const CareerCard = ({ entry }: { entry: CareerEntry }) => (
 
 export const Career = () => {
   return (
-   <section className="w-full bg-zinc-50 dark:bg-zinc-900 py-12 pb-[130px]  relative overflow-hidden">
+   <section className="w-full bg-zinc-50  py-12 pb-[130px]  relative overflow-hidden">
       
       {/* Dot grid background */}
       <svg aria-hidden className="pointer-events-none select-none absolute inset-0 w-full h-full">
         <defs>
           <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-            <circle cx="1" cy="1" r="1" className="fill-zinc-300 dark:fill-zinc-700" />
+            <circle cx="1" cy="1" r="1" className="fill-zinc-300 " />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#dot-grid)" />
@@ -150,10 +149,10 @@ export const Career = () => {
 
         {/* Header */}
         <div className="mb-12">
-          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+          <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">
             Trajetória
           </p>
-          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+          <h2 className="text-4xl font-bold tracking-tight text-zinc-900 ">
             Carreira
           </h2>
         </div>
@@ -162,7 +161,7 @@ export const Career = () => {
         <div className="relative max-w-4xl mx-auto">
 
           {/* Vertical line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-200 dark:bg-zinc-700/50 -translate-x-1/2" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-zinc-200  -translate-x-1/2" />
 
           {CAREER.map((entry, i) => {
           const isLeft = i % 2 === 0;

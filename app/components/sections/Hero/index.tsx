@@ -12,7 +12,7 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="min-h-screen w-full flex items-center bg-[#FEFEFE] dark:bg-zinc-950 relative">
+    <section className="min-h-screen w-full flex items-center bg-[#FEFEFE]  relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-24 lg:py-0">
         <div className="relative flex items-center">
 
@@ -26,7 +26,7 @@ export const Hero = () => {
           <div className="flex flex-col gap-6 absolute">
             {/* Name + title */}
             <div className="flex flex-col gap-2">
-              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-[1.1]">
+              <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900  leading-[1.1]">
                 Senior Frontend
                 <br />
                 <span className="highlight-word relative inline-block">Engineer</span>
@@ -34,7 +34,7 @@ export const Hero = () => {
             </div>
 
             {/* Bio */}
-            <p className="text-base text-zinc-500 dark:text-zinc-400 leading-relaxed max-w-lg">
+            <p className="text-base text-zinc-500  leading-relaxed max-w-lg">
               Building scalable, high-performance web applications for complex financial systems.
               Specialized in React & TypeScript, with deep experience in security-critical platforms
               used by millions of users.
@@ -45,7 +45,7 @@ export const Hero = () => {
               {tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800 px-3 py-1.5 rounded-md"
+                  className="text-xs font-medium text-zinc-600  bg-zinc-100  px-3 py-1.5 rounded-md"
                 >
                   {tag}
                 </span>
@@ -54,7 +54,7 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-            <button className="cursor-pointer inline-flex items-center gap-2 border border-[#727272] text-zinc-700 dark:text-zinc-300 dark:border-zinc-600 text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 hover:border-zinc-900 dark:hover:border-zinc-400 transition-colors">
+            <button className="cursor-pointer inline-flex items-center gap-2 border border-[#727272] text-zinc-700   text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-zinc-100  hover:border-zinc-900  transition-colors">
   View my work
 </button>
 

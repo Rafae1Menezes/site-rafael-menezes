@@ -98,14 +98,14 @@ const ALL_PROJECTS: Project[] = [
 const PAGE_SIZE = 6;
 
 const typeColors: Record<string, string> = {
-  Fintech: "bg-blue-50 text-blue-700 dark:bg-blue-950 dark:text-blue-300",
-  "Design System": "bg-purple-50 text-purple-700 dark:bg-purple-950 dark:text-purple-300",
-  Security: "bg-red-50 text-red-700 dark:bg-red-950 dark:text-red-300",
-  Tooling: "bg-amber-50 text-amber-700 dark:bg-amber-950 dark:text-amber-300",
-  Architecture: "bg-teal-50 text-teal-700 dark:bg-teal-950 dark:text-teal-300",
-  Optimization: "bg-green-50 text-green-700 dark:bg-green-950 dark:text-green-300",
-  DevOps: "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
-  Product: "bg-pink-50 text-pink-700 dark:bg-pink-950 dark:text-pink-300",
+  Fintech: "bg-blue-50 text-blue-700 ",
+  "Design System": "bg-purple-50 text-purple-700",
+  Security: "bg-red-50 text-red-700",
+  Tooling: "bg-amber-50 text-amber-700",
+  Architecture: "bg-teal-50 text-teal-700",
+  Optimization: "bg-green-50 text-green-700",
+  DevOps: "bg-zinc-100 text-zinc-700",
+  Product: "bg-pink-50 text-pink-700",
 };
 
 export const MyWork = () => {
@@ -114,20 +114,20 @@ export const MyWork = () => {
   const hasMore = visible < ALL_PROJECTS.length;
 
   return (
-    <section className="w-full bg-zinc-50 dark:bg-zinc-900 py-12">
+    <section className="w-full bg-zinc-50  py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-2">
+            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-2">
               Portfolio
             </p>
-            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+            <h2 className="text-4xl font-bold tracking-tight text-zinc-900 ">
               My work
             </h2>
           </div>
-          <p className="text-sm text-zinc-400 dark:text-zinc-500">
+          <p className="text-sm text-zinc-400">
             {shown.length} of {ALL_PROJECTS.length} projects
           </p>
         </div>
@@ -145,12 +145,11 @@ export const MyWork = () => {
       transition-all duration-300 ease-out
       hover:-translate-y-1.5
       hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)]
-      dark:hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.4),0_2px_8px_-2px_rgba(0,0,0,0.2)]
     `}
   >
             <article
               
-              className="group h-full flex flex-col bg-white dark:bg-zinc-800/60 border border-zinc-200 dark:border-zinc-700/50 rounded-2xl p-6 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors"
+              className="group h-full flex flex-col bg-white  border-zinc-200  rounded-2xl p-6 hover:border-zinc-300  transition-colors"
             >
               {/* Top row */}
               <div className="flex items-start justify-between gap-3 mb-4">
@@ -161,16 +160,16 @@ export const MyWork = () => {
                 >
                   {project.type}
                 </span>
-                <span className="text-xs text-zinc-400 dark:text-zinc-500 tabular-nums mt-0.5">
+                <span className="text-xs text-zinc-400  tabular-nums mt-0.5">
                   {project.year}
                 </span>
               </div>
 
               {/* Title & description */}
-              <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-50 mb-2 leading-snug">
+              <h3 className="text-base font-semibold text-zinc-900  mb-2 leading-snug">
                 {project.title}
               </h3>
-              <p className="text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed flex-1">
+              <p className="text-sm text-zinc-500  leading-relaxed flex-1">
                 {project.description}
               </p>
 
@@ -179,7 +178,7 @@ export const MyWork = () => {
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-700/60 px-2 py-0.5 rounded"
+                    className="text-xs text-zinc-500  bg-zinc-100  px-2 py-0.5 rounded"
                   >
                     {tag}
                   </span>
@@ -197,7 +196,7 @@ export const MyWork = () => {
           <div className="flex justify-center mt-12">
             <button
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 px-6 py-2.5 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600  border border-zinc-200  px-6 py-2.5 rounded-lg hover:bg-zinc-100  transition-colors"
             >
               Load more projects
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

@@ -85,26 +85,26 @@ export const Articles = () => {
   const hasMore = visible < ALL_ARTICLES.length;
 
   return (
-    <section className="w-full bg-[#FEFEFE] dark:bg-zinc-900 py-12">
+    <section className="w-full bg-[#FEFEFE] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex items-end justify-between mb-6">
           <div>
-            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400 dark:text-zinc-500 mb-1">
+            <p className="text-xs font-medium tracking-widest uppercase text-zinc-400  mb-1">
               Writing
             </p>
-            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-900 ">
               Articles
             </h2>
           </div>
-          <p className="text-xs text-zinc-400 dark:text-zinc-500">
+          <p className="text-xs text-zinc-400 ">
             {shown.length} of {ALL_ARTICLES.length}
           </p>
         </div>
 
         {/* List */}
-        <div className="divide-y divide-zinc-200 dark:divide-zinc-700/50 border-t border-zinc-200 dark:border-zinc-700/50">
+        <div className="divide-y divide-zinc-200  border-t border-zinc-200 ">
           {shown.map((article) => (
             <div
   key={article.id}
@@ -112,9 +112,8 @@ export const Articles = () => {
     rounded-xl px-2 -mx-2
     transition-all duration-200 ease-out
     hover:-translate-y-0.5
-    hover:bg-white dark:hover:bg-zinc-800/60
+    hover:bg-white 
     hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)]
-    dark:hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.3),0_1px_4px_-1px_rgba(0,0,0,0.2)]
     hover:border-transparent
   "
 >
@@ -125,10 +124,10 @@ export const Articles = () => {
                     {article.tag}
                   </span>
                 </div>
-                <p className="text-[13px] font-semibold text-zinc-900 dark:text-zinc-50 truncate leading-snug">
+                <p className="text-[13px] font-semibold text-zinc-900  truncate leading-snug">
                   {article.title}
                 </p>
-                <p className="text-[11px] text-zinc-400 dark:text-zinc-500 mt-0.5">
+                <p className="text-[11px] text-zinc-400  mt-0.5">
                   {article.readTime} read · {article.year}
                 </p>
               </div>
@@ -141,7 +140,7 @@ export const Articles = () => {
           <div className="flex justify-center mt-5">
             <button
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
-              className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 border border-zinc-200 dark:border-zinc-700 px-5 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors"
+              className="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600  border border-zinc-200  px-5 py-2 rounded-lg hover:bg-zinc-100  transition-colors"
             >
               Load more
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">

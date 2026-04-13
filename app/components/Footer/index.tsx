@@ -12,7 +12,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-zinc-50 dark:bg-zinc-950 relative">
+    <footer className="w-full bg-zinc-50  relative">
 
       {/* Green line top */}
       <div className="h-px bg-gradient-to-r from-transparent via-green-400/50 to-transparent" />
@@ -22,10 +22,10 @@ export const Footer = () => {
 
           {/* Left — name + tagline */}
           <div className="flex flex-col items-center sm:items-start gap-0.5">
-            <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+            <span className="text-sm font-semibold text-zinc-800 ">
               Rafael Menezes
             </span>
-            <span className="text-xs text-zinc-400 dark:text-zinc-600">
+            <span className="text-xs text-zinc-400 ">
               Senior Frontend Engineer · Tech Lead
             </span>
           </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-xs text-zinc-400 dark:text-zinc-600 hover:text-zinc-700 dark:hover:text-zinc-300 transition-colors"
+                className="text-xs text-zinc-400  hover:text-zinc-700  transition-colors"
               >
                 {link.label}
               </a>
@@ -44,7 +44,7 @@ export const Footer = () => {
           </nav>
 
           {/* Right — copyright */}
-          <p className="text-xs text-zinc-400 dark:text-zinc-600 flex-shrink-0">
+          <p className="text-xs text-zinc-400 shrink-0">
             © {year}
           </p>
 

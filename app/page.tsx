@@ -1,10 +1,10 @@
-import { Articles } from "./components/Articles";
-import { Career } from "./components/Career";
-import { Contact } from "./components/Contact";
-import { Education } from "./components/Education";
+import { Articles } from "./components/sections/Articles";
+import { Career } from "./components/sections/Career";
+import { Contact } from "./components/sections/Contact";
+import { Education } from "./components/sections/Education";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import { MyWork } from "./components/MyWork";
+import { Hero } from "./components/sections/Hero";
+import { MyWork } from "./components/sections/MyWork";
 import { Navbar } from "./components/Navbar";
 import { Stack } from "./components/Stack";
 
