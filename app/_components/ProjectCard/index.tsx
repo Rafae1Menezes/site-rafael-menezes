@@ -2,16 +2,6 @@
 import { useEffect, useRef } from "react";
 import { Tag, TagColor } from "../Tag";
 
-type Project = {
-    id: number;
-    title: string;
-    description: string;
-    tags: string[];
-    type: ProjectType;
-    year: string;
-    link?: string;
-};
-
 export type ProjectType =
     | "Fintech"
     | "Design System"
@@ -21,6 +11,16 @@ export type ProjectType =
     | "Optimization"
     | "DevOps"
     | "Product";
+
+type Project = {
+    id: number;
+    title: string;
+    description: string;
+    tags: string[];
+    type: ProjectType;
+    year: string;
+    link?: string;
+};
 
 export const typeColorMap: Record<ProjectType, TagColor> = {
     Fintech: "blue",

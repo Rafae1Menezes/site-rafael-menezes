@@ -1,10 +1,10 @@
 ---
-id: 1;
-title: Micro-frontend patterns that actually scale;
-tag: Architecture;
-year: 2015;
-readTime: 8 min;
-slug: micro-frontend-patterns-that-actually-scale;
+id: 1
+title: Micro-frontend patterns that actually scale
+tag: Architecture
+year: 2015
+readTime: 8 min
+slug: micro-frontend-patterns-that-actually-scale
 ---
 
 # Conteúdo aqui

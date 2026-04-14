@@ -1,14 +1,14 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { Button } from "../../_components/Button";
-import { ProjectCard } from "../../_components/ProjectCard";
+import { ProjectCard, ProjectType } from "../../_components/ProjectCard";
 
 type Project = {
     id: number;
     title: string;
     description: string;
     tags: string[];
-    type: string;
+    type: ProjectType;
     year: string;
     link?: string;
 };

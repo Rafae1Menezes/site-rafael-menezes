@@ -29,3 +29,11 @@ export default async function ArticlePage({ params }: Props) {
         </main>
     );
 }
+
+export async function generateStaticParams() {
+    const articles = getAllArticles();
+
+    return articles.map((a) => ({
+        slug: a.slug,
+    }));
+}
