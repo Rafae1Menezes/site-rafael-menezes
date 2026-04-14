@@ -1,8 +1,7 @@
-"use client";
-import { useState, useRef, useEffect } from "react";
 import { Button } from "../../_components/Button";
 import { Thumbnail } from "@/app/_components/Thumbnail";
 import { ArticleCard } from "@/app/_components/ArticleCard";
+import { ArticlesClient } from "@/app/_components/ArticlesClient";
 
 type Article = {
     id: number;
@@ -27,18 +26,6 @@ const ALL_ARTICLES: Article[] = [
 const PAGE_SIZE = 5;
 
 export const Articles = () => {
-    const [visible, setVisible] = useState(PAGE_SIZE);
-    // guarda o índice a partir do qual os itens são "novos"
-    const [newFrom, setNewFrom] = useState<number>(Infinity);
-
-    const shown = ALL_ARTICLES.slice(0, visible);
-    const hasMore = visible < ALL_ARTICLES.length;
-
-    const handleLoadMore = () => {
-        setNewFrom(visible);
-        setVisible((v) => v + PAGE_SIZE);
-    };
-
     return (
         <section id="articles" className="w-full scroll-mt-14 bg-[#FEFEFE] py-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -48,41 +35,14 @@ export const Articles = () => {
                         <p className="mb-1 text-xs font-medium tracking-widest text-zinc-400 uppercase">Writing</p>
                         <h2 className="text-3xl font-bold tracking-tight text-zinc-900">Articles</h2>
                     </div>
-                    <p className="text-xs text-zinc-400">
-                        {shown.length} of {ALL_ARTICLES.length}
-                    </p>
                 </div>
 
-                {/* List */}
-                <div className="divide-y divide-zinc-200 border-t border-zinc-200">
-                    {shown.map((article, i) => (
-                        <ArticleCard
-                            key={article.id}
-                            article={article}
-                            isNew={i >= newFrom}
-                            // índice relativo dentro do novo batch para o stagger
-                            index={i >= newFrom ? i - newFrom : 0}
-                        />
+                {/* Lista */}
+                <ArticlesClient>
+                    {ALL_ARTICLES.map((article, i) => (
+                        <ArticleCard key={article.id} article={article} index={i} />
                     ))}
-                </div>
-
-                {/* Load more */}
-                {hasMore && (
-                    <div className="mt-5 flex justify-center">
-                        <Button onClick={handleLoadMore}>
-                            Load more
-                            <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
-                                <path
-                                    d="M7 2v10M2 7l5 5 5-5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </Button>
-                    </div>
-                )}
+                </ArticlesClient>
             </div>
         </section>
     );
