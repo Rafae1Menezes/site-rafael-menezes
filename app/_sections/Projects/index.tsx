@@ -1,7 +1,6 @@
-"use client";
-import { useState, useRef, useEffect } from "react";
 import { Button } from "../../_components/Button";
 import { ProjectCard, ProjectType } from "../../_components/ProjectCard";
+import { ProjectsClient } from "@/app/_components/ProjectsClient";
 
 type Project = {
     id: number;
@@ -97,20 +96,7 @@ const ALL_PROJECTS: Project[] = [
     },
 ];
 
-const PAGE_SIZE = 6;
-
-export const MyWork = () => {
-    const [visible, setVisible] = useState(PAGE_SIZE);
-    const [newFrom, setNewFrom] = useState<number>(Infinity);
-
-    const shown = ALL_PROJECTS.slice(0, visible);
-    const hasMore = visible < ALL_PROJECTS.length;
-
-    const handleLoadMore = () => {
-        setNewFrom(visible);
-        setVisible((v) => v + PAGE_SIZE);
-    };
-
+export const Projects = () => {
     return (
         <section id="my-work" className="w-full scroll-mt-14 bg-zinc-50 py-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -119,38 +105,13 @@ export const MyWork = () => {
                         <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Portfolio</p>
                         <h2 className="text-4xl font-bold tracking-tight text-zinc-900">My work</h2>
                     </div>
-                    <p className="text-sm text-zinc-400">
-                        {shown.length} of {ALL_PROJECTS.length} projects
-                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                    {shown.map((project, i) => (
-                        <ProjectCard
-                            key={project.id}
-                            project={project}
-                            isNew={i >= newFrom}
-                            index={i >= newFrom ? i - newFrom : 0}
-                        />
+                <ProjectsClient>
+                    {ALL_PROJECTS.map((project, i) => (
+                        <ProjectCard key={project.id} project={project} />
                     ))}
-                </div>
-
-                {hasMore && (
-                    <div className="mt-12 flex justify-center">
-                        <Button onClick={handleLoadMore}>
-                            Load more projects
-                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                <path
-                                    d="M7 2v10M2 7l5 5 5-5"
-                                    stroke="currentColor"
-                                    strokeWidth="1.5"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </Button>
-                    </div>
-                )}
+                </ProjectsClient>
             </div>
         </section>
     );

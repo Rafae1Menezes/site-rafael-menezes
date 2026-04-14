@@ -1,5 +1,3 @@
-"use client";
-import { useEffect, useRef } from "react";
 import { Tag, TagColor } from "../Tag";
 
 export type ProjectType =
@@ -33,33 +31,9 @@ export const typeColorMap: Record<ProjectType, TagColor> = {
     Product: "pink",
 };
 
-export const ProjectCard = ({ project, isNew, index }: { project: Project; isNew: boolean; index: number }) => {
-    const ref = useRef<HTMLAnchorElement>(null);
-
-    useEffect(() => {
-        if (!isNew || !ref.current) return;
-
-        const el = ref.current;
-        const delay = index * 60;
-
-        el.style.opacity = "0";
-        el.style.transform = "translateY(-16px)";
-        el.style.transition = "none";
-
-        const raf = requestAnimationFrame(() => {
-            setTimeout(() => {
-                el.style.transition = `opacity 280ms ease ${delay}ms, transform 340ms cubic-bezier(0.22,1,0.36,1) ${delay}ms`;
-                el.style.opacity = "1";
-                el.style.transform = "translateY(0)";
-            }, 10);
-        });
-
-        return () => cancelAnimationFrame(raf);
-    }, [isNew, index]);
-
+export const ProjectCard = ({ project }: { project: Project }) => {
     return (
         <a
-            ref={ref}
             href="#"
             className="h-full w-full rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
         >
