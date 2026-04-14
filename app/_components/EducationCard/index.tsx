@@ -1,3 +1,5 @@
+import { Tag } from "../Tag";
+
 type EducationEntry = {
     id: number;
     institution: string;
@@ -42,17 +44,21 @@ const icons = {
     ),
 };
 
+const typeLabel = {
+    postgrad: "Pós-graduação",
+    graduation: "Bacharelado",
+};
+
 export const EducationCard = ({ entry }: { entry: EducationEntry }) => (
-    <div className={`w-full max-w-sm rounded-2xl p-px`}>
+    <div className="w-full max-w-sm rounded-2xl p-px">
         <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4">
-            {/* Icon + type badge */}
+            {/* Icon + Tag */}
             <div className="mb-3 flex items-center justify-between">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-700">
                     {icons[entry.type]}
                 </div>
-                <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium text-zinc-500">
-                    {entry.type === "postgrad" ? "Pós-graduação" : "Bacharelado"}
-                </span>
+
+                <Tag size="xs">{typeLabel[entry.type]}</Tag>
             </div>
 
             {/* Field */}

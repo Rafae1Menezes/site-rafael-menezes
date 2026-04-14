@@ -1,5 +1,7 @@
+"use client";
 import { useEffect, useRef } from "react";
 import { Thumbnail } from "../Thumbnail";
+import { Tag, TagColor } from "../Tag";
 
 type Article = {
     id: number;
@@ -10,12 +12,14 @@ type Article = {
     href?: string;
 };
 
-const tagColors: Record<string, string> = {
-    Architecture: "bg-green-50 text-green-700",
-    Performance: "bg-amber-50 text-amber-700",
-    React: "bg-blue-50 text-blue-700",
-    Security: "bg-red-50 text-red-700",
-    DX: "bg-purple-50 text-purple-700",
+export type ArticleTag = "Architecture" | "Performance" | "React" | "Security" | "DX";
+
+export const articleTagColorMap: Record<ArticleTag, TagColor> = {
+    Architecture: "green",
+    Performance: "amber",
+    React: "blue",
+    Security: "red",
+    DX: "purple",
 };
 
 export const ArticleCard = ({ article, isNew, index }: { article: Article; isNew: boolean; index: number }) => {
@@ -25,7 +29,6 @@ export const ArticleCard = ({ article, isNew, index }: { article: Article; isNew
         if (!isNew || !ref.current) return;
 
         const el = ref.current;
-        // stagger baseado na posição dentro do novo batch
         const delay = index * 60;
 
         el.style.opacity = "0";
@@ -49,15 +52,19 @@ export const ArticleCard = ({ article, isNew, index }: { article: Article; isNew
             className="group -mx-2 flex cursor-pointer items-center gap-3 rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]"
         >
             <Thumbnail tag={article.tag} />
+
             <div className="min-w-0 flex-1">
+                {/* Tag */}
                 <div className="mb-0.5 flex items-center gap-1.5">
-                    <span
-                        className={`rounded px-1.5 py-0.5 text-[10px] font-medium ${tagColors[article.tag] ?? "bg-zinc-100 text-zinc-600"}`}
-                    >
+                    <Tag size="xs" color={articleTagColorMap[article.tag as keyof typeof articleTagColorMap] ?? "default"}>
                         {article.tag}
-                    </span>
+                    </Tag>
                 </div>
+
+                {/* Title */}
                 <p className="truncate text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
+
+                {/* Meta */}
                 <p className="mt-0.5 text-[11px] text-zinc-400">
                     {article.readTime} read · {article.year}
                 </p>

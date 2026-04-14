@@ -1,6 +1,7 @@
 import Image from "next/image";
 import foto from "./foto.png";
 import { Button } from "../../_components/Button";
+import { Tag } from "@/app/_components/Tag";
 
 export const Hero = () => {
     const tags = ["React", "TypeScript", "Fintech", "Performance", "Security", "Architecture"];
@@ -31,12 +32,7 @@ export const Hero = () => {
 
                         <div className="flex flex-wrap justify-center gap-2 md:justify-start">
                             {tags.map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="rounded-md bg-zinc-100 px-3 py-1.5 text-[clamp(0.65rem,1vw,0.75rem)] font-medium text-zinc-600"
-                                >
-                                    {tag}
-                                </span>
+                                <Tag key={tag}>{tag}</Tag>
                             ))}
                         </div>
 
