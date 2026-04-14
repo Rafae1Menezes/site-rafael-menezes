@@ -13,7 +13,14 @@ export const Hero = () => {
                     {/* Foto — order-1 mobile, order-2 desktop */}
                     <div className="order-1 flex w-full justify-center md:order-2 md:w-[65%] md:justify-end">
                         <div className="relative max-h-60 w-full max-w-[80vw] overflow-hidden md:max-h-full md:max-w-full">
-                            <Image src={foto} width={700} height={400} alt="foto" className="h-auto w-full object-cover" />
+                            <Image
+                                src={foto}
+                                width={700}
+                                height={400}
+                                alt="foto"
+                                className="h-auto w-full object-cover"
+                                priority
+                            />
                         </div>
                     </div>
 

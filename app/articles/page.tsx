@@ -18,5 +18,3 @@ export default function ArticlesPage() {
         </main>
     );
 }
-
-export const dynamic = "force-static";
