@@ -68,7 +68,10 @@ export const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent blur-[0.5px]" />
+                <div
+                    className="h-[1px] w-full origin-center bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent blur-[0.5px]"
+                    style={{ animation: "pulseLine 4s ease-in-out infinite" }}
+                />
             </nav>
         </>
     );
