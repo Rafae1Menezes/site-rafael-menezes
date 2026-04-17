@@ -1,6 +1,13 @@
+import { Footer } from "@/app/_components/Footer";
+import { Header } from "@/app/_components/Header";
+import { Navbar } from "@/app/_components/Navbar";
+import { Tag } from "@/app/_components/Tag";
 import { getAllArticles, getArticleBySlug } from "@/app/_libs/articles";
-import { remark } from "remark";
-import html from "remark-html";
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import { mdxComponents } from "@/app/_components/mdxComponents";
 
 interface Props {
     params: {
@@ -11,22 +18,32 @@ interface Props {
 export default async function ArticlePage({ params }: Props) {
     const { slug } = await params;
 
-    console.log(slug);
-
-    const article = getArticleBySlug(slug);
-
-    const processedContent = await remark().use(html).process(article.content);
-
-    const contentHtml = processedContent.toString();
+    const article = await getArticleBySlug(slug);
 
     return (
-        <main className="mx-auto max-w-3xl p-6">
-            <h1 className="mb-4 text-4xl font-bold">{article.title}</h1>
-
-            <p className="mb-8 text-gray-500">{article.date}</p>
-
-            <article className="prose prose-zinc" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-        </main>
+        <>
+            <Navbar />
+            <div id="articles" className="w-full py-30">
+                <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <Header title="Writing" subtitle="Articles" />
+                    <h1 className="mt-5 mb-4 text-4xl font-bold">{article.title}</h1>
+                    <Tag>Performance</Tag> · {article.readTime} read · {article.year}
+                    <article>
+                        <MDXRemote
+                            source={article.content}
+                            components={mdxComponents}
+                            options={{
+                                mdxOptions: {
+                                    remarkPlugins: [remarkGfm],
+                                    rehypePlugins: [rehypeHighlight],
+                                },
+                            }}
+                        />
+                    </article>
+                </main>
+            </div>
+            <Footer />
+        </>
     );
 }
 

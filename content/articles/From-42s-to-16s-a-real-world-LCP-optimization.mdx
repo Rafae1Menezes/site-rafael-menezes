@@ -1,0 +1,119 @@
+---
+id: 2
+title: From 4.2s to 1.6s a real-world LCP optimization
+tag: Performance
+year: 2015
+readTime: 12 min
+slug: From-42s-to-16s-a-real-world-LCP-optimization
+---
+
+# Conteúdo aqui
+
+## The Problem
+
+We had a React app that was getting slow. Not a little slow — embarrassingly slow. Our LCP was sitting at 4.2 seconds on a mid-range Android device on a 4G connection. Users were bouncing before the page even rendered.
+
+This is the story of how we cut that in half.
+
+## Diagnosing the Beast
+
+Before touching any code, we spent a week just _measuring_. Chrome DevTools, Lighthouse CI on every PR, WebPageTest with real devices. The data told a clear story:
+
+**The main culprits:**
+
+- A 1.8MB JavaScript bundle loaded synchronously
+- Hero image not preloaded, discovered late in the waterfall
+- Three blocking render fonts
+- A third-party analytics script in `<head>`
+
+## The JavaScript Bundle
+
+Our bundle had grown organically over 3 years. No one was malicious — every import made sense at the time. But the result was catastrophic.
+
+```bash
+
+# Before
+
+dist/index.js 1.82 MB (gzipped: 487 KB)
+
+# After
+
+dist/index.js 312 KB (gzipped: 89 KB)
+dist/[chunks]... lazy-loaded on demand
+```
+
+The key insight: **most of our JavaScript wasn't needed for the initial render**. Charts, data tables, modals, rich text editors — all loaded eagerly even when users landed on a page that showed none of them.
+
+## Code Splitting Strategy
+
+We applied three layers of splitting:
+
+**1. Route-level splitting** — the easy win. Every page became a lazy import:
+
+```tsx
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Reports = lazy(() => import("./pages/Reports"));
+```
+
+**2. Component-level splitting** — for heavy components that aren't immediately visible:
+
+```tsx
+const RichEditor = lazy(() => import("./components/RichEditor"));
+const DataChart = lazy(() => import("./components/DataChart"));
+```
+
+**3. Vendor chunk splitting** — isolating stable third-party libraries so they can be cached independently:
+
+```ts
+// vite.config.ts
+build: {
+        rollupOptions: {
+        output: {
+        manualChunks: {
+        'react-vendor': ['react', 'react-dom'],
+        'chart-vendor': ['recharts', 'd3'],
+        'form-vendor': ['react-hook-form', 'zod'],
+        }
+        }
+    }
+}
+```
+
+## The Image Problem
+
+Our hero image was a 1.2MB PNG discovered by the browser only after parsing the full HTML and CSS. By then, we'd already wasted 1.5 seconds.
+
+**The fix was embarrassingly simple:** add a `<link rel="preload">` in the `<head>`.
+
+```html
+<link rel="preload" as="image" href="/hero.webp" fetchpriority="high" />
+```
+
+We also converted from PNG to WebP (68% smaller) and added proper width/height attributes to eliminate layout shift.
+
+## Font Loading
+
+Three custom fonts were blocking render. We switched to `font-display: swap` and preloaded only the fonts used above the fold.
+
+## Results
+
+| Metric      | Before | After | Delta    |
+| ----------- | ------ | ----- | -------- |
+| LCP         | 4.2s   | 1.6s  | **-62%** |
+| FCP         | 2.8s   | 1.1s  | **-61%** |
+| TTI         | 6.1s   | 2.4s  | **-61%** |
+| Bundle size | 1.82MB | 312KB | **-83%** |
+
+The biggest lesson: **measure first, optimize second**. Every change we made was backed by data. We didn't guess — we knew exactly which resource was in the critical path before we touched it.
+
+## What Didn't Work
+
+We tried prerendering/SSG for this SPA. It helped FCP but actually hurt LCP because the hydration bundle still needed to load. Sometimes the obvious solution isn't the right one.
+
+We also tried aggressive service worker caching. Repeat visits became lightning fast, but first visits didn't improve meaningfully. Great for retention, not for acquisition.
+
+## The Lesson
+
+Performance work is often unglamorous. It's not building new features — it's reading waterfall charts at 11pm, arguing about whether a 40KB library is worth it, and writing PRs with descriptions like "remove unused lodash import (-8KB)."
+
+But when you ship a page that loads in 1.6 seconds instead of 4.2, and you see the bounce rate drop in real-time? That's deeply satisfying.

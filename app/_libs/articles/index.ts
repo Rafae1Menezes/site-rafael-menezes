@@ -17,23 +17,27 @@ export function getAllArticles() {
     });
 }
 
-export function getArticleBySlug(slug: string): {
+export async function getArticleBySlug(slug: string): Promise<{
     title: string;
-    date: string;
+    year: string;
     description: string;
     slug: string;
-    content: string;
-} {
-    const fullPath = path.join(articlesDirectory, `${slug}.md`);
+    content: any;
+    tag: string;
+    readTime: string;
+}> {
+    const fullPath = path.join(articlesDirectory, `${slug}.mdx`);
     const fileContents = fs.readFileSync(fullPath, "utf8");
 
     const { data, content } = matter(fileContents);
 
     return {
         title: data.title,
-        date: data.date,
+        year: data.year,
+        tag: data.tag,
         description: data.description,
         slug: data.slug,
-        content,
+        readTime: data.readTime,
+        content: content,
     };
 }

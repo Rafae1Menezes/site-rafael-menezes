@@ -1,4 +1,5 @@
 import { EducationCard } from "@/app/_components/EducationCard";
+import { Header } from "@/app/_components/Header";
 
 type EducationEntry = {
     id: number;
@@ -40,13 +41,8 @@ export const Education = () => {
     return (
         <section id="education" className="relative w-full scroll-mt-14 overflow-hidden bg-white py-24">
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="mb-12">
-                    <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Acadêmico</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-zinc-900">Formação</h2>
-                </div>
+                <Header title="Acadêmico" subtitle="Formação" />
 
-                {/* Cards grid */}
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
                     {EDUCATION.map((entry) => (
                         <EducationCard key={entry.id} entry={entry} />

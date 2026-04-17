@@ -1,4 +1,5 @@
 import { CareerCard } from "@/app/_components/CareerCard";
+import { Header } from "@/app/_components/Header";
 
 type CareerEntry = {
     id: number;
@@ -97,11 +98,7 @@ export const Career = () => {
             </svg>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Header */}
-                <div className="mb-12">
-                    <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Trajetória</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-zinc-900">Carreira</h2>
-                </div>
+                <Header title="Trajetória" subtitle="Carreira" />
 
                 {/* ── MOBILE timeline: linha à esquerda, cards à direita ── */}
                 <div className="relative md:hidden">

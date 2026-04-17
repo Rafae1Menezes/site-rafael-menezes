@@ -1,35 +1,36 @@
 import Image from "next/image";
 import globo from "./globo.svg";
 import { MobileMenu } from "../MobileMenu";
+import Link from "next/link";
 
 const navItems = [
     {
         label: "Início",
-        anchor: "#start",
+        anchor: "/#start",
     },
     {
         label: "Meu trabalho",
-        anchor: "#my-work",
+        anchor: "/#my-work",
     },
     {
         label: "Artigos",
-        anchor: "#articles",
+        anchor: "/#articles",
     },
     {
         label: "Carreira",
-        anchor: "#career",
+        anchor: "/#career",
     },
     {
         label: "Formação",
-        anchor: "#education",
+        anchor: "/#education",
     },
     {
         label: "Stack",
-        anchor: "#stack",
+        anchor: "/#stack",
     },
     {
         label: "Contato",
-        anchor: "#contact",
+        anchor: "/#contact",
     },
 ];
 
@@ -39,9 +40,9 @@ export const Navbar = () => {
             <nav className="fixed top-0 right-0 left-0 z-50 w-full border-b border-white/30 bg-white/10 shadow-[0_8px_18px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
-                        <a href="#" className="text-black">
+                        <Link href="/" className="text-black">
                             <span className="text-xl font-semibold">RAFAEL MENEZES</span>
-                        </a>
+                        </Link>
 
                         {/* Desktop links */}
                         <div className="hidden items-center gap-6 md:flex">

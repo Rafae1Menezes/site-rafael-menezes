@@ -1,3 +1,4 @@
+import { Header } from "@/app/_components/Header";
 import { Button } from "../../_components/Button";
 import { ProjectCard, ProjectType } from "../../_components/ProjectCard";
 import { ProjectsClient } from "@/app/_components/ProjectsClient";
@@ -100,12 +101,7 @@ export const Projects = () => {
     return (
         <section id="my-work" className="w-full scroll-mt-14 bg-zinc-50 py-12">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-                    <div>
-                        <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Portfolio</p>
-                        <h2 className="text-4xl font-bold tracking-tight text-zinc-900">My work</h2>
-                    </div>
-                </div>
+                <Header title="Portfolio" subtitle="My work" />
 
                 <ProjectsClient>
                     {ALL_PROJECTS.map((project, i) => (

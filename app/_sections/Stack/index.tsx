@@ -1,3 +1,4 @@
+import { Header } from "@/app/_components/Header";
 import { StackCard } from "@/app/_components/StackCard";
 
 type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
@@ -91,10 +92,7 @@ export const Stack = () => {
             </svg>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mb-12">
-                    <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Tecnologias</p>
-                    <h2 className="text-4xl font-bold tracking-tight text-zinc-900">Stack</h2>
-                </div>
+                <Header title="Tecnologias" subtitle="Stack" />
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {STACK.map((group) => (
