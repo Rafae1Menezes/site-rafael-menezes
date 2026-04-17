@@ -1,3 +1,5 @@
+"use client";
+import Link from "next/link";
 import { Tag, TagColor } from "../Tag";
 
 export type ProjectType =
@@ -33,11 +35,8 @@ export const typeColorMap: Record<ProjectType, TagColor> = {
 
 export const ProjectCard = ({ project }: { project: Project }) => {
     return (
-        <a
-            href="#"
-            className="h-full w-full rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]"
-        >
-            <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-colors hover:border-zinc-300">
+        <Link href="#">
+            <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]">
                 {/* Header */}
                 <div className="mb-4 flex items-start justify-between gap-3">
                     <Tag size="sm" color={typeColorMap[project.type]}>
@@ -62,6 +61,6 @@ export const ProjectCard = ({ project }: { project: Project }) => {
                     ))}
                 </div>
             </article>
-        </a>
+        </Link>
     );
 };
