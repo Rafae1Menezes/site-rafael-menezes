@@ -1,6 +1,6 @@
 import { Career } from "@/app/types/career";
 
-export const careerContent: Career[] = [
+export const CAREER: Career[] = [
     {
         id: 1,
         company: "NTT DATA",

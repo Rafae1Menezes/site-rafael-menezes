@@ -1,15 +1,7 @@
+import { LINKS } from "@/content/links";
+
 export const Footer = () => {
     const year = new Date().getFullYear();
-
-    const links = [
-        { label: "Início", href: "#" },
-        { label: "Meu trabalho", href: "#" },
-        { label: "Artigos", href: "#" },
-        { label: "Carreira", href: "#" },
-        { label: "Formação", href: "#" },
-        { label: "Stack", href: "#" },
-        { label: "Contato", href: "#" },
-    ];
 
     return (
         <footer className="relative w-full border-t border-zinc-200 bg-zinc-50">
@@ -23,10 +15,10 @@ export const Footer = () => {
 
                     {/* Center — nav */}
                     <nav className="flex flex-wrap justify-center gap-x-5 gap-y-1">
-                        {links.map((link) => (
+                        {LINKS.map((link) => (
                             <a
                                 key={link.label}
-                                href={link.href}
+                                href={link.anchor}
                                 className="text-xs text-zinc-400 transition-colors hover:text-zinc-700"
                             >
                                 {link.label}

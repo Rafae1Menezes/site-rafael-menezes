@@ -1,6 +1,6 @@
 import { Header } from "@/app/_components/Header";
 import { SkillCard } from "@/app/_components/SkillCard";
-import { skillContent } from "@/content/skills";
+import { SKILLS } from "@/content/skills";
 
 export const SkillsSection = () => {
     return (
@@ -18,7 +18,7 @@ export const SkillsSection = () => {
                 <Header title="Tecnologias" subtitle="Stack" />
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {skillContent.map((group) => (
+                    {SKILLS.map((group) => (
                         <SkillCard key={group.category} group={group} />
                     ))}
                 </div>

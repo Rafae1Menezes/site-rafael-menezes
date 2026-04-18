@@ -8,7 +8,7 @@ export const mdxComponents = {
 
     h3: (props: any) => <h3 className="mt-6 mb-2 text-2xl font-semibold" {...props} />,
 
-    p: (props: any) => <p className="mb-4 leading-relaxed text-zinc-600 dark:text-zinc-300" {...props} />,
+    p: (props: any) => <p className="mb-4 leading-relaxed text-zinc-600" {...props} />,
 
     a: ({ href, children, ...props }: any) => (
         <Link href={href} className="text-green-400 underline transition hover:text-green-300" {...props}>
@@ -20,7 +20,7 @@ export const mdxComponents = {
 
     ol: (props: any) => <ol className="mb-4 list-decimal space-y-2 pl-6" {...props} />,
 
-    li: (props: any) => <li className="text-zinc-600 dark:text-zinc-300" {...props} />,
+    li: (props: any) => <li className="text-zinc-600" {...props} />,
 
     blockquote: (props: any) => (
         <blockquote className="my-6 border-l-4 border-green-400 pl-4 text-zinc-500 italic" {...props} />

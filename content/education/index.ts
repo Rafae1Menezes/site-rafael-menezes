@@ -1,6 +1,6 @@
 import { Education } from "@/app/types/education";
 
-export const educationContent: Education[] = [
+export const EDUCATION: Education[] = [
     {
         id: 1,
         institution: "PUC - MG",

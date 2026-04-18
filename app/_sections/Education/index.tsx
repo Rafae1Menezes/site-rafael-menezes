@@ -1,6 +1,6 @@
 import { EducationCard } from "@/app/_components/EducationCard";
 import { Header } from "@/app/_components/Header";
-import { educationContent } from "@/content/education";
+import { EDUCATION } from "@/content/education";
 
 export const EducationSection = () => {
     return (
@@ -9,7 +9,7 @@ export const EducationSection = () => {
                 <Header title="Acadêmico" subtitle="Formação" />
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    {educationContent.map((entry) => (
+                    {EDUCATION.map((entry) => (
                         <EducationCard key={entry.id} entry={entry} />
                     ))}
                 </div>

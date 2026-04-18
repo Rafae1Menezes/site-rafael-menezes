@@ -2,37 +2,7 @@ import Image from "next/image";
 import globo from "./globo.svg";
 import { MobileMenu } from "../MobileMenu";
 import Link from "next/link";
-
-const navItems = [
-    {
-        label: "Início",
-        anchor: "/#start",
-    },
-    {
-        label: "Meu trabalho",
-        anchor: "/#my-work",
-    },
-    {
-        label: "Artigos",
-        anchor: "/#articles",
-    },
-    {
-        label: "Carreira",
-        anchor: "/#career",
-    },
-    {
-        label: "Formação",
-        anchor: "/#education",
-    },
-    {
-        label: "Stack",
-        anchor: "/#skills",
-    },
-    {
-        label: "Contato",
-        anchor: "/#contact",
-    },
-];
+import { LINKS } from "@/content/links";
 
 export const Navbar = () => {
     return (
@@ -46,7 +16,7 @@ export const Navbar = () => {
 
                         {/* Desktop links */}
                         <div className="hidden items-center gap-6 md:flex">
-                            {navItems.map((item) => (
+                            {LINKS.map((item) => (
                                 <a
                                     key={item.label}
                                     href={item.anchor}
@@ -65,7 +35,7 @@ export const Navbar = () => {
                             </a>
                         </div>
                         {/* CLIENT PART */}
-                        <MobileMenu navItems={navItems} />
+                        <MobileMenu navItems={LINKS} />
                     </div>
                 </div>
 

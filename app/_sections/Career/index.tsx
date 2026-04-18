@@ -1,7 +1,7 @@
 import { CareerCard } from "@/app/_components/CareerCard";
 import { Header } from "@/app/_components/Header";
 import { Career } from "@/app/types/career";
-import { careerContent } from "@/content/career";
+import { CAREER } from "@/content/career";
 
 export const CareerSection = () => {
     return (
@@ -24,7 +24,7 @@ export const CareerSection = () => {
                     <div className="absolute top-0 bottom-0 left-3 w-px bg-zinc-200" />
 
                     <div className="flex flex-col gap-6 pl-10">
-                        {careerContent.map((entry) => (
+                        {CAREER.map((entry) => (
                             <div key={entry.id} className="relative">
                                 {/* dot */}
                                 <div className="absolute top-5 -left-[32px] z-10 h-2.5 w-2.5 rounded-full border-2 border-[#7FA885] bg-[#B9F8BD]" />
@@ -38,7 +38,7 @@ export const CareerSection = () => {
                 <div className="relative mx-auto hidden max-w-4xl md:block">
                     <div className="absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2 bg-zinc-200" />
 
-                    {careerContent.map((entry, i) => {
+                    {CAREER.map((entry, i) => {
                         const isLeft = i % 2 === 0;
                         return (
                             <div

@@ -1,6 +1,6 @@
 import { SkillGroup } from "@/app/types/skill";
 
-export const skillContent: SkillGroup[] = [
+export const SKILLS: SkillGroup[] = [
     {
         category: "Core",
         description: "Tecnologias que uso diariamente há anos",
