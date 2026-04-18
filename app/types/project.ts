@@ -16,5 +16,5 @@ export type Project = {
     type: ProjectType;
     year: string;
     slug: string;
-    content: String;
+    content: string;
 };

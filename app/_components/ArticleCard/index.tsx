@@ -1,15 +1,8 @@
 import { Thumbnail } from "../Thumbnail";
-import { Tag, TagColor } from "../Tag";
+import { Tag } from "../Tag";
 import Link from "next/link";
 import { Article, ArticleTag } from "@/app/types/article";
-
-export const articleTagColorMap: Record<ArticleTag, TagColor> = {
-    Architecture: "green",
-    Performance: "amber",
-    React: "blue",
-    Security: "red",
-    DX: "purple",
-};
+import { articleColorMap } from "@/content/colors";
 
 export const ArticleCard = ({ article }: { article: Article }) => {
     return (
@@ -18,7 +11,7 @@ export const ArticleCard = ({ article }: { article: Article }) => {
                 <Thumbnail tag={article.tag} />
                 <div className="min-w-0 flex-1">
                     <div className="mb-0.5 flex items-center gap-1.5">
-                        <Tag size="xs" color={articleTagColorMap[article.tag as keyof typeof articleTagColorMap] ?? "default"}>
+                        <Tag size="xs" color={articleColorMap[article.tag as keyof typeof articleColorMap] ?? "default"}>
                             {article.tag}
                         </Tag>
                     </div>

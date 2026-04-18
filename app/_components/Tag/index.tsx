@@ -1,10 +1,10 @@
-export type TagColor = "default" | "blue" | "purple" | "red" | "amber" | "teal" | "green" | "zinc" | "pink";
+import { Color } from "@/content/colors";
 
 type TagSize = "xs" | "sm" | "md";
 
 interface TagProps {
     children: React.ReactNode;
-    color?: TagColor;
+    color?: Color;
     size?: TagSize;
     className?: string;
 }
@@ -17,7 +17,7 @@ const sizes: Record<TagSize, string> = {
     md: "px-3 py-1.5 text-sm",
 };
 
-const colors: Record<TagColor, string> = {
+const colors: Record<Color, string> = {
     default: "bg-zinc-100 text-zinc-600",
     blue: "bg-blue-50 text-blue-700",
     purple: "bg-purple-50 text-purple-700",
