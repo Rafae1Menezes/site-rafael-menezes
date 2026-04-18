@@ -31,7 +31,7 @@ const SkillRow = ({ skill }: { skill: Skill }) => {
     );
 };
 
-export const StackCard = ({ group }: { group: SkillGroup }) => (
+export const SkillCard = ({ group }: { group: SkillGroup }) => (
     <div className="group w-full rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.08),0_2px_8px_-2px_rgba(0,0,0,0.04)]">
         {/* Header */}
         <p className="mb-0.5 text-[13px] font-bold text-zinc-900">{group.category}</p>

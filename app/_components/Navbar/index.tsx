@@ -26,7 +26,7 @@ const navItems = [
     },
     {
         label: "Stack",
-        anchor: "/#stack",
+        anchor: "/#skills",
     },
     {
         label: "Contato",

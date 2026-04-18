@@ -2,7 +2,7 @@ import { Footer } from "./_components/Footer";
 import { HeroSection } from "./_sections/Hero";
 import { Projects } from "./_sections/Projects";
 import { Navbar } from "./_components/Navbar";
-import { StackSection } from "./_sections/Stack";
+import { SkillsSection } from "./_sections/Skills";
 import { ProjectCard } from "./_components/ProjectCard";
 import { ArticlesSection } from "./_sections/Articles";
 import { CareerSection } from "./_sections/Career";
@@ -18,7 +18,7 @@ export default function Home() {
             <ArticlesSection />
             <CareerSection />
             <EducationSection />
-            <StackSection />
+            <SkillsSection />
             <ContactSection />
             <Footer />
         </>
