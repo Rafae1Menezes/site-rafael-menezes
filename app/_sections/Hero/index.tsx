@@ -42,7 +42,9 @@ export const HeroSection = () => {
                         </div>
 
                         <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
-                            <Button>View my work</Button>
+                            <Button as="link" href="#my-work">
+                                View my work
+                            </Button>
                             <Button variant="primary">Download CV</Button>
                         </div>
                     </div>

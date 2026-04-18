@@ -26,7 +26,7 @@ export const CareerSection = () => {
                         {CAREER.map((entry) => (
                             <div key={entry.id} className="relative">
                                 {/* dot */}
-                                <div className="absolute top-5 -left-[32px] z-10 h-2.5 w-2.5 rounded-full border-2 border-[#7FA885] bg-[#B9F8BD]" />
+                                <div className="absolute top-5 -left-8 z-10 h-2.5 w-2.5 rounded-full border-2 border-[#7FA885] bg-[#B9F8BD]" />
                                 <CareerCard entry={entry} />
                             </div>
                         ))}

@@ -1,0 +1,27 @@
+---
+id: 6
+title: Performance Audit & Optimization
+description: Systematic performance audit across a large React app — reduced bundle size by 40%, improved LCP from 4.2s to 1.6s through code splitting and lazy loading.
+tags: Performance,Vite,React
+type: Optimization
+year: 2021
+slug: performance-audit-optimization
+---
+
+## The Problem
+
+The app was slow.
+
+LCP at 4.2 seconds.
+
+## The Findings
+
+- Large bundle
+- Blocking assets
+- No code splitting
+
+## The Fix
+
+```tsx
+const Page = lazy(() => import("./Page"));
+```

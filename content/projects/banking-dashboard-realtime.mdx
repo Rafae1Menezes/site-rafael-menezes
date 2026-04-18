@@ -1,0 +1,25 @@
+---
+id: 1
+title: Banking Dashboard
+description: Internal financial operations dashboard for a large-scale fintech, handling real-time transaction monitoring and fraud alerts for 2M+ users.
+tags: React,TypeScript,WebSocket
+type: Fintech
+year: 2024
+slug: banking-dashboard-realtime
+---
+
+## The Problem
+
+Handling real-time financial data at scale is not just a backend challenge.
+
+Our frontend was receiving a continuous stream of transactions, alerts, and updates — and it couldn’t keep up.
+
+The UI froze. Tables lagged. Alerts arrived late.
+
+## The Root Cause
+
+We were treating all real-time data equally.
+
+```ts
+socket.on("message", handleEverything);
+```

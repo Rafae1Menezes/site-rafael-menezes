@@ -1,0 +1,27 @@
+---
+id: 4
+title: Observability Platform UI
+description: Frontend for an internal observability tool — log viewer, error tracking dashboards, and performance metrics explorer used by 200+ engineers.
+tags: React,D3.js,REST API
+type: Tooling
+year: 2022
+slug: observability-platform-ui
+---
+
+## The Problem
+
+Engineers had data — but no visibility.
+
+Logs were hard to read. Metrics were disconnected.
+
+## The Challenge
+
+Rendering large datasets without breaking performance.
+
+## The Fix
+
+We used virtualization:
+
+```tsx
+<VirtualizedList items={logs} />
+```

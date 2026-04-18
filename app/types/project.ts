@@ -15,5 +15,6 @@ export type Project = {
     tags: string[];
     type: ProjectType;
     year: string;
-    link?: string;
+    slug: string;
+    content: String;
 };

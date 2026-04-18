@@ -1,0 +1,25 @@
+---
+id: 5
+title: Micro-frontend Migration
+description: Led the architectural migration of a monolithic frontend to a micro-frontend model using Module Federation, reducing deploy coupling across 3 squads.
+tags: Webpack,Module Federation,Architecture
+type: Architecture
+year: 2022
+slug: micro-frontend-migration
+---
+
+## The Problem
+
+Multiple teams working on one codebase.
+
+Conflicts were constant.
+
+## The Solution
+
+Micro-frontends.
+
+```ts
+remotes: {
+    app: "app@url/remoteEntry.js";
+}
+```

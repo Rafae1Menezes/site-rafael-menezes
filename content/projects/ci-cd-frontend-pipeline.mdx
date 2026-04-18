@@ -1,0 +1,27 @@
+---
+id: 8
+title: CI/CD Frontend Pipeline
+description: Designed the entire frontend CI/CD pipeline with automated visual regression testing, bundle analysis, and Lighthouse checks on every PR.
+tags: GitHub Actions,Playwright,DX
+type: DevOps
+year: 2020
+slug: ci-cd-frontend-pipeline
+---
+
+## The Problem
+
+Deploys were risky.
+
+Bugs slipped through.
+
+## The Solution
+
+We automated everything.
+
+## Pipeline
+
+```yaml
+- run: npm test
+- run: npm run build
+- run: lighthouse-ci
+```

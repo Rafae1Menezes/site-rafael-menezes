@@ -2,10 +2,9 @@ import { ArticleCard } from "@/app/_components/ArticleCard";
 import { ArticlesClient } from "@/app/_components/ArticlesClient";
 import { Header } from "@/app/_components/Header";
 import { getAllArticles } from "@/app/_libs/articles";
-import { Article } from "@/app/types/article";
 
 export const ArticlesSection = async () => {
-    const articles = getAllArticles() as Article[];
+    const articles = getAllArticles();
 
     return (
         <section id="articles" className="w-full scroll-mt-14 bg-[#FEFEFE] py-12">

@@ -1,0 +1,27 @@
+---
+id: 3
+title: Auth & Security Layer
+description: Redesigned the frontend authentication flow with MFA, session management, and token refresh strategies for a security-critical B2B SaaS platform.
+tags: TypeScript,OAuth2,Security
+type: Security
+year: 2023
+slug: auth-security-layer
+---
+
+## The Problem
+
+Authentication was unreliable.
+
+Sessions expired unexpectedly. MFA flows were inconsistent.
+
+## The Fix
+
+We redesigned token handling:
+
+- Short-lived access tokens
+- Secure refresh tokens
+
+```ts
+if (tokenExpired) {
+    await refreshToken();
+}
