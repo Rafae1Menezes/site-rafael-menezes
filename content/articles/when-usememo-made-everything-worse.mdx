@@ -1,0 +1,20 @@
+---
+id: 5
+title: When useMemo made everything worse
+tag: React
+year: 2025
+readTime: 9 min
+slug: when-usememo-made-everything-worse
+---
+
+## The Optimization Trap
+
+We added `useMemo` everywhere.
+
+Because… performance.
+
+## The Code
+
+```tsx
+const computed = useMemo(() => heavyCalculation(data), [data]);
+```

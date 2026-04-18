@@ -1,0 +1,51 @@
+---
+id: 6
+title: The hidden cost of too many API calls
+tag: Performance
+year: 2025
+readTime: 11 min
+slug: the-hidden-cost-of-too-many-api-calls
+---
+
+## The Problem That Didn’t Look Like One
+
+Everything was “working.”
+
+No errors. No crashes. No complaints from the backend team.
+
+But the app felt sluggish — especially on mobile.
+
+We checked the usual suspects: bundle size, images, fonts.
+
+Nothing alarming.
+
+Until we opened the Network tab.
+
+## Death by a Thousand Requests
+
+On initial load, the page was making **47 API calls**.
+
+Not one big request.
+
+Forty-seven small ones.
+
+Each one seemed harmless. Together, they were a disaster.
+
+## Why This Hurts More Than You Think
+
+Even with HTTP/2, requests aren’t free:
+
+- Connection overhead
+- Header size
+- Main thread scheduling
+- Waterfall delays
+
+And worse: many requests were **dependent on each other**.
+
+```ts
+// request A
+const user = await fetchUser();
+
+// request B depends on A
+const orders = await fetchOrders(user.id);
+```

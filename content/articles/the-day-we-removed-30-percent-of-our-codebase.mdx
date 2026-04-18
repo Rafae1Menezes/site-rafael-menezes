@@ -1,0 +1,40 @@
+---
+id: 4
+title: The day we removed 30% of our codebase
+tag: Architecture
+year: 2025
+readTime: 8 min
+slug: the-day-we-removed-30-percent-of-our-codebase
+---
+
+## The Problem Nobody Talks About
+
+Our app wasn’t slow. It wasn’t broken.
+
+It was just... heavy.
+
+Every feature added over time left a trace. Some unused, some duplicated, some forgotten.
+
+## The Audit
+
+We ran a simple question across the codebase:
+
+> “Is this still used?”
+
+The answers were uncomfortable.
+
+## What We Found
+
+- Dead components
+- Old feature flags never removed
+- Duplicate utility functions
+- Entire pages no longer linked anywhere
+
+## The Cleanup
+
+We removed aggressively.
+
+```bash
+git rm -r legacy-components/
+git rm unused-utils.ts
+```

@@ -1,0 +1,44 @@
+---
+id: 3
+title: Why your React app feels slow (even when it isn’t)
+tag: Performance
+year: 2025
+readTime: 10 min
+slug: why-your-react-app-feels-slow
+---
+
+## The Illusion of Slowness
+
+We had a curious problem. Our metrics were fine — Lighthouse scores above 90, LCP under 2 seconds — yet users kept complaining:
+
+> “It feels slow.”
+
+That word — _feels_ — turned out to be the key.
+
+## The Hidden Gap Between Metrics and Perception
+
+Performance metrics measure reality. Users experience perception.
+
+And perception is heavily influenced by:
+
+- Visual feedback
+- Responsiveness
+- Layout stability
+- Micro-interactions
+
+Our app loaded fast — but it _looked_ broken while loading.
+
+## The Skeleton Fix
+
+We replaced blank loading states with skeletons.
+
+```tsx
+function CardSkeleton() {
+    return (
+        <div className="animate-pulse">
+            <div className="mb-2 h-6 w-3/4 rounded bg-zinc-700" />
+            <div className="h-4 w-full rounded bg-zinc-800" />
+        </div>
+    );
+}
+```

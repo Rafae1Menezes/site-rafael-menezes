@@ -1,6 +1,5 @@
 import { CareerCard } from "@/app/_components/CareerCard";
 import { Header } from "@/app/_components/Header";
-import { Career } from "@/app/types/career";
 import { CAREER } from "@/content/career";
 
 export const CareerSection = () => {
