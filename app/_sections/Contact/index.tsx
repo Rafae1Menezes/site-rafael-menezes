@@ -2,7 +2,7 @@ import Image from "next/image";
 import foto from "./foto.jpg";
 import { Button } from "../../_components/Button";
 
-export const Contact = () => {
+export const ContactSection = () => {
     const links = [
         {
             label: "LinkedIn",
@@ -53,7 +53,7 @@ export const Contact = () => {
                     <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-12">
                         <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
                             {/* Photo */}
-                            <div className="flex-shrink-0">
+                            <div className="shrink-0">
                                 <div className="h-28 w-28 overflow-hidden rounded-2xl border border-zinc-200 sm:h-36 sm:w-36">
                                     <Image
                                         width={300}

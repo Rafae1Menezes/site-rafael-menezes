@@ -1,85 +1,8 @@
 import { Header } from "@/app/_components/Header";
 import { StackCard } from "@/app/_components/StackCard";
+import { skillContent } from "@/content/stack";
 
-type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
-
-type Skill = {
-    name: string;
-    level: SkillLevel;
-};
-
-type SkillGroup = {
-    category: string;
-    description: string;
-    skills: Skill[];
-};
-
-const STACK: SkillGroup[] = [
-    {
-        category: "Core",
-        description: "Tecnologias que uso diariamente há anos",
-        skills: [
-            { name: "TypeScript", level: "Especialista" },
-            { name: "React", level: "Especialista" },
-            { name: "Next.js", level: "Especialista" },
-            { name: "JavaScript", level: "Especialista" },
-            { name: "HTML & CSS", level: "Especialista" },
-        ],
-    },
-    {
-        category: "Arquitetura",
-        description: "Padrões e decisões de escala",
-        skills: [
-            { name: "Micro-frontends", level: "Especialista" },
-            { name: "Module Federation", level: "Especialista" },
-            { name: "Design Systems", level: "Avançado" },
-            { name: "Monorepos", level: "Avançado" },
-        ],
-    },
-    {
-        category: "Performance & Qualidade",
-        description: "Entrega confiável e rápida",
-        skills: [
-            { name: "Vite", level: "Especialista" },
-            { name: "Jest", level: "Avançado" },
-            { name: "Storybook", level: "Avançado" },
-            { name: "Web Vitals / LCP", level: "Avançado" },
-            { name: "SEO técnico", level: "Avançado" },
-            { name: "Acessibilidade", level: "Avançado" },
-        ],
-    },
-    {
-        category: "Dados & APIs",
-        description: "Integração e estado",
-        skills: [
-            { name: "GraphQL", level: "Avançado" },
-            { name: "REST", level: "Especialista" },
-            { name: "Redux", level: "Avançado" },
-            { name: "React Query", level: "Avançado" },
-        ],
-    },
-    {
-        category: "Segurança",
-        description: "Experiência em plataformas críticas",
-        skills: [
-            { name: "Autenticação & Auth flows", level: "Especialista" },
-            { name: "Prevenção de fraudes", level: "Avançado" },
-            { name: "SDKs de analytics", level: "Avançado" },
-        ],
-    },
-    {
-        category: "Design & Produto",
-        description: "Onde o frontend encontra o design",
-        skills: [
-            { name: "Figma", level: "Especialista" },
-            { name: "UI/UX", level: "Especialista" },
-            { name: "Wireframing", level: "Avançado" },
-            { name: "Branding", level: "Intermediário" },
-        ],
-    },
-];
-
-export const Stack = () => {
+export const StackSection = () => {
     return (
         <section id="stack" className="relative w-full scroll-mt-14 overflow-hidden bg-zinc-50 py-24">
             <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full opacity-50 select-none">
@@ -95,7 +18,7 @@ export const Stack = () => {
                 <Header title="Tecnologias" subtitle="Stack" />
 
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {STACK.map((group) => (
+                    {skillContent.map((group) => (
                         <StackCard key={group.category} group={group} />
                     ))}
                 </div>

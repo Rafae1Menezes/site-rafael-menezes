@@ -2,16 +2,7 @@ import { Header } from "@/app/_components/Header";
 import { Button } from "../../_components/Button";
 import { ProjectCard, ProjectType } from "../../_components/ProjectCard";
 import { ProjectsClient } from "@/app/_components/ProjectsClient";
-
-type Project = {
-    id: number;
-    title: string;
-    description: string;
-    tags: string[];
-    type: ProjectType;
-    year: string;
-    link?: string;
-};
+import { Project } from "@/app/types/project";
 
 const ALL_PROJECTS: Project[] = [
     {
