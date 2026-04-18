@@ -1,12 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../../_components/Button";
 
-const PAGE_SIZE = 6;
-
 export const ProjectsClient = ({ children }: { children: React.ReactNode[] }) => {
-    const [visible, setVisible] = useState(PAGE_SIZE);
+    const [pageSize, setPageSize] = useState(6);
+    const [visible, setVisible] = useState(6);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const isMobile = window.innerWidth < 640;
+
+            const size = isMobile ? 3 : 6;
+
+            setPageSize(size);
+            setVisible(size);
+        };
+
+        handleResize();
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     const hasMore = visible < children.length;
 
@@ -22,7 +37,7 @@ export const ProjectsClient = ({ children }: { children: React.ReactNode[] }) =>
 
             {hasMore && (
                 <div className="mt-5 flex justify-center">
-                    <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>Load more</Button>
+                    <Button onClick={() => setVisible((v) => v + pageSize)}>Load more</Button>
                 </div>
             )}
         </>
