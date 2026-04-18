@@ -1,4 +1,5 @@
-import { Tag, TagColor } from "../Tag";
+import { Color } from "@/content/colors";
+import { Tag } from "../Tag";
 
 type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
 
@@ -13,7 +14,7 @@ type SkillGroup = {
     skills: Skill[];
 };
 
-const levelColorMap: Record<SkillLevel, TagColor> = {
+const levelColorMap: Record<SkillLevel, Color> = {
     Especialista: "green",
     Avançado: "zinc",
     Intermediário: "default",
