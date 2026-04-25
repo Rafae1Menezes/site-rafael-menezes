@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Button } from "../../_components/Button";
+import { Button } from "../Button";
 
-export const ProjectsClient = ({ children }: { children: React.ReactNode[] }) => {
+export const ProjectsGroup = ({ children }: { children: React.ReactNode[] }) => {
     const [pageSize, setPageSize] = useState(6);
     const [visible, setVisible] = useState(6);
 

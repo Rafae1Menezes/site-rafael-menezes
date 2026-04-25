@@ -2,43 +2,38 @@ import { Footer } from "@/app/_components/Footer";
 import { Header } from "@/app/_components/Header";
 import { Navbar } from "@/app/_components/Navbar";
 import { Tag } from "@/app/_components/Tag";
-import { getAllProjects, getProjectBySlug } from "@/app/_libs/projects";
+import { getAllArticles, getArticleBySlug } from "@/app/_libs/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { mdxComponents } from "@/app/_components/mdxComponents";
-import { projectColorMap } from "@/content/colors";
+import { setRequestLocale } from "next-intl/server";
 
 interface Props {
     params: {
         slug: string;
+        locale: string;
     };
 }
 
-export default async function ProjectsPage({ params }: Props) {
-    const { slug } = await params;
+export default async function ArticlePage({ params }: Props) {
+    const { slug, locale } = await params;
+    setRequestLocale(locale);
 
-    const project = await getProjectBySlug(slug);
+    const article = await getArticleBySlug(slug);
 
     return (
         <>
             <Navbar />
             <div className="w-full py-30">
                 <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <Header title="Portfolio" subtitle="My work" />
-                    <h1 className="mt-5 mb-4 text-4xl font-bold">{project.title}</h1>
-                    {project.tags.map((tag) => (
-                        <Tag key={tag}>{tag}</Tag>
-                    ))}{" "}
-                    ·{" "}
-                    <Tag size="sm" color={projectColorMap[project.type]}>
-                        {project.type}
-                    </Tag>{" "}
-                    · {project.year}
+                    <Header title="Writing" subtitle="Articles" />
+                    <h1 className="mt-5 mb-4 text-4xl font-bold">{article.title}</h1>
+                    <Tag>Performance</Tag> · {article.readTime} read · {article.year}
                     <article>
                         <MDXRemote
-                            source={project.content}
+                            source={article.content}
                             components={mdxComponents}
                             options={{
                                 mdxOptions: {
@@ -56,7 +51,7 @@ export default async function ProjectsPage({ params }: Props) {
 }
 
 export function generateStaticParams() {
-    const articles = getAllProjects();
+    const articles = getAllArticles();
     return articles.map((a) => ({
         slug: a.slug,
     }));

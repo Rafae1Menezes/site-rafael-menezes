@@ -1,8 +1,6 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import Image from "next/image";
-import globo from "./globo.svg";
+import { SwitchLanguage } from "../SwitchLanguage";
 
 export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anchor: string }> }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -43,15 +41,7 @@ export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anch
                     </a>
                 ))}
 
-                <a
-                    href="#"
-                    onClick={() => setIsOpen(false)}
-                    className={`flex items-center gap-2 rounded-full border border-blue-950 px-5 py-1.5 text-base font-medium text-gray-500 transition-all duration-300 hover:text-black ${isOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
-                    style={{ transitionDelay: isOpen ? "420ms" : "0ms" }}
-                >
-                    <Image src={globo} width={16} height={16} alt="idioma" />
-                    Português
-                </a>
+                <SwitchLanguage />
             </div>
         </>
     );

@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Button } from "../../_components/Button";
+import { Button } from "../Button";
 
 const PAGE_SIZE = 5;
 
-export const ArticlesClient = ({ children }: { children: React.ReactNode[] }) => {
+export const ArticlesGroup = ({ children }: { children: React.ReactNode[] }) => {
     const [visible, setVisible] = useState(PAGE_SIZE);
     const hasMore = visible < children.length;
 

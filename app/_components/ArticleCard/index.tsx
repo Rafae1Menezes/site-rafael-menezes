@@ -3,10 +3,13 @@ import { Tag } from "../Tag";
 import Link from "next/link";
 import { Article, ArticleTag } from "@/app/types/article";
 import { articleColorMap } from "@/content/colors";
+import { getLocale } from "next-intl/server";
 
-export const ArticleCard = ({ article }: { article: Article }) => {
+export const ArticleCard = async ({ article }: { article: Article }) => {
+    const locale = await getLocale();
+
     return (
-        <Link href={`/articles/${article.slug}`}>
+        <Link href={`/${locale}/articles/${article.slug}`}>
             <div className="group -mx-2 flex cursor-pointer items-center gap-3 rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)]">
                 <Thumbnail tag={article.tag} />
                 <div className="min-w-0 flex-1">

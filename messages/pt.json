@@ -1,0 +1,12 @@
+{
+    "hero": {
+        "seniorFrontend": "Senior Frontend",
+        "engineer": "Engenheiro",
+        "description": "Desenvolvimento de aplicações web escaláveis ​​e de alto desempenho para sistemas financeiros complexos. Especializado em React e TypeScript, com vasta experiência em plataformas de segurança crítica utilizadas por milhões de usuários.",
+        "performance": "Performance",
+        "security": "Segurança",
+        "architecture": "Arquitetura",
+        "viewMyWork": "Meu portfólio",
+        "downloadCV": "Baixar CV"
+    }
+}

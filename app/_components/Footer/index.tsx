@@ -1,6 +1,9 @@
 import { LINKS } from "@/content/links";
+import { getLocale } from "next-intl/server";
+import Link from "next/link";
 
-export const Footer = () => {
+export const Footer = async () => {
+    const locate = await getLocale();
     const year = new Date().getFullYear();
 
     return (
@@ -16,13 +19,13 @@ export const Footer = () => {
                     {/* Center — nav */}
                     <nav className="flex flex-wrap justify-center gap-x-5 gap-y-1">
                         {LINKS.map((link) => (
-                            <a
+                            <Link
                                 key={link.label}
-                                href={link.anchor}
+                                href={`/${locate}${link.anchor}`}
                                 className="text-xs text-zinc-400 transition-colors hover:text-zinc-700"
                             >
                                 {link.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
 

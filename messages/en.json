@@ -1,0 +1,12 @@
+{
+    "hero": {
+        "seniorFrontend": "Senior Frontend",
+        "engineer": "Engineer",
+        "description": "Building scalable, high-performance web applications for complex financial systems. Specialized in React & TypeScript, with deep experience in security-critical platforms used by millions of users.",
+        "performance": "Performance",
+        "security": "Security",
+        "architecture": "Architecture",
+        "viewMyWork": "View my work",
+        "downloadCV": "Download CV"
+    }
+}

@@ -2,9 +2,11 @@ import Image from "next/image";
 import foto from "./foto.png";
 import { Button } from "../../_components/Button";
 import { Tag } from "@/app/_components/Tag";
+import { getTranslations } from "next-intl/server";
 
-export const HeroSection = () => {
-    const tags = ["React", "TypeScript", "Fintech", "Performance", "Security", "Architecture"];
+export const HeroSection = async () => {
+    const t = await getTranslations("hero");
+    const tags = ["React", "TypeScript", "Fintech", t("performance"), t("security"), t("architecture")];
 
     return (
         <section id="start" className="flex min-h-screen w-full items-center bg-[#FEFEFE]">
@@ -25,14 +27,13 @@ export const HeroSection = () => {
 
                     <div className="order-2 flex w-full flex-col gap-6 text-center md:order-1 md:w-[50%] md:text-left">
                         <h1 className="text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] font-bold tracking-tight text-zinc-900">
-                            Senior Frontend
+                            {t("seniorFrontend")}
                             <br />
-                            <span className="highlight-word relative inline-block">Engineer</span>
+                            <span className="highlight-word relative inline-block">{t("engineer")}</span>
                         </h1>
 
                         <p className="mx-auto max-w-lg text-[clamp(0.8rem,1.5vw,1rem)] leading-relaxed text-zinc-500 md:mx-0">
-                            Building scalable, high-performance web applications for complex financial systems. Specialized in
-                            React & TypeScript, with deep experience in security-critical platforms used by millions of users.
+                            {t("description")}
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-2 md:justify-start">
@@ -43,9 +44,9 @@ export const HeroSection = () => {
 
                         <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
                             <Button as="link" href="#my-work">
-                                View my work
+                                {t("viewMyWork")}
                             </Button>
-                            <Button variant="primary">Download CV</Button>
+                            <Button variant="primary">{t("downloadCV")}</Button>
                         </div>
                     </div>
                 </div>

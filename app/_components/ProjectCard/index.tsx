@@ -2,10 +2,13 @@ import Link from "next/link";
 import { Tag } from "../Tag";
 import { Project, ProjectType } from "@/app/types/project";
 import { projectColorMap } from "@/content/colors";
+import { getLocale } from "next-intl/server";
 
-export const ProjectCard = ({ project }: { project: Project }) => {
+export const ProjectCard = async ({ project }: { project: Project }) => {
+    const locale = await getLocale();
+
     return (
-        <Link href={`/projects/${project.slug}`}>
+        <Link href={`/${locale}/projects/${project.slug}`}>
             <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]">
                 <div className="mb-4 flex items-start justify-between gap-3">
                     <Tag size="sm" color={projectColorMap[project.type]}>
