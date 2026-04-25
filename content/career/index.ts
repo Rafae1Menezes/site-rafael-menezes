@@ -19,6 +19,7 @@ export const CAREER: Career[] = [
         description:
             "Time de Prevenção de Fraudes. Autenticação crítica, SDKs internos de analytics e reconhecimento facial, refatorações do sistema de login.",
         tags: ["TypeScript", "React", "Next.js", "Vite", "Security"],
+        current: true,
     },
     {
         id: 3,
