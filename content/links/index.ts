@@ -1,30 +1,30 @@
 export const LINKS = [
     {
-        label: "Início",
+        label: "home",
         anchor: "/#start",
     },
     {
-        label: "Meu trabalho",
+        label: "myWork",
         anchor: "/#my-work",
     },
     {
-        label: "Artigos",
+        label: "articles",
         anchor: "/#articles",
     },
     {
-        label: "Carreira",
+        label: "career",
         anchor: "/#career",
     },
     {
-        label: "Formação",
+        label: "education",
         anchor: "/#education",
     },
     {
-        label: "Stack",
-        anchor: "/#skills",
+        label: "stack",
+        anchor: "/#stack",
     },
     {
-        label: "Contato",
+        label: "contact",
         anchor: "/#contact",
     },
 ];

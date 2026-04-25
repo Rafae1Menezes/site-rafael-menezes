@@ -2,10 +2,11 @@ import { MobileMenu } from "../MobileMenu";
 import Link from "next/link";
 import { LINKS } from "@/content/links";
 import { SwitchLanguage } from "../SwitchLanguage";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export const Navbar = async () => {
     const locate = await getLocale();
+    const t = await getTranslations("links");
 
     return (
         <>
@@ -24,7 +25,7 @@ export const Navbar = async () => {
                                     href={`/${locate}${item.anchor}`}
                                     className="highlight-link relative py-0.5 text-sm text-gray-500 transition-colors hover:text-gray-900"
                                 >
-                                    {item.label}
+                                    {t(item.label)}
                                 </Link>
                             ))}
 

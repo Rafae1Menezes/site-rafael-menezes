@@ -8,5 +8,14 @@
         "architecture": "Arquitetura",
         "viewMyWork": "Meu portfólio",
         "downloadCV": "Baixar CV"
+    },
+    "links": {
+        "home": "Início",
+        "myWork": "Meu Trabalho",
+        "articles": "Artigos",
+        "career": "Carreira",
+        "education": "Formação",
+        "stack": "Stack",
+        "contact": "Contato"
     }
 }
