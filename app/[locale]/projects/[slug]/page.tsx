@@ -11,14 +11,7 @@ import { mdxComponents } from "@/app/_components/mdxComponents";
 import { projectColorMap } from "@/content/colors";
 import { setRequestLocale } from "next-intl/server";
 
-interface Props {
-    params: {
-        slug: string;
-        locale: string;
-    };
-}
-
-export default async function ProjectsPage({ params }: Props) {
+export default async function ProjectsPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
     const { slug, locale } = await params;
     setRequestLocale(locale);
 

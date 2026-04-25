@@ -10,7 +10,7 @@ import { ContactSection } from "../_sections/Contact";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "../../i18n/routing";
 
-export default async function Home({ params }: { params: { locale: string } }) {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
     return (

@@ -24,7 +24,13 @@ export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
 }
 
-export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: { locale: string } }) {
+export default async function LocaleLayout({
+    children,
+    params,
+}: {
+    children: React.ReactNode;
+    params: Promise<{ locale: string }>;
+}) {
     // isso resolve o requestLocale para todas as páginas e componentes filhos
     const { locale } = await params;
     setRequestLocale(locale);
@@ -32,7 +38,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
+        <html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
             <body>
                 <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
             </body>

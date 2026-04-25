@@ -9,13 +9,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { mdxComponents } from "@/app/_components/mdxComponents";
 
-interface Props {
-    params: {
-        slug: string;
-    };
-}
-
-export default async function ArticlePage({ params }: Props) {
+export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
     const article = await getArticleBySlug(slug);
