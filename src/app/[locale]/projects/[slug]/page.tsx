@@ -1,13 +1,13 @@
-import { Footer } from "@/src/components/Footer";
-import { Header } from "@/src/components/Header";
-import { Navbar } from "@/src/components/Navbar";
-import { Tag } from "@/src/components/Tag";
-import { getAllProjects, getProjectBySlug } from "@/src/_libs/projects";
+import { Footer } from "@/src/components/layout/Footer";
+import { Header } from "@/src/components/layout/Header";
+import { Navbar } from "@/src/components/layout/Navbar";
+import { Tag } from "@/src/components/ui/Tag";
+import { getAllProjects, getProjectBySlug } from "@/src/services/projects";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import { mdxComponents } from "@/src/components/mdxComponents";
+import { mdxComponents } from "@/src/components/mdx";
 import { projectColorMap } from "@/content/colors";
 import { setRequestLocale } from "next-intl/server";
 

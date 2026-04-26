@@ -1,5 +1,5 @@
-import { CareerCard } from "@/src/components/CareerCard";
-import { Header } from "@/src/components/Header";
+import { CareerCard } from "@/src/components/ui/CareerCard";
+import { Header } from "@/src/components/layout/Header";
 import { CAREER } from "@/content/career";
 
 export const CareerSection = () => {

@@ -1,13 +1,13 @@
-import { Footer } from "@/src/components/Footer";
-import { Header } from "@/src/components/Header";
-import { Navbar } from "@/src/components/Navbar";
-import { Tag } from "@/src/components/Tag";
-import { getAllArticles, getArticleBySlug } from "@/src/_libs/articles";
+import { Footer } from "@/src/components/layout/Footer";
+import { Header } from "@/src/components/layout/Header";
+import { Navbar } from "@/src/components/layout/Navbar";
+import { Tag } from "@/src/components/ui/Tag";
+import { getAllArticles, getArticleBySlug } from "@/src/services/articles";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
-import { mdxComponents } from "@/src/components/mdxComponents";
+import { mdxComponents } from "@/src/components/mdx";
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;

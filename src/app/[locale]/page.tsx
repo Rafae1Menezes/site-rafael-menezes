@@ -1,7 +1,7 @@
-import { Footer } from "../../components/Footer";
+import { Footer } from "../../components/layout/Footer";
 import { HeroSection } from "../../components/sections/Hero";
 import { Projects } from "../../components/sections/Projects";
-import { Navbar } from "../../components/Navbar";
+import { Navbar } from "../../components/layout/Navbar";
 import { SkillsSection } from "../../components/sections/Skills";
 import { ArticlesSection } from "../../components/sections/Articles";
 import { CareerSection } from "../../components/sections/Career";

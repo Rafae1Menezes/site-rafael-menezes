@@ -1,7 +1,7 @@
-import { MobileMenu } from "../MobileMenu";
+import { MobileMenu } from "../../ui/MobileMenu";
 import Link from "next/link";
 import { LINKS } from "@/content/links";
-import { SwitchLanguage } from "../SwitchLanguage";
+import { SwitchLanguage } from "../../ui/SwitchLanguage";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export const Navbar = async () => {

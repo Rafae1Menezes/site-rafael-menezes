@@ -1,7 +1,7 @@
-import { Header } from "@/src/components/Header";
-import { ProjectCard } from "../../../components/ProjectCard";
-import { ProjectsGroup } from "@/src/components/ProjectsGroup";
-import { getAllProjects } from "@/src/_libs/projects";
+import { Header } from "@/src/components/layout/Header";
+import { ProjectCard } from "../../ui/ProjectCard";
+import { ProjectsGroup } from "@/src/components/ui/ProjectsGroup";
+import { getAllProjects } from "@/src/services/projects";
 
 export const Projects = () => {
     const projects = getAllProjects();

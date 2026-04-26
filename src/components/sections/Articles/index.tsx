@@ -1,7 +1,7 @@
-import { ArticleCard } from "@/src/components/ArticleCard";
-import { ArticlesGroup } from "@/src/components/ArticlesGroup";
-import { Header } from "@/src/components/Header";
-import { getAllArticles } from "@/src/_libs/articles";
+import { ArticleCard } from "@/src/components/ui/ArticleCard";
+import { ArticlesGroup } from "@/src/components/ui/ArticlesGroup";
+import { Header } from "@/src/components/layout/Header";
+import { getAllArticles } from "@/src/services/articles";
 
 export const ArticlesSection = async () => {
     const articles = getAllArticles();

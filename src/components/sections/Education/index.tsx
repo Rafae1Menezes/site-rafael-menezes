@@ -1,5 +1,5 @@
-import { EducationCard } from "@/src/components/EducationCard";
-import { Header } from "@/src/components/Header";
+import { EducationCard } from "@/src/components/ui/EducationCard";
+import { Header } from "@/src/components/layout/Header";
 import { EDUCATION } from "@/content/education";
 
 export const EducationSection = () => {

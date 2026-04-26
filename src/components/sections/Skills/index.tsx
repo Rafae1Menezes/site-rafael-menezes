@@ -1,5 +1,5 @@
-import { Header } from "@/src/components/Header";
-import { SkillCard } from "@/src/components/SkillCard";
+import { Header } from "@/src/components/layout/Header";
+import { SkillCard } from "@/src/components/ui/SkillCard";
 import { SKILLS } from "@/content/skills";
 
 export const SkillsSection = () => {

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import foto from "./foto.jpg";
-import { Button } from "../../../components/Button";
+import { Button } from "../../ui/Button";
 
 export const ContactSection = () => {
     const links = [
