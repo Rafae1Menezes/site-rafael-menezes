@@ -36,7 +36,7 @@ export const HeroSection = async () => {
                         <h1 className="text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] font-bold tracking-tight text-zinc-900">
                             {t("seniorFrontend")}
                             <br />
-                            <span className="highlight-word relative inline-block">{t("engineer")}</span>
+                            <span className="highlightWord relative inline-block">{t("engineer")}</span>
                         </h1>
 
                         <p className="mx-auto max-w-lg text-[clamp(0.8rem,1.5vw,1rem)] leading-relaxed text-zinc-500 md:mx-0">

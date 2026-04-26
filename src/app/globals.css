@@ -47,11 +47,29 @@ body {
     }
 }
 
-.highlight-word {
+@layer components {
+    .elevation1 {
+        @apply rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)];
+    }
+    .elevation2 {
+        @apply rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)];
+    }
+    .elevation3 {
+        @apply animate-rotate-border w-full rounded-2xl bg-transparent from-zinc-200 from-0% via-green-400 to-zinc-200 to-100% p-px transition-all duration-300 ease-out;
+    }
+    .elevation3:hover {
+        @apply -translate-y-1.5 bg-conic/[from_var(--border-angle)] shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)];
+    }
+    .elevation3Active {
+        @apply -translate-y-1.5 bg-conic/[from_var(--border-angle)] shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)];
+    }
+}
+
+.highlightWord {
     z-index: 0;
 }
 
-.highlight-word::before {
+.highlightWord::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -61,13 +79,13 @@ body {
     z-index: -1;
 }
 
-.highlight-link {
+.highlightLink {
     position: relative;
     z-index: 0;
     padding: 2px 4px;
 }
 
-.highlight-link::before {
+.highlightLink::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -78,7 +96,7 @@ body {
     z-index: -1;
 }
 
-.highlight-link:hover::before {
+.highlightLink:hover::before {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -92,14 +110,5 @@ body {
     50% {
         opacity: 1;
         transform: scaleX(1);
-    }
-}
-
-@keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
     }
 }

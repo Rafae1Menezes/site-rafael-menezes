@@ -9,7 +9,7 @@ export const ProjectCard = async ({ project }: { project: Project }) => {
 
     return (
         <Link href={`/${locale}/projects/${project.slug}`}>
-            <article className="group flex h-full flex-col rounded-2xl border border-zinc-200 bg-white p-6 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)]">
+            <article className="group elevation1 flex h-full flex-col">
                 <div className="mb-4 flex items-start justify-between gap-3">
                     <Tag size="sm" color={projectColorMap[project.type]}>
                         {project.type}

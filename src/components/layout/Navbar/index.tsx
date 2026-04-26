@@ -23,7 +23,7 @@ export const Navbar = async () => {
                                 <Link
                                     key={item.label}
                                     href={`/${locale}${item.anchor}`}
-                                    className="highlight-link relative py-0.5 text-sm text-gray-500 transition-colors hover:text-gray-900"
+                                    className="highlightLink relative py-0.5 text-sm text-gray-500 transition-colors hover:text-gray-900"
                                 >
                                     {t(item.label)}
                                 </Link>
