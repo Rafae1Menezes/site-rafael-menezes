@@ -5,7 +5,7 @@ import { SwitchLanguage } from "../SwitchLanguage";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export const Navbar = async () => {
-    const locate = await getLocale();
+    const locale = await getLocale();
     const t = await getTranslations("links");
 
     return (
@@ -13,7 +13,7 @@ export const Navbar = async () => {
             <nav className="fixed top-0 right-0 left-0 z-50 w-full border-b border-white/30 bg-white/10 shadow-[0_8px_18px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
-                        <Link href={`/${locate}`} className="text-black">
+                        <Link href={`/${locale}`} className="text-black">
                             <span className="text-xl font-semibold">RAFAEL MENEZES</span>
                         </Link>
 
@@ -22,7 +22,7 @@ export const Navbar = async () => {
                             {LINKS.map((item) => (
                                 <Link
                                     key={item.label}
-                                    href={`/${locate}${item.anchor}`}
+                                    href={`/${locale}${item.anchor}`}
                                     className="highlight-link relative py-0.5 text-sm text-gray-500 transition-colors hover:text-gray-900"
                                 >
                                     {t(item.label)}

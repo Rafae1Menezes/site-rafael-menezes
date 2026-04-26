@@ -1,9 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { SwitchLanguage } from "../SwitchLanguage";
+import { useLocale, useTranslations } from "next-intl";
+import Link from "next/link";
 
 export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anchor: string }> }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const t = useTranslations("links");
+    const locale = useLocale();
 
     useEffect(() => {
         document.body.style.overflow = isOpen ? "hidden" : "";
@@ -31,14 +35,14 @@ export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anch
                 } md:hidden`}
             >
                 {navItems.map((item) => (
-                    <a
+                    <Link
                         key={item.label}
-                        href={item.anchor}
+                        href={`/${locale}${item.anchor}`}
                         onClick={() => setIsOpen(false)}
                         className={`text-2xl font-semibold text-gray-700 transition-all duration-300 hover:text-black ${isOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
                     >
-                        {item.label}
-                    </a>
+                        {t(item.label)}
+                    </Link>
                 ))}
 
                 <SwitchLanguage />

@@ -4,7 +4,7 @@ import { SKILLS } from "@/content/skills";
 
 export const SkillsSection = () => {
     return (
-        <section id="skill" className="relative w-full scroll-mt-14 overflow-hidden bg-zinc-50 py-16 sm:py-20">
+        <section id="skill" className="relative w-full scroll-mt-10 overflow-hidden bg-zinc-50 py-16 sm:scroll-mt-14 sm:py-20">
             <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full opacity-50 select-none">
                 <defs>
                     <pattern id="dot-grid-skill" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">

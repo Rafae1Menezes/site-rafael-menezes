@@ -4,7 +4,10 @@ import { EDUCATION } from "@/content/education";
 
 export const EducationSection = () => {
     return (
-        <section id="education" className="relative w-full scroll-mt-14 overflow-hidden bg-white py-16 sm:py-20">
+        <section
+            id="education"
+            className="relative w-full scroll-mt-10 overflow-hidden bg-white py-16 sm:scroll-mt-14 sm:py-20"
+        >
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title="Acadêmico" subtitle="Formação" />
 

@@ -4,7 +4,10 @@ import { CAREER } from "@/content/career";
 
 export const CareerSection = () => {
     return (
-        <section id="career" className="relative w-full scroll-mt-14 overflow-hidden bg-zinc-50 py-12 sm:pb-[130px]">
+        <section
+            id="career"
+            className="relative w-full scroll-mt-10 overflow-hidden bg-zinc-50 py-12 sm:scroll-mt-14 sm:pb-[130px]"
+        >
             {/* Dot grid background */}
             <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full select-none">
                 <defs>
