@@ -2,10 +2,17 @@ import Image from "next/image";
 import foto from "./foto.webp";
 import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import { Locale } from "@/src/types/locale";
+
+const cvMap = {
+    pt: "cv-pt.pdf",
+    en: "cv-en.pdf",
+};
 
 export const HeroSection = async () => {
     const t = await getTranslations("hero");
+    const locale = (await getLocale()) as Locale;
     const tags = ["React", "TypeScript", "Fintech", t("performance"), t("security"), t("architecture")];
 
     return (
@@ -46,7 +53,7 @@ export const HeroSection = async () => {
                             <Button as="link" href="#my-work" className="w-100">
                                 {t("viewMyWork")}
                             </Button>
-                            <Button variant="primary" className="w-100">
+                            <Button as="link" href={`/${cvMap[locale]}`} variant="primary" className="w-100" target="_blank">
                                 {t("downloadCV")}
                             </Button>
                         </div>
