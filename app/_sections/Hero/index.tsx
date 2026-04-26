@@ -43,10 +43,12 @@ export const HeroSection = async () => {
                         </div>
 
                         <div className="flex flex-wrap items-center justify-center gap-3 pt-2 md:justify-start">
-                            <Button as="link" href="#my-work">
+                            <Button as="link" href="#my-work" className="w-100">
                                 {t("viewMyWork")}
                             </Button>
-                            <Button variant="primary">{t("downloadCV")}</Button>
+                            <Button variant="primary" className="w-100">
+                                {t("downloadCV")}
+                            </Button>
                         </div>
                     </div>
                 </div>
