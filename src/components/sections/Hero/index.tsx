@@ -1,5 +1,5 @@
 import Image from "next/image";
-import foto from "./foto.png";
+import foto from "./foto.webp";
 import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
 import { getTranslations } from "next-intl/server";
