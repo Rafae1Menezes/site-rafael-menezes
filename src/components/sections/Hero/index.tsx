@@ -13,11 +13,11 @@ export const HeroSection = async () => {
             <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
                 <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
                     <div className="order-1 flex w-full justify-center md:order-2 md:w-[65%] md:justify-end">
-                        <div className="relative max-h-60 w-full max-w-[80vw] overflow-hidden md:max-h-full md:max-w-full">
+                        <div className="relative max-h-60 w-full max-w-[60vw] overflow-hidden md:max-h-full md:max-w-full">
                             <Image
                                 src={foto}
-                                width={700}
-                                height={400}
+                                width={669}
+                                height={462}
                                 alt="foto"
                                 className="h-auto w-full object-cover"
                                 priority
