@@ -1,4 +1,4 @@
-import { SkillGroup } from "@/app/types/skill";
+import { SkillGroup } from "@/src/types/skill";
 
 export const SKILLS: SkillGroup[] = [
     {

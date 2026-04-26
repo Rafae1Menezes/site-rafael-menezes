@@ -1,5 +1,5 @@
-import { ArticleTag } from "@/app/types/article";
-import { ProjectType } from "@/app/types/project";
+import { ArticleTag } from "@/src/types/article";
+import { ProjectType } from "@/src/types/project";
 
 export type Color = "default" | "blue" | "purple" | "red" | "amber" | "teal" | "green" | "zinc" | "pink";
 

@@ -1,4 +1,4 @@
-import { Education } from "@/app/types/education";
+import { Education } from "@/src/types/education";
 
 export const EDUCATION: Education[] = [
     {

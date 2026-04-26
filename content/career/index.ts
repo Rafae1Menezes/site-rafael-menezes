@@ -1,4 +1,4 @@
-import { Career } from "@/app/types/career";
+import { Career } from "@/src/types/career";
 
 export const CAREER: Career[] = [
     {
