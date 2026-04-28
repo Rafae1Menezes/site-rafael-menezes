@@ -38,7 +38,7 @@ export const HeroSection = async () => {
                         </div>
 
                         <div className="flex flex-wrap items-center justify-center gap-3 pt-2 lg:justify-start">
-                            <Button as="link" href="#my-work" className="w-full sm:w-auto">
+                            <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
                             </Button>
 
@@ -46,7 +46,7 @@ export const HeroSection = async () => {
                                 as="link"
                                 href={`/${cvMap[locale]}`}
                                 variant="primary"
-                                className="w-full sm:w-auto"
+                                className="w-full sm:w-50"
                                 target="_blank"
                             >
                                 {t("downloadCV")}
