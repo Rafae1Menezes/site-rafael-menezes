@@ -73,7 +73,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: #b9f8bd;
+    background: #64d98b;
     width: 0%;
     animation: highlight 0.2s ease-out 0.2s forwards;
     z-index: -1;
@@ -82,14 +82,18 @@ body {
 .highlightLink {
     position: relative;
     z-index: 0;
-    padding: 2px 4px;
+    padding: 4px 8px;
+}
+
+.highlightLink:hover {
+    color: #1c3825;
 }
 
 .highlightLink::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: #b9f8bd;
+    background: #64d98b;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease-out;

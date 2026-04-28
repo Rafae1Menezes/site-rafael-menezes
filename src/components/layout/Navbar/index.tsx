@@ -3,6 +3,8 @@ import Link from "next/link";
 import { LINKS } from "@/content/links";
 import { SwitchLanguage } from "../../ui/SwitchLanguage";
 import { getLocale, getTranslations } from "next-intl/server";
+import logo from "./logo.svg";
+import Image from "next/image";
 
 export const Navbar = async () => {
     const locale = await getLocale();
@@ -14,11 +16,14 @@ export const Navbar = async () => {
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
                         <Link href={`/${locale}`} className="text-black">
-                            <span className="text-xl font-semibold">RAFAEL MENEZES</span>
+                            <span className="flex items-center gap-1 text-xl font-semibold">
+                                <Image src={logo} width={34} height={16} alt="logo" />
+                                RAFAEL MENEZES
+                            </span>
                         </Link>
 
                         {/* Desktop links */}
-                        <div className="hidden items-center gap-6 md:flex">
+                        <div className="hidden items-center gap-4 md:flex">
                             {LINKS.map((item) => (
                                 <Link
                                     key={item.label}

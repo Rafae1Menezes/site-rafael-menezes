@@ -17,18 +17,27 @@ export const HeroSection = async () => {
 
     return (
         <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD]">
-            <div className="mx-auto w-full max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-0">
+            <div className="mx-auto w-full max-w-7xl px-4 pt-14 sm:px-6 lg:px-8">
+                <div className="sm:gap:10 grid grid-cols-1 items-center gap-5 lg:grid-cols-[auto_1fr] lg:gap-0">
                     {/* TEXTO */}
-                    <div className="relative z-10 order-2 flex flex-col gap-6 lg:order-1">
-                        <h1 className="text-center text-[clamp(2rem,5vw,3.75rem)] leading-[1.1] font-bold tracking-tight text-zinc-900 lg:text-left">
-                            {t("seniorFrontend")}
-                            <br />
-                            <span className="highlightWord relative inline-block">{t("engineer")}</span>
+                    <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
+                        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm">
+                            <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
+
+                            <span className="text-xs font-medium tracking-wide text-emerald-700 uppercase">
+                                Senior Frontend Engineer
+                            </span>
+                        </div>
+
+                        <h1 className="text-center text-4xl leading-tight font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl">
+                            Building scalable <br />
+                            digital experiences <br />
+                            <span className="text-emerald-600">with impact.</span>
                         </h1>
 
-                        <p className="mx-auto max-w-lg text-center text-[clamp(0.8rem,1.5vw,1rem)] leading-relaxed text-zinc-500 lg:mx-0 lg:text-left">
-                            {t("description")}
+                        <p className="max-w-130 text-center text-base leading-relaxed text-zinc-600 sm:text-lg">
+                            I design and build high-performance web applications with clean code, solid architecture and
+                            exceptional user experiences.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
@@ -37,7 +46,7 @@ export const HeroSection = async () => {
                             ))}
                         </div>
 
-                        <div className="flex flex-wrap items-center justify-center gap-3 pt-2 lg:justify-start">
+                        <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 lg:justify-start">
                             <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
                             </Button>
@@ -61,7 +70,7 @@ export const HeroSection = async () => {
                                 src={foto}
                                 alt="Hero illustration"
                                 priority
-                                className="h-auto w-full max-w-sm sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:-translate-x-10"
+                                className="h-auto w-full max-w-sm sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:translate-x-0"
                             />
                         </div>
                     </div>
