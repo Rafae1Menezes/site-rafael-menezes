@@ -4,6 +4,9 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "../../i18n/routing";
 import "../globals.css";
+import { Navbar } from "@/src/components/layout/Navbar";
+import { Footer } from "@/src/components/layout/Footer";
+import { ConditionalScrollToTop } from "@/src/components/layout/ConditionalScrollToTop";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -40,7 +43,12 @@ export default async function LocaleLayout({
     return (
         <html lang={locale} className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
             <body>
-                <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+                <ConditionalScrollToTop />
+                <NextIntlClientProvider messages={messages}>
+                    <Navbar />
+                    {children}
+                    <Footer />
+                </NextIntlClientProvider>
             </body>
         </html>
     );

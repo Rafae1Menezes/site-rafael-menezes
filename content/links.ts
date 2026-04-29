@@ -4,6 +4,10 @@ export const LINKS = [
         anchor: "/#start",
     },
     {
+        label: "about",
+        anchor: "/#about",
+    },
+    {
         label: "myWork",
         anchor: "/#my-work",
     },

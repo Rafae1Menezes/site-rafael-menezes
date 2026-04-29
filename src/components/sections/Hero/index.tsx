@@ -16,8 +16,8 @@ export const HeroSection = async () => {
     const tags = ["React", "TypeScript", "Fintech", t("performance"), t("security"), t("architecture")];
 
     return (
-        <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD]">
-            <div className="mx-auto w-full max-w-7xl px-4 pt-14 sm:px-6 lg:px-8">
+        <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD] py-12">
+            <div className="mx-auto w-full max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
                 <div className="sm:gap:10 grid grid-cols-1 items-center gap-5 lg:grid-cols-[auto_1fr] lg:gap-0">
                     {/* TEXTO */}
                     <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
@@ -25,7 +25,7 @@ export const HeroSection = async () => {
                             <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
 
                             <span className="text-xs font-medium tracking-wide text-emerald-700 uppercase">
-                                Senior Frontend Engineer
+                                Senior Software Engineer
                             </span>
                         </div>
 
@@ -70,7 +70,7 @@ export const HeroSection = async () => {
                                 src={foto}
                                 alt="Hero illustration"
                                 priority
-                                className="h-auto w-full max-w-sm sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:translate-x-0"
+                                className="hidden h-auto w-full max-w-sm sm:block sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:translate-x-0"
                             />
                         </div>
                     </div>

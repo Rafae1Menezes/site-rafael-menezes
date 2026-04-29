@@ -9,21 +9,21 @@ import { EducationSection } from "../../components/sections/Education";
 import { ContactSection } from "../../components/sections/Contact";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "../../i18n/routing";
+import { AboutSection } from "@/src/components/sections/About";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     setRequestLocale(locale);
     return (
         <>
-            <Navbar />
             <HeroSection />
+            <AboutSection />
             <Projects />
             <ArticlesSection />
             <CareerSection />
             <EducationSection />
             <SkillsSection />
             <ContactSection />
-            <Footer />
         </>
     );
 }

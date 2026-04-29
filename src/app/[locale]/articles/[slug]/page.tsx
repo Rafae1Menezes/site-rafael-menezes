@@ -17,29 +17,25 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     const article = await getArticleBySlug(slug);
 
     return (
-        <>
-            <Navbar />
-            <div className="w-full py-30">
-                <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <Header title="Writing" subtitle="Articles" />
-                    <h1 className="mt-5 mb-4 text-4xl font-bold">{article.title}</h1>
-                    <Tag>Performance</Tag> · {article.readTime} read · {article.year}
-                    <article>
-                        <MDXRemote
-                            source={article.content}
-                            components={mdxComponents}
-                            options={{
-                                mdxOptions: {
-                                    remarkPlugins: [remarkGfm],
-                                    rehypePlugins: [rehypeHighlight],
-                                },
-                            }}
-                        />
-                    </article>
-                </main>
-            </div>
-            <Footer />
-        </>
+        <div className="w-full py-30">
+            <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <Header title="Writing" subtitle="Articles" />
+                <h1 className="mt-5 mb-4 text-4xl font-bold">{article.title}</h1>
+                <Tag>Performance</Tag> · {article.readTime} read · {article.year}
+                <article>
+                    <MDXRemote
+                        source={article.content}
+                        components={mdxComponents}
+                        options={{
+                            mdxOptions: {
+                                remarkPlugins: [remarkGfm],
+                                rehypePlugins: [rehypeHighlight],
+                            },
+                        }}
+                    />
+                </article>
+            </main>
+        </div>
     );
 }
 
