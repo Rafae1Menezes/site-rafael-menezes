@@ -18,7 +18,7 @@ export const HeroSection = async () => {
     return (
         <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD] py-12">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="sm:gap:10 grid grid-cols-1 items-center gap-5 lg:grid-cols-[auto_1fr] lg:gap-0">
+                <div className="sm:gap:10 grid grid-cols-1 items-center gap-5 sm:gap-0 lg:grid-cols-[auto_1fr] lg:gap-0">
                     {/* TEXTO */}
                     <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
                         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm">
@@ -46,7 +46,7 @@ export const HeroSection = async () => {
                             ))}
                         </div>
 
-                        <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 lg:justify-start">
+                        <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0 lg:justify-start">
                             <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
                             </Button>
