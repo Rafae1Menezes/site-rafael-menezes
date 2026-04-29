@@ -1,74 +1,52 @@
+import { JSX } from "react";
 import { Tag } from "../Tag";
+import { Calendar, MapPin } from "lucide-react";
 
 type EducationEntry = {
     id: number;
+    icon: React.ElementType;
+    badge: string;
+    title: string;
     institution: string;
-    degree: string;
-    field: string;
     period: string;
-    type: "graduation" | "postgrad";
+    description: string;
+    institutionColored: boolean;
 };
 
-const icons = {
-    postgrad: (
-        <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-            <path d="M2 17l10 5 10-5" />
-            <path d="M2 12l10 5 10-5" />
-        </svg>
-    ),
-    graduation: (
-        <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <circle cx="12" cy="8" r="3" />
-            <path d="M6.5 15.5C7.5 13.5 9.5 12 12 12s4.5 1.5 5.5 3.5" />
-            <path d="M3 20h18" />
-        </svg>
-    ),
-};
+export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
+    const Icon = entry.icon;
+    return (
+        <div className="group relative flex flex-col rounded-2xl border border-[#e2ede8] bg-white p-6 shadow-md transition-all duration-300">
+            {/* Bottom green accent bar */}
+            <div className="absolute right-6 bottom-0 left-6 h-[3px] rounded-t-full bg-[#1a5c3a] opacity-0 transition-opacity duration-300" />
 
-const typeLabel = {
-    postgrad: "Pós-graduação",
-    graduation: "Bacharelado",
-};
-
-export const EducationCard = ({ entry }: { entry: EducationEntry }) => (
-    <div className="w-full max-w-sm rounded-2xl p-px">
-        <div className="bg-primary-50 border-primary-200 w-full rounded-2xl border p-4">
-            {/* Icon + Tag */}
-            <div className="mb-3 flex items-center justify-between">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-700">
-                    {icons[entry.type]}
+            {/* Top row: icon + badge */}
+            <div className="mb-5 flex items-start justify-between">
+                <div className="bg-primary-50 flex h-11 w-11 items-center justify-center rounded-xl">
+                    <Icon size={20} className="text-primary-600" />
                 </div>
-
-                <Tag size="xs">{typeLabel[entry.type]}</Tag>
+                <Tag>{entry.badge}</Tag>
             </div>
 
-            {/* Field */}
-            <p className="mb-1 text-[15px] leading-snug font-bold text-zinc-900">{entry.field}</p>
+            {/* Title */}
+            <h3 className="mb-4 text-lg leading-snug font-bold text-[#0d2b1e]">{entry.title}</h3>
 
-            {/* Institution */}
-            <p className="text-primary-700 mb-0.5 text-[12px]">{entry.institution}</p>
+            {/* Meta */}
+            <div className="mb-4 space-y-1.5">
+                <div className="flex items-center gap-2">
+                    <MapPin size={13} className="shrink-0 text-[#1a5c3a]" />
+                    <span className={`text-sm font-medium ${entry.institutionColored ? "text-[#1a5c3a]" : "text-[#3a5548]"}`}>
+                        {entry.institution}
+                    </span>
+                </div>
+                <div className="flex items-center gap-2">
+                    <Calendar size={13} className="shrink-0 text-[#1a5c3a]" />
+                    <span className="text-sm text-[#6b8a7a]">{entry.period}</span>
+                </div>
+            </div>
 
-            {/* Period */}
-            <p className="text-primary-700 text-[11px]">{entry.period}</p>
+            {/* Description */}
+            <p className="mb-6 flex-1 text-sm leading-relaxed text-[#6b8a7a]">{entry.description}</p>
         </div>
-    </div>
-);
+    );
+};

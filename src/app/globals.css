@@ -81,7 +81,7 @@ body {
         @apply rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)];
     }
     .elevation3 {
-        @apply animate-rotate-border w-full rounded-2xl bg-transparent from-zinc-200 from-0% via-green-400 to-zinc-200 to-100% p-px transition-all duration-300 ease-out;
+        @apply animate-rotate-border via-primary-400 w-full rounded-2xl border-0 bg-transparent from-transparent from-0% to-transparent to-100% p-[2px] transition-all duration-300 ease-out hover:border-0;
     }
     .elevation3:hover {
         @apply -translate-y-1.5 bg-conic/[from_var(--border-angle)] shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)];

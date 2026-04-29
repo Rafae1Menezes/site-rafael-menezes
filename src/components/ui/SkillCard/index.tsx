@@ -33,7 +33,7 @@ const SkillRow = ({ skill }: { skill: Skill }) => {
 };
 
 export const SkillCard = ({ group }: { group: SkillGroup }) => (
-    <div className="group elevation1 w-full">
+    <div className="group elevation1 w-full shadow-md">
         {/* Header */}
         <p className="mb-0.5 text-[13px] font-bold text-zinc-900">{group.category}</p>
 

@@ -4,7 +4,6 @@ import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Locale } from "@/src/types/locale";
-import { ScrollToExplore } from "../../ui/ScrollToExplore";
 
 const cvMap = {
     pt: "cv-pt.pdf",
