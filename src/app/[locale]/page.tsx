@@ -17,12 +17,12 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
     return (
         <>
             <HeroSection />
-            <AboutSection />
             <Projects />
             <ArticlesSection />
             <CareerSection />
             <EducationSection />
             <SkillsSection />
+            <AboutSection />
             <ContactSection />
         </>
     );

@@ -47,24 +47,11 @@ export const ContactSection = () => {
     ];
 
     return (
-        <section id="contact" className="relative w-full scroll-mt-10 overflow-hidden bg-white py-16 sm:scroll-mt-14 sm:py-20">
-            <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-4xl">
+        <section id="contact" className="w-full scroll-mt-10 bg-[#FEFEFE] pb-12 sm:scroll-mt-14">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="mx-auto">
                     <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-12">
                         <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
-                            {/* Photo */}
-                            <div className="shrink-0">
-                                <div className="h-28 w-28 overflow-hidden rounded-2xl border border-zinc-200 sm:h-36 sm:w-36">
-                                    <Image
-                                        width={300}
-                                        height={300}
-                                        src={foto}
-                                        alt="Rafael Menezes"
-                                        className="h-full w-full object-cover"
-                                    />
-                                </div>
-                            </div>
-
                             {/* Content */}
                             <div className="flex-1 text-center sm:text-left">
                                 <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Contato</p>

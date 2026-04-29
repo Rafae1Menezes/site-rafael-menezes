@@ -3,10 +3,7 @@ export const LINKS = [
         label: "home",
         anchor: "/#start",
     },
-    {
-        label: "about",
-        anchor: "/#about",
-    },
+
     {
         label: "myWork",
         anchor: "/#my-work",
@@ -26,6 +23,10 @@ export const LINKS = [
     {
         label: "stack",
         anchor: "/#stack",
+    },
+    {
+        label: "about",
+        anchor: "/#about",
     },
     {
         label: "contact",
