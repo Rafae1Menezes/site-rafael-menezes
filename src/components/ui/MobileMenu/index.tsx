@@ -34,12 +34,15 @@ export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anch
                     isOpen ? "opacity-100" : "pointer-events-none opacity-0"
                 } md:hidden`}
             >
-                {navItems.map((item) => (
+                {navItems.map((item, index) => (
                     <Link
                         key={item.label}
                         href={`/${locale}${item.anchor}`}
                         onClick={() => setIsOpen(false)}
-                        className={`text-2xl font-semibold text-gray-700 transition-all duration-300 hover:text-black ${isOpen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"}`}
+                        className={`text-2xl font-semibold text-gray-700 transition-all duration-300 ease-out hover:text-black ${isOpen ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
+                        style={{
+                            transitionDelay: `${index * 100}ms`, // efeito cascata
+                        }}
                     >
                         {t(item.label)}
                     </Link>
