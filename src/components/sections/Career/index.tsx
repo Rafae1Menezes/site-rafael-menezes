@@ -53,7 +53,7 @@ export const CareerSection = () => {
                                     <CareerCard entry={entry} />
                                 </div>
                                 <div className="flex w-14 flex-shrink-0 justify-center">
-                                    <div className="z-10 h-2.5 w-2.5 rounded-full border-2 border-[#7FA885] bg-[#B9F8BD]" />
+                                    <div className="bg-primary-400 border-primary-600 z-10 h-2.5 w-2.5 rounded-full border-2" />
                                 </div>
                                 <div className="w-[calc(50%-28px)] flex-shrink-0" />
                             </div>

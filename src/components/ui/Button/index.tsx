@@ -32,10 +32,9 @@ export const Button = ({ children, variant = "secondary", className = "", disabl
         "cursor-pointer font-semibold justify-center inline-flex items-center gap-2 font-medium rounded-lg text-[clamp(0.75rem,1.2vw,0.875rem)] px-5 py-2.5 disabled:opacity-50 disabled:cursor-not-allowed transition-[background-color,border-color,transform,box-shadow] duration-150 active:scale-[0.96] active:duration-75";
 
     const variants: Record<ButtonVariant, string> = {
-        primary:
-            "bg-emerald-600 text-[#fff] hover:bg-emerald-500 hover:border-[#8ff097] active:bg-[#83d58d] active:border-[#6de876]",
+        primary: "bg-primary-600 text-white hover:bg-primary-500  ",
         secondary:
-            "bg-[#f7f7f7] text-zinc-700 border border-[#7e7e8a] hover:bg-[#eee] hover:border-[#7e7e8a] hover:text-zinc-900 active:bg-zinc-100",
+            "bg-secondary-100 text-zinc-700 border border-secondary-400 hover:bg-secondary-200 hover:border-secondary-300 hover:text-zinc-900 ",
     };
 
     const classes = `${base} ${variants[variant]} ${className}`;

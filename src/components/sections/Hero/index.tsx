@@ -1,9 +1,10 @@
 import Image from "next/image";
-import foto from "./foto2.png";
+import foto from "./foto.png";
 import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Locale } from "@/src/types/locale";
+import { ScrollToExplore } from "../../ui/ScrollToExplore";
 
 const cvMap = {
     pt: "cv-pt.pdf",
@@ -75,6 +76,19 @@ export const HeroSection = async () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
+                <span className="text-xs tracking-widest text-gray-400 uppercase">Scroll to explore</span>
+
+                <svg
+                    className="h-4 w-4 animate-bounce text-gray-500"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                </svg>
             </div>
         </section>
     );

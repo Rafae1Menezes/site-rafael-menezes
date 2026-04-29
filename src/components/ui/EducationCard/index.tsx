@@ -51,7 +51,7 @@ const typeLabel = {
 
 export const EducationCard = ({ entry }: { entry: EducationEntry }) => (
     <div className="w-full max-w-sm rounded-2xl p-px">
-        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4">
+        <div className="bg-primary-50 border-primary-200 w-full rounded-2xl border p-4">
             {/* Icon + Tag */}
             <div className="mb-3 flex items-center justify-between">
                 <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-50 text-green-700">
@@ -65,10 +65,10 @@ export const EducationCard = ({ entry }: { entry: EducationEntry }) => (
             <p className="mb-1 text-[15px] leading-snug font-bold text-zinc-900">{entry.field}</p>
 
             {/* Institution */}
-            <p className="mb-0.5 text-[12px] text-zinc-400">{entry.institution}</p>
+            <p className="text-primary-700 mb-0.5 text-[12px]">{entry.institution}</p>
 
             {/* Period */}
-            <p className="text-[11px] text-zinc-400">{entry.period}</p>
+            <p className="text-primary-700 text-[11px]">{entry.period}</p>
         </div>
     </div>
 );
