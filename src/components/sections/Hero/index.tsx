@@ -16,9 +16,9 @@ export const HeroSection = async () => {
     const tags = ["React", "TypeScript", "Fintech", t("performance"), t("security"), t("architecture")];
 
     return (
-        <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD] py-12">
+        <section className="relative flex min-h-screen w-full items-center overflow-hidden bg-[#FEFDFD]">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="sm:gap:10 grid grid-cols-1 items-center gap-5 sm:gap-0 lg:grid-cols-[auto_1fr] lg:gap-0">
+                <div className="sm:gap:10 grid grid-cols-1 items-center sm:gap-0 lg:grid-cols-[auto_1fr] lg:gap-0">
                     {/* TEXTO */}
                     <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
                         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm">

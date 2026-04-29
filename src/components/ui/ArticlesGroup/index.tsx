@@ -19,7 +19,7 @@ export const ArticlesGroup = ({ children }: { children: React.ReactNode[] }) => 
             </div>
 
             {hasMore && (
-                <div className="mt-5 flex justify-center">
+                <div className="mt-10 flex justify-center">
                     <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>Load more</Button>
                 </div>
             )}

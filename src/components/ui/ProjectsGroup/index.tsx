@@ -36,7 +36,7 @@ export const ProjectsGroup = ({ children }: { children: React.ReactNode[] }) => 
             </div>
 
             {hasMore && (
-                <div className="mt-5 flex justify-center">
+                <div className="mt-10 flex justify-center">
                     <Button onClick={() => setVisible((v) => v + pageSize)}>Load more</Button>
                 </div>
             )}
