@@ -1,10 +1,11 @@
 import { LINKS } from "@/content/links";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 
 export const Footer = async () => {
     const locate = await getLocale();
     const year = new Date().getFullYear();
+    const t = await getTranslations("links");
 
     return (
         <footer className="relative w-full border-t border-zinc-200 bg-zinc-50">
@@ -24,7 +25,7 @@ export const Footer = async () => {
                                 href={`/${locate}${link.anchor}`}
                                 className="text-xs text-zinc-400 transition-colors hover:text-zinc-700"
                             >
-                                {link.label}
+                                {t(link.label)}
                             </Link>
                         ))}
                     </nav>

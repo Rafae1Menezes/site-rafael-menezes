@@ -9,7 +9,7 @@ export const ProjectCard = async ({ project }: { project: Project }) => {
 
     return (
         <Link href={`/${locale}/projects/${project.slug}`}>
-            <article className="group elevation1 flex h-full flex-col">
+            <article className="group elevation1 flex h-full flex-col shadow-md">
                 <div className="mb-4 flex items-start justify-between gap-3">
                     <Tag size="sm" color={projectColorMap[project.type]}>
                         {project.type}

@@ -12,7 +12,7 @@ type CareerEntry = {
 
 export const CareerCard = ({ entry }: { entry: CareerEntry }) => (
     <div className={`elevation3 ${entry.current ? "elevation3Active" : ""}`}>
-        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4">
+        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4 shadow-md">
             {/* Company */}
             <p className="mb-0.5 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">{entry.company}</p>
 

@@ -37,7 +37,7 @@ const formations = [
 
 export function EducationSection() {
     return (
-        <section id="articles" className="w-full scroll-mt-10 bg-white py-12 sm:scroll-mt-14">
+        <section id="education" className="w-full scroll-mt-10 bg-white py-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title="Acadêmico" subtitle="Formação" />
 

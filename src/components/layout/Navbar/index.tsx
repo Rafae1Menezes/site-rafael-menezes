@@ -12,7 +12,7 @@ export const Navbar = async () => {
 
     return (
         <>
-            <nav className="fixed top-0 right-0 left-0 z-50 w-full border-b border-white/30 bg-white/10 shadow-[0_8px_18px_rgba(0,0,0,0.02)] backdrop-blur-sm">
+            <nav className="fixed top-0 right-0 left-0 z-50 w-full border-b border-white/30 bg-white/60 shadow-[0_8px_18px_rgba(0,0,0,0.02)] backdrop-blur-sm">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <div className="flex h-16 items-center justify-between">
                         <Link href={`/${locale}`} className="text-black">

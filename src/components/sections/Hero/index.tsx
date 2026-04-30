@@ -4,6 +4,9 @@ import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
 import { getLocale, getTranslations } from "next-intl/server";
 import { Locale } from "@/src/types/locale";
+import { Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 const cvMap = {
     pt: "cv-pt.pdf",
@@ -49,6 +52,7 @@ export const HeroSection = async () => {
                         <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0 lg:justify-start">
                             <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
+                                <ArrowRight size={20} />
                             </Button>
 
                             <Button
@@ -59,6 +63,7 @@ export const HeroSection = async () => {
                                 target="_blank"
                             >
                                 {t("downloadCV")}
+                                <Download size={20} />
                             </Button>
                         </div>
                     </div>
@@ -78,16 +83,7 @@ export const HeroSection = async () => {
             </div>
             <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
                 <span className="text-xs tracking-widest text-gray-400 uppercase">Scroll to explore</span>
-
-                <svg
-                    className="h-4 w-4 animate-bounce text-gray-500"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
+                <ChevronDown className="h-4 w-4 animate-bounce text-gray-500" />
             </div>
         </section>
     );

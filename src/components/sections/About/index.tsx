@@ -22,11 +22,11 @@ export const AboutSection = async () => {
                             </p>
                             <p>Over the years, I've worked across different domains.</p>
 
-                            <div className="flex items-center justify-center gap-5 lg:justify-start">
+                            <div className="flex items-center justify-center gap-2 lg:justify-start lg:gap-3">
                                 <MapPin size={32} className="text-primary-600 shrink-0" />
                                 <div>
                                     <div className="text-primary-600 font-bold">Based in Brasil</div>
-                                    <div className="text-sm text-neutral-500">Manhuaçu - MG</div>
+                                    <div className="text-sm text-neutral-500 lg:text-left">Manhuaçu - MG</div>
                                 </div>
                             </div>
                         </div>

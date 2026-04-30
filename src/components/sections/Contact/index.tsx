@@ -1,6 +1,7 @@
 import Image from "next/image";
-import foto from "./foto.jpg";
 import { Button } from "../../ui/Button";
+import { ArrowUpRight } from "lucide-react";
+import logos from "./logos.png";
 
 export const ContactSection = () => {
     const links = [
@@ -50,8 +51,19 @@ export const ContactSection = () => {
         <section id="contact" className="w-full scroll-mt-10 bg-[#FEFEFE] pb-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto">
-                    <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-12">
-                        <div className="flex flex-col items-center gap-8 sm:flex-row sm:items-start">
+                    <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-zinc-50 p-8 sm:p-12">
+                        {/* Background image */}
+                        <div className="absolute inset-0">
+                            <Image
+                                src={logos}
+                                alt="Tech background"
+                                fill
+                                className="hidden object-contain object-right opacity-40 sm:flex"
+                                priority
+                            />
+                        </div>
+
+                        <div className="relative flex flex-col items-center gap-8 sm:flex-row sm:items-start">
                             {/* Content */}
                             <div className="flex-1 text-center sm:text-left">
                                 <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Contato</p>
@@ -65,22 +77,9 @@ export const ContactSection = () => {
                                 <div className="flex flex-col flex-wrap gap-3 sm:flex-row">
                                     {links.map((link) => (
                                         <Button as="link" key={link.label} href={link.href} target="_blank">
-                                            <span className="text-zinc-400">{link.icon}</span>
+                                            <span className="text-zinc-700">{link.icon}</span>
                                             {link.label}
-                                            <svg
-                                                width="10"
-                                                height="10"
-                                                viewBox="0 0 10 10"
-                                                className="text-zinc-300"
-                                                fill="none"
-                                            >
-                                                <path
-                                                    d="M2 8L8 2M8 2H4M8 2v4"
-                                                    stroke="currentColor"
-                                                    strokeWidth="1.2"
-                                                    strokeLinecap="round"
-                                                />
-                                            </svg>
+                                            <ArrowUpRight size={20} />
                                         </Button>
                                     ))}
                                 </div>
