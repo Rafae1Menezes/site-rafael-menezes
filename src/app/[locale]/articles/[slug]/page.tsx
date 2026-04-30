@@ -9,6 +9,7 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import { mdxComponents } from "@/src/components/mdx";
 import { setRequestLocale } from "next-intl/server";
+import Link from "next/link";
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
     const { slug, locale } = await params;
@@ -17,11 +18,28 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     const article = await getArticleBySlug(slug);
 
     return (
-        <div className="w-full py-30">
+        <div className="w-full pt-24 pb-20 md:pt-28 md:pb-40">
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title="Writing" subtitle="Articles" />
-                <h1 className="mt-5 mb-4 text-4xl font-bold">{article.title}</h1>
-                <Tag>Performance</Tag> · {article.readTime} read · {article.year}
+                {/* Breadcrumb */}
+                <nav className="mb-8 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-400 uppercase">
+                    Writing
+                    <span className="text-zinc-300"> / </span>
+                    Articles
+                </nav>
+
+                {/* Título */}
+                <h1 className="mb-2 max-w-[680px] text-[2rem] leading-[1.2] font-bold tracking-[-0.03em] text-zinc-900 md:mb-4">
+                    {article.title}
+                </h1>
+
+                {/* Metadados */}
+                <div className=":mb-12 mb-6 flex flex-wrap items-center gap-2.5">
+                    <Tag color="green">{article.tag}</Tag>
+                    <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                    <span className="font-mono text-[0.8125rem] text-zinc-400">{article.readTime} read</span>
+                    <span className="h-1 w-1 rounded-full bg-zinc-300" />
+                    <span className="font-mono text-[0.8125rem] text-zinc-400">{article.year}</span>
+                </div>
                 <article>
                     <MDXRemote
                         source={article.content}
