@@ -9,7 +9,10 @@ export const ProjectCard = async ({ project }: { project: Project }) => {
     const locale = await getLocale();
 
     return (
-        <Link href={`/${locale}/projects/${project.slug}`}>
+        <Link
+            href={`/${locale}/projects/${project.slug}`}
+            className="group focus-visible:ring-primary-500 block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        >
             <Card classNames="transition-all duration-300 ease-out hover:-translate-y-1.5">
                 <div className="mb-4 flex items-start justify-between gap-3">
                     <Tag size="sm" color={projectColorMap[project.type]}>

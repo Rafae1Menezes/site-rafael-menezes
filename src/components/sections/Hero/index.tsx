@@ -40,13 +40,13 @@ export const HeroSection = async () => {
                             exceptional user experiences.
                         </p>
 
-                        <div className="flex flex-wrap justify-center gap-2 lg:justify-start">
+                        <div className="flex flex-wrap justify-center gap-2">
                             {tags.map((tag) => (
                                 <Tag key={tag}>{tag}</Tag>
                             ))}
                         </div>
 
-                        <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0 lg:justify-start">
+                        <div className="t flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0">
                             <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
                                 <ArrowRight size={20} />

@@ -21,7 +21,7 @@ export const Footer = async () => {
                             <Link
                                 key={link.label}
                                 href={`/${locale}${link.anchor}`}
-                                className="text-xs text-zinc-400 transition-colors hover:text-zinc-700"
+                                className="rounded-lg p-1 text-xs text-zinc-400 transition-colors hover:text-zinc-700"
                             >
                                 {t(link.label)}
                             </Link>
