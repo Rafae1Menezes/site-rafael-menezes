@@ -34,20 +34,20 @@ export const mdxComponents = {
 
     li: ({ children, ...props }: any) => (
         <li className="flex items-center gap-2 text-[0.9375rem] leading-[1.6] text-zinc-500" {...props}>
-            <span className="mt-px h-[5px] w-[5px] shrink-0 rounded-full bg-green-600" />
+            <span className="mt-px h-1.25 w-1.25 shrink-0 rounded-full bg-green-600" />
             {children}
         </li>
     ),
 
     blockquote: (props: any) => (
         <blockquote
-            className="my-6 [border-radius:0_6px_6px_0] rounded-r-md border-l-[3px] border-green-600 bg-green-50 py-3.5 pr-5 pl-5 text-[0.9375rem] leading-[1.7] text-zinc-700 italic"
+            className="my-6 rounded-[0_6px_6px_0] rounded-r-md border-l-[3px] border-green-600 bg-green-50 py-3.5 pr-5 pl-5 text-[0.9375rem] leading-[1.7] text-zinc-700 italic"
             {...props}
         />
     ),
 
     code: ({ children }: any) => (
-        <code className="rounded border border-zinc-300 bg-zinc-200 px-1.5 py-0.5 font-mono text-[0.8em] font-medium text-zinc-900 [pre_&]:rounded-none [pre_&]:border-0 [pre_&]:bg-transparent [pre_&]:p-0 [pre_&]:text-[1em] [pre_&]:font-normal">
+        <code className="rounded border border-zinc-300 bg-zinc-200 px-1.5 py-0.5 font-mono text-[0.8em] font-medium text-zinc-900 in-[pre]:rounded-none in-[pre]:border-0 in-[pre]:bg-transparent in-[pre]:p-0 in-[pre]:text-[1em] in-[pre]:font-normal">
             {children}
         </code>
     ),

@@ -1,10 +1,10 @@
-import { MobileMenu } from "../../ui/MobileMenu";
-import Link from "next/link";
 import { LINKS } from "@/content/links";
-import { SwitchLanguage } from "../../ui/SwitchLanguage";
 import { getLocale, getTranslations } from "next-intl/server";
-import logo from "./logo.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { MobileMenu } from "../../ui/MobileMenu";
+import { SwitchLanguage } from "../../ui/SwitchLanguage";
+import logo from "./logo.svg";
 
 export const Navbar = async () => {
     const locale = await getLocale();
@@ -42,7 +42,7 @@ export const Navbar = async () => {
                 </div>
 
                 <div
-                    className="h-[2px] w-full origin-center bg-gradient-to-r from-transparent via-emerald-400/80 to-transparent blur-[0.5px]"
+                    className="h-0.5 w-full origin-center bg-linear-to-r from-transparent via-emerald-400/80 to-transparent blur-[0.5px]"
                     style={{ animation: "pulseLine 4s ease-in-out infinite" }}
                 />
             </nav>

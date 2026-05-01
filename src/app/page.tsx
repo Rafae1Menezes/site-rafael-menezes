@@ -6,9 +6,9 @@ export default function RootPage() {
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
-            var l = navigator.language?.startsWith('en') ? 'en' : 'pt';
-            window.location.replace('/' + l);
-          `,
+                                var l = navigator.language?.startsWith('en') ? 'en' : 'pt';
+                                window.location.replace('/' + l);
+                            `,
                     }}
                 />
             </head>

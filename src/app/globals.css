@@ -45,7 +45,7 @@ html {
 body {
     background: var(--background);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans);
 }
 
 @property --border-angle {
@@ -64,45 +64,16 @@ body {
     }
 }
 
-@keyframes highlight {
-    from {
-        width: 0%;
+@keyframes pulseLine {
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scaleX(0.6);
     }
-    to {
-        width: 100%;
+    50% {
+        opacity: 1;
+        transform: scaleX(1);
     }
-}
-
-@layer components {
-    .elevation1 {
-        @apply rounded-2xl border border-zinc-200 bg-white p-5 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:border-zinc-300 hover:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)] active:shadow-[0_8px_24px_-4px_rgba(0,0,0,0.5),0_2px_8px_-2px_rgba(0,0,0,0.04)];
-    }
-    .elevation2 {
-        @apply rounded-xl px-2 py-2.5 transition-[background,box-shadow,transform] duration-200 ease-out hover:-translate-y-0.5 hover:bg-white hover:shadow-[0_4px_16px_-2px_rgba(0,0,0,0.06),0_1px_4px_-1px_rgba(0,0,0,0.04)] active:shadow-[0_4px_12px_-2px_rgba(0,0,0,0.2),0_1px_4px_-1px_rgba(0,0,0,0.1)];
-    }
-    .elevation3 {
-        @apply animate-rotate-border via-primary-400 w-full rounded-2xl border-0 bg-transparent from-transparent from-0% to-transparent to-100% p-[2px] transition-all duration-300 ease-out hover:border-0;
-    }
-    .elevation3:hover {
-        @apply -translate-y-1.5 bg-conic/[from_var(--border-angle)] shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)];
-    }
-    .elevation3Active {
-        @apply -translate-y-1.5 bg-conic/[from_var(--border-angle)] shadow-[0_8px_24px_-4px_rgba(0,0,0,0.3),0_2px_8px_-2px_rgba(0,0,0,0.04)];
-    }
-}
-
-.highlightWord {
-    z-index: 0;
-}
-
-.highlightWord::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #64d98b;
-    width: 0%;
-    animation: highlight 0.2s ease-out 0.2s forwards;
-    z-index: -1;
 }
 
 .highlightLink {
@@ -129,16 +100,4 @@ body {
 .highlightLink:hover::before {
     transform: scaleX(1);
     transform-origin: left;
-}
-
-@keyframes pulseLine {
-    0%,
-    100% {
-        opacity: 0.2;
-        transform: scaleX(0.6);
-    }
-    50% {
-        opacity: 1;
-        transform: scaleX(1);
-    }
 }

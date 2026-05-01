@@ -1,12 +1,10 @@
-import Image from "next/image";
-import foto from "./foto.png";
-import { Button } from "../../ui/Button";
 import { Tag } from "@/src/components/ui/Tag";
-import { getLocale, getTranslations } from "next-intl/server";
 import { Locale } from "@/src/types/locale";
-import { Download } from "lucide-react";
-import { ArrowRight } from "lucide-react";
-import { ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Download } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
+import Image from "next/image";
+import { Button } from "../../ui/Button";
+import foto from "./foto.png";
 
 const cvMap = {
     pt: "cv-pt.pdf",
@@ -22,12 +20,11 @@ export const HeroSection = async () => {
         <section className="relative flex min-h-dvh w-full items-center overflow-hidden bg-[#FEFDFD] pt-24 pb-30 sm:min-h-full">
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="sm:gap:10 grid grid-cols-1 items-center sm:gap-0 lg:grid-cols-[auto_1fr] lg:gap-0">
-                    {/* TEXTO */}
                     <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
                         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm">
                             <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
 
-                            <span className="text-xs font-medium tracking-wide text-emerald-700 uppercase">
+                            <span className="rounded-sm text-xs font-medium tracking-wide text-emerald-700 uppercase">
                                 Senior Software Engineer
                             </span>
                         </div>
@@ -68,7 +65,6 @@ export const HeroSection = async () => {
                         </div>
                     </div>
 
-                    {/* IMAGEM */}
                     <div className="relative z-0 order-1 flex justify-center lg:order-2 lg:justify-end">
                         <div className="relative flex w-full justify-center lg:block">
                             <Image

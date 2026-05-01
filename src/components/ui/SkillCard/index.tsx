@@ -1,4 +1,5 @@
 import { Color } from "@/content/colors";
+import { Card } from "../Card";
 import { Tag } from "../Tag";
 
 type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
@@ -33,7 +34,7 @@ const SkillRow = ({ skill }: { skill: Skill }) => {
 };
 
 export const SkillCard = ({ group }: { group: SkillGroup }) => (
-    <div className="group elevation1 w-full shadow-md">
+    <Card classNames="transition-all duration-300 ease-out hover:-translate-y-1.5">
         {/* Header */}
         <p className="mb-0.5 text-[13px] font-bold text-zinc-900">{group.category}</p>
 
@@ -45,5 +46,5 @@ export const SkillCard = ({ group }: { group: SkillGroup }) => (
                 <SkillRow key={skill.name} skill={skill} />
             ))}
         </div>
-    </div>
+    </Card>
 );

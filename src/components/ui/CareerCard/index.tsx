@@ -1,3 +1,4 @@
+import { Card } from "../Card";
 import { Tag } from "../Tag";
 
 type CareerEntry = {
@@ -11,8 +12,10 @@ type CareerEntry = {
 };
 
 export const CareerCard = ({ entry }: { entry: CareerEntry }) => (
-    <div className={`elevation3 ${entry.current ? "elevation3Active" : ""}`}>
-        <div className="w-full rounded-2xl border border-zinc-200 bg-white p-4 shadow-md">
+    <div
+        className={`animate-rotate-border via-primary-400 rounded-2xl from-transparent from-0% to-transparent to-100% p-0.5 transition-all duration-300 ease-out ${entry.current ? "bg-conic/[from_var(--border-angle)] hover:-translate-y-1.5" : "hover:-translate-y-1.5 hover:bg-conic/[from_var(--border-angle)]"}`}
+    >
+        <Card>
             {/* Company */}
             <p className="mb-0.5 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">{entry.company}</p>
 
@@ -39,6 +42,6 @@ export const CareerCard = ({ entry }: { entry: CareerEntry }) => (
                     </Tag>
                 ))}
             </div>
-        </div>
+        </Card>
     </div>
 );

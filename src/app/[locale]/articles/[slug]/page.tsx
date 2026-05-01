@@ -15,19 +15,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return (
         <div className="w-full pt-24 pb-20 md:pt-28 md:pb-40">
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Breadcrumb */}
                 <nav className="mb-8 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-400 uppercase">
                     Writing
                     <span className="text-zinc-300"> / </span>
                     Articles
                 </nav>
 
-                {/* Título */}
-                <h1 className="mb-2 max-w-[680px] text-[2rem] leading-[1.2] font-bold tracking-[-0.03em] text-zinc-900 md:mb-4">
+                <h1 className="mb-2 max-w-170 text-[2rem] leading-[1.2] font-bold tracking-[-0.03em] text-zinc-900 md:mb-4">
                     {article.title}
                 </h1>
 
-                {/* Metadados */}
                 <div className=":mb-12 mb-6 flex flex-wrap items-center gap-2.5">
                     <Tag color="green">{article.tag}</Tag>
                     <span className="h-1 w-1 rounded-full bg-zinc-300" />

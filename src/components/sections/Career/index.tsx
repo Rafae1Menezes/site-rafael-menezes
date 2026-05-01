@@ -1,14 +1,13 @@
-import { CareerCard } from "@/src/components/ui/CareerCard";
-import { Header } from "@/src/components/layout/Header";
 import { CAREER } from "@/content/career";
+import { Header } from "@/src/components/layout/Header";
+import { CareerCard } from "@/src/components/ui/CareerCard";
 
 export const CareerSection = () => {
     return (
         <section
             id="career"
-            className="relative w-full scroll-mt-10 overflow-hidden bg-zinc-50 py-12 sm:scroll-mt-14 sm:pb-[130px]"
+            className="relative w-full scroll-mt-10 overflow-hidden bg-zinc-50 py-12 sm:scroll-mt-14 sm:pb-32.5"
         >
-            {/* Dot grid background */}
             <svg aria-hidden className="pointer-events-none absolute inset-0 h-full w-full select-none">
                 <defs>
                     <pattern id="dot-grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
@@ -21,7 +20,6 @@ export const CareerSection = () => {
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title="Trajetória" subtitle="Carreira" />
 
-                {/* ── MOBILE timeline: linha à esquerda, cards à direita ── */}
                 <div className="relative md:hidden">
                     <div className="absolute top-0 bottom-0 left-3 w-px bg-zinc-200" />
 
@@ -36,7 +34,6 @@ export const CareerSection = () => {
                     </div>
                 </div>
 
-                {/* ── DESKTOP timeline: alternado esquerda/direita ── */}
                 <div className="relative mx-auto hidden max-w-4xl md:block">
                     <div className="bg-secondary-400 absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2" />
 
@@ -45,17 +42,17 @@ export const CareerSection = () => {
                         return (
                             <div
                                 key={entry.id}
-                                className={`mb-[-70px] flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
+                                className={`-mb-17.5 flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
                             >
                                 <div
-                                    className={`flex w-[calc(50%-28px)] flex-shrink-0 py-4 ${isLeft ? "justify-end" : "justify-start"}`}
+                                    className={`flex w-[calc(50%-28px)] shrink-0 py-4 ${isLeft ? "justify-end" : "justify-start"}`}
                                 >
                                     <CareerCard entry={entry} />
                                 </div>
-                                <div className="flex w-14 flex-shrink-0 justify-center">
-                                    <div className="bg-primary-300 border-primary-500 z-10 h-2.5 w-2.5 rounded-full border-2" />
+                                <div className="flex w-14 shrink-0 justify-center">
+                                    <div className="bg-primary-300 border-primary-400 z-10 h-2.5 w-2.5 rounded-full border-2" />
                                 </div>
-                                <div className="w-[calc(50%-28px)] flex-shrink-0" />
+                                <div className="w-[calc(50%-28px)] shrink-0" />
                             </div>
                         );
                     })}

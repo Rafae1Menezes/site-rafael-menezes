@@ -1,9 +1,8 @@
+import { mdxComponents } from "@/src/components/mdx";
 import { Tag } from "@/src/components/ui/Tag";
 import { getAllProjects, getProjectBySlug } from "@/src/services/projects";
-import { MDXRemote } from "next-mdx-remote/rsc";
-
-import { mdxComponents } from "@/src/components/mdx";
 import { setRequestLocale } from "next-intl/server";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypeHighlight from "rehype-highlight";
 import remarkGfm from "remark-gfm";
 
@@ -16,19 +15,16 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
     return (
         <div className="w-full pt-24 pb-20 md:pt-28 md:pb-40">
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                {/* Breadcrumb */}
                 <nav className="mb-4 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-400 uppercase md:mb-8">
                     Writing
                     <span className="text-zinc-300"> / </span>
                     Articles
                 </nav>
 
-                {/* Título */}
                 <h1 className="mb-2 max-w-[680px] text-[2rem] leading-[1.2] font-bold tracking-[-0.03em] text-zinc-900 md:mb-4">
                     {project.title}
                 </h1>
 
-                {/* Metadados */}
                 <div className="mb-6 flex flex-wrap items-center gap-2.5 md:mb-12">
                     {project.tags.map((tag) => (
                         <Tag key={tag} color="green">

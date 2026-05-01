@@ -41,7 +41,6 @@ export function EducationSection() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title="Acadêmico" subtitle="Formação" />
 
-                {/* Cards grid */}
                 <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-3">
                     {formations.map((item) => (
                         <EducationCard key={item.id} entry={item} />

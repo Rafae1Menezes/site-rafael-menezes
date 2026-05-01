@@ -8,7 +8,6 @@ export const AboutSection = async () => {
         <section id="about" className="w-full scroll-mt-10 bg-[#FEFEFE] py-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col-reverse items-center gap-10 lg:flex-row lg:items-start lg:justify-between">
-                    {/* Texto */}
                     <div className="w-full max-w-2xl text-center lg:text-left">
                         <Header title="Biografia" subtitle="About" />
                         <div className="flex flex-col gap-5">
@@ -33,7 +32,6 @@ export const AboutSection = async () => {
                         </div>
                     </div>
 
-                    {/* Foto */}
                     <div className="w-48 shrink-0 sm:w-64 lg:w-auto">
                         <Image src={foto} width={400} height={400} alt="foto" className="rounded-2xl shadow-md" />
                     </div>
