@@ -29,7 +29,7 @@ export const ArticleCard = async ({ article }: { article: Article }) => {
                         </Tag>
                     </div>
                     <p className="truncate text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
-                    <p className="mt-0.5 text-[11px] text-zinc-400">
+                    <p className="mt-0.5 text-[11px] text-zinc-500">
                         {article.readTime} read · {article.year}
                     </p>
                 </div>

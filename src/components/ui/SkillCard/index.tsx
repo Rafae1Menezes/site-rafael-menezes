@@ -38,7 +38,7 @@ export const SkillCard = ({ group }: { group: SkillGroup }) => (
         {/* Header */}
         <p className="mb-0.5 text-[13px] font-bold text-zinc-900">{group.category}</p>
 
-        <p className="mb-3 text-[11px] text-zinc-400">{group.description}</p>
+        <p className="mb-3 text-[11px] text-zinc-500">{group.description}</p>
 
         {/* Skills */}
         <div>

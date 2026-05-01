@@ -15,7 +15,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
     return (
         <div className="w-full pt-24 pb-20 md:pt-28 md:pb-40">
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <nav className="mb-4 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-400 uppercase md:mb-8">
+                <nav className="mb-4 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-500 uppercase md:mb-8">
                     Writing
                     <span className="text-zinc-300"> / </span>
                     Articles
@@ -32,7 +32,7 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                         </Tag>
                     ))}
                     <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                    <span className="font-mono text-[0.8125rem] text-zinc-400">{project.year}</span>
+                    <span className="font-mono text-[0.8125rem] text-zinc-500">{project.year}</span>
                 </div>
                 <article>
                     <MDXRemote

@@ -23,7 +23,8 @@ export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anch
         <>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="z-[60] flex h-10 w-10 flex-col items-center justify-center gap-[5px] md:hidden"
+                aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
+                className="z-60 flex h-10 w-10 flex-col items-center justify-center gap-1.25 md:hidden"
             >
                 <span className={cn(barBase, isOpen && "translate-y-1.75 rotate-45")} />
                 <span className={cn(barBase, isOpen && "opacity-0")} />

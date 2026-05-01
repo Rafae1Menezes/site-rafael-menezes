@@ -15,7 +15,7 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
     return (
         <div className="w-full pt-24 pb-20 md:pt-28 md:pb-40">
             <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <nav className="mb-8 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-400 uppercase">
+                <nav className="mb-8 flex items-center gap-2 font-mono text-xs tracking-widest text-zinc-500 uppercase">
                     Writing
                     <span className="text-zinc-300"> / </span>
                     Articles
@@ -28,9 +28,9 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
                 <div className=":mb-12 mb-6 flex flex-wrap items-center gap-2.5">
                     <Tag color="green">{article.tag}</Tag>
                     <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                    <span className="font-mono text-[0.8125rem] text-zinc-400">{article.readTime} read</span>
+                    <span className="font-mono text-[0.8125rem] text-zinc-500">{article.readTime} read</span>
                     <span className="h-1 w-1 rounded-full bg-zinc-300" />
-                    <span className="font-mono text-[0.8125rem] text-zinc-400">{article.year}</span>
+                    <span className="font-mono text-[0.8125rem] text-zinc-500">{article.year}</span>
                 </div>
                 <article>
                     <MDXRemote

@@ -13,7 +13,7 @@ export const Footer = async () => {
                 <div className="flex flex-col items-center justify-between gap-4 py-8 sm:flex-row">
                     <div className="flex flex-col items-center gap-0.5 sm:items-start">
                         <span className="text-sm font-semibold text-zinc-800">Rafael Menezes</span>
-                        <span className="text-xs text-zinc-400">Senior Frontend Engineer · Tech Lead</span>
+                        <span className="text-xs text-zinc-500">Senior Frontend Engineer · Tech Lead</span>
                     </div>
 
                     <nav className="flex flex-wrap justify-center gap-x-5 gap-y-1">
@@ -21,14 +21,14 @@ export const Footer = async () => {
                             <Link
                                 key={link.label}
                                 href={`/${locale}${link.anchor}`}
-                                className="rounded-lg p-1 text-xs text-zinc-400 transition-colors hover:text-zinc-700"
+                                className="rounded-lg p-1 text-xs text-zinc-500 transition-colors hover:text-zinc-700"
                             >
                                 {t(link.label)}
                             </Link>
                         ))}
                     </nav>
 
-                    <p className="shrink-0 text-xs text-zinc-400">© {year}</p>
+                    <p className="shrink-0 text-xs text-zinc-500">© {year}</p>
                 </div>
             </div>
         </footer>

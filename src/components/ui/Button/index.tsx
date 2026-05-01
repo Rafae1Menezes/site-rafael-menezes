@@ -32,7 +32,7 @@ export const Button = ({ children, variant = "secondary", className = "", disabl
         "cursor-pointer font-semibold justify-center inline-flex items-center gap-2 font-medium rounded-lg text-[clamp(0.75rem,1.2vw,0.875rem)] px-5 py-2.5 disabled:opacity-50 disabled:cursor-not-allowed transition-[background-color,border-color,transform,box-shadow] duration-150 active:scale-[0.96] active:duration-75";
 
     const variants: Record<ButtonVariant, string> = {
-        primary: "bg-primary-600 text-white hover:bg-primary-500  ",
+        primary: "bg-primary-700 text-white hover:bg-primary-500  ",
         secondary:
             "bg-secondary-100 text-zinc-700 border border-secondary-400 hover:bg-secondary-200 hover:border-secondary-300 hover:text-zinc-900 ",
     };

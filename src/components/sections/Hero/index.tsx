@@ -77,9 +77,9 @@ export const HeroSection = async () => {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
-                <span className="text-xs tracking-widest text-gray-400 uppercase">Scroll to explore</span>
-                <ChevronDown className="h-4 w-4 animate-bounce text-gray-500" />
+            <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-gray-600">
+                <span className="text-xs tracking-widest uppercase">Scroll to explore</span>
+                <ChevronDown className="h-4 w-4 animate-bounce" />
             </div>
         </section>
     );

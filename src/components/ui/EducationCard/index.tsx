@@ -10,7 +10,6 @@ type EducationEntry = {
     institution: string;
     period: string;
     description: string;
-    institutionColored: boolean;
 };
 
 export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
@@ -33,20 +32,18 @@ export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
 
             {/* Meta */}
             <div className="mb-4 space-y-1.5">
-                <div className="flex items-center gap-2">
-                    <MapPin size={13} className="shrink-0 text-[#1a5c3a]" />
-                    <span className={`text-sm font-medium ${entry.institutionColored ? "text-[#1a5c3a]" : "text-[#3a5548]"}`}>
-                        {entry.institution}
-                    </span>
+                <div className="flex items-center gap-2 text-gray-500">
+                    <MapPin size={13} className="shrink-0" />
+                    <span className="text-sm font-medium">{entry.institution}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                    <Calendar size={13} className="shrink-0 text-[#1a5c3a]" />
-                    <span className="text-sm text-[#6b8a7a]">{entry.period}</span>
+                <div className="flex items-center gap-2 text-gray-500">
+                    <Calendar size={13} className="shrink-0" />
+                    <span className="text-sm">{entry.period}</span>
                 </div>
             </div>
 
             {/* Description */}
-            <p className="mb-3 flex-1 text-sm leading-relaxed text-[#6b8a7a]">{entry.description}</p>
+            <p className="mb-3 flex-1 text-sm leading-relaxed text-gray-500">{entry.description}</p>
         </Card>
     );
 };

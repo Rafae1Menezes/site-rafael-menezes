@@ -1,12 +1,12 @@
+import { ConditionalScrollToTop } from "@/src/components/layout/ConditionalScrollToTop";
+import { Footer } from "@/src/components/layout/Footer";
+import { Navbar } from "@/src/components/layout/Navbar";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
+import { Geist, Geist_Mono } from "next/font/google";
 import { routing } from "../../i18n/routing";
 import "../globals.css";
-import { Navbar } from "@/src/components/layout/Navbar";
-import { Footer } from "@/src/components/layout/Footer";
-import { ConditionalScrollToTop } from "@/src/components/layout/ConditionalScrollToTop";
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -46,7 +46,7 @@ export default async function LocaleLayout({
                 <ConditionalScrollToTop />
                 <NextIntlClientProvider messages={messages}>
                     <Navbar />
-                    {children}
+                    <main>{children}</main>
                     <Footer />
                 </NextIntlClientProvider>
             </body>

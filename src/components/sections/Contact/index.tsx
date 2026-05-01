@@ -64,7 +64,7 @@ export const ContactSection = () => {
 
                         <div className="relative flex flex-col items-center gap-8 sm:flex-row sm:items-start">
                             <div className="flex-1 text-center sm:text-left">
-                                <p className="mb-2 text-xs font-medium tracking-widest text-zinc-400 uppercase">Contato</p>
+                                <p className="mb-2 text-xs font-medium tracking-widest text-zinc-500 uppercase">Contato</p>
                                 <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900">Vamos conversar</h2>
                                 <p className="mb-8 max-w-md text-sm leading-relaxed text-zinc-500">
                                     Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou

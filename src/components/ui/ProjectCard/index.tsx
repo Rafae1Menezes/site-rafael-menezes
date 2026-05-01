@@ -18,7 +18,7 @@ export const ProjectCard = async ({ project }: { project: Project }) => {
                     <Tag size="sm" color={projectColorMap[project.type]}>
                         {project.type}
                     </Tag>
-                    <span className="mt-0.5 text-xs text-zinc-400">{project.year}</span>
+                    <span className="mt-0.5 text-xs text-zinc-500">{project.year}</span>
                 </div>
                 <h3 className="mb-2 text-base leading-snug font-semibold text-zinc-900">{project.title}</h3>
                 <p className="flex-1 text-sm leading-relaxed text-zinc-500">{project.description}</p>

@@ -17,13 +17,13 @@ export const CareerCard = ({ entry }: { entry: CareerEntry }) => (
     >
         <Card>
             {/* Company */}
-            <p className="mb-0.5 text-[10px] font-semibold tracking-wider text-zinc-400 uppercase">{entry.company}</p>
+            <p className="mb-0.5 text-[10px] font-semibold tracking-wider text-zinc-500 uppercase">{entry.company}</p>
 
             {/* Role */}
             <p className="text-[13px] leading-snug font-bold text-zinc-900">{entry.role}</p>
 
             {/* Period */}
-            <p className="mt-0.5 mb-2 text-[11px] text-zinc-400">{entry.period}</p>
+            <p className="mt-0.5 mb-2 text-[11px] text-zinc-500">{entry.period}</p>
 
             {/* Description */}
             <p className="text-[12px] leading-relaxed text-zinc-500">{entry.description}</p>

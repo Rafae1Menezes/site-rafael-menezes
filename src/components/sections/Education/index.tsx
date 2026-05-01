@@ -11,7 +11,6 @@ const formations = [
         institution: "PUC - MG",
         period: "20XX – 20XX",
         description: "Foco em sistemas distribuídos, escalabilidade, microsserviços e boas práticas de arquitetura.",
-        institutionColored: false,
     },
     {
         id: 2,
@@ -21,7 +20,6 @@ const formations = [
         institution: "PUC - MG",
         period: "20XX – 20XX",
         description: "Ênfase em processos de desenvolvimento, qualidade de software e métodos ágeis.",
-        institutionColored: false,
     },
     {
         id: 3,
@@ -31,7 +29,6 @@ const formations = [
         institution: "Universidade Federal de Juiz de Fora",
         period: "20XX – 20XX",
         description: "Formação em design visual, criatividade e comunicação visual aplicada a projetos digitais.",
-        institutionColored: true,
     },
 ];
 
