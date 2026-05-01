@@ -1,8 +1,7 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import { Article } from "@/src/types/article";
 import { Project } from "@/src/types/project";
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
 const projectDirectory = path.join(process.cwd(), "content/projects");
 

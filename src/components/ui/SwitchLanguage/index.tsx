@@ -1,9 +1,8 @@
 "use client";
-import Image from "next/image";
 import { Globe } from "lucide-react";
 import { useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export const SwitchLanguage = () => {
     const locale = useLocale();

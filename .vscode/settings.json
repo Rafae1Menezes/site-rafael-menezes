@@ -19,5 +19,10 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.removeUnusedImports": "explicit",
+        "source.fixAll.eslint": "explicit"
     }
 }

@@ -1,7 +1,7 @@
 import { Header } from "@/src/components/layout/Header";
-import { ProjectCard } from "../../ui/ProjectCard";
 import { ProjectsGroup } from "@/src/components/ui/ProjectsGroup";
 import { getAllProjects } from "@/src/services/projects";
+import { ProjectCard } from "../../ui/ProjectCard";
 
 export const Projects = () => {
     const projects = getAllProjects();
@@ -12,7 +12,7 @@ export const Projects = () => {
                 <Header title="Portfolio" subtitle="My work" />
 
                 <ProjectsGroup>
-                    {projects.map((project, i) => (
+                    {projects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
                 </ProjectsGroup>

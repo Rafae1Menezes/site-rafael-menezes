@@ -1,6 +1,6 @@
+import { Header } from "@/src/components/layout/Header";
 import { ArticleCard } from "@/src/components/ui/ArticleCard";
 import { ArticlesGroup } from "@/src/components/ui/ArticlesGroup";
-import { Header } from "@/src/components/layout/Header";
 import { getAllArticles } from "@/src/services/articles";
 
 export const ArticlesSection = async () => {
@@ -11,7 +11,7 @@ export const ArticlesSection = async () => {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title="Writing" subtitle="Articles" />
                 <ArticlesGroup>
-                    {articles.map((article, i) => (
+                    {articles.map((article) => (
                         <ArticleCard key={article.id} article={article} />
                     ))}
                 </ArticlesGroup>

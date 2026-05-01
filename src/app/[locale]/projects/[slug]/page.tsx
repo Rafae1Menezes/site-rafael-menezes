@@ -1,15 +1,11 @@
-import { Footer } from "@/src/components/layout/Footer";
-import { Header } from "@/src/components/layout/Header";
-import { Navbar } from "@/src/components/layout/Navbar";
 import { Tag } from "@/src/components/ui/Tag";
 import { getAllProjects, getProjectBySlug } from "@/src/services/projects";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
-import remarkGfm from "remark-gfm";
-import rehypeHighlight from "rehype-highlight";
 import { mdxComponents } from "@/src/components/mdx";
-import { projectColorMap } from "@/content/colors";
 import { setRequestLocale } from "next-intl/server";
+import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
 
 export default async function ProjectsPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
     const { slug, locale } = await params;
@@ -35,7 +31,9 @@ export default async function ProjectsPage({ params }: { params: Promise<{ slug:
                 {/* Metadados */}
                 <div className="mb-6 flex flex-wrap items-center gap-2.5 md:mb-12">
                     {project.tags.map((tag) => (
-                        <Tag color="green">{tag}</Tag>
+                        <Tag key={tag} color="green">
+                            {tag}
+                        </Tag>
                     ))}
                     <span className="h-1 w-1 rounded-full bg-zinc-300" />
                     <span className="font-mono text-[0.8125rem] text-zinc-400">{project.year}</span>

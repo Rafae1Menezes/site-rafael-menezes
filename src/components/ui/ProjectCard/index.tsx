@@ -1,8 +1,8 @@
+import { projectColorMap } from "@/content/colors";
+import { Project } from "@/src/types/project";
+import { getLocale } from "next-intl/server";
 import Link from "next/link";
 import { Tag } from "../Tag";
-import { Project, ProjectType } from "@/src/types/project";
-import { projectColorMap } from "@/content/colors";
-import { getLocale } from "next-intl/server";
 
 export const ProjectCard = async ({ project }: { project: Project }) => {
     const locale = await getLocale();

@@ -1,6 +1,5 @@
-import { JSX } from "react";
-import { Tag } from "../Tag";
 import { Calendar, MapPin } from "lucide-react";
+import { Tag } from "../Tag";
 
 type EducationEntry = {
     id: number;

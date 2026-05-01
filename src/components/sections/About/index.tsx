@@ -1,7 +1,7 @@
 import { Header } from "@/src/components/layout/Header";
-import foto from "./foto.png";
-import Image from "next/image";
 import { MapPin } from "lucide-react";
+import Image from "next/image";
+import foto from "./foto.png";
 
 export const AboutSection = async () => {
     return (
@@ -13,14 +13,15 @@ export const AboutSection = async () => {
                         <Header title="Biografia" subtitle="About" />
                         <div className="flex flex-col gap-5">
                             <p>
-                                I'm a software engineer focused on building secure, scalable and high-performance systems. I
-                                enjoy solving complex problems, designing clean architectures and delivering impactful products.
+                                I&apos;m a software engineer focused on building secure, scalable and high-performance systems.
+                                I enjoy solving complex problems, designing clean architectures and delivering impactful
+                                products.
                             </p>
                             <p>
-                                Over the years, I've worked across different domains — from fintech and security to developer
-                                tools and platform engineering.
+                                Over the years, I&apos;ve worked across different domains — from fintech and security to
+                                developer tools and platform engineering.
                             </p>
-                            <p>Over the years, I've worked across different domains.</p>
+                            <p>Over the years, I&apos;ve worked across different domains.</p>
 
                             <div className="flex items-center justify-center gap-2 lg:justify-start lg:gap-3">
                                 <MapPin size={32} className="text-primary-600 shrink-0" />

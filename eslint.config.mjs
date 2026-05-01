@@ -1,6 +1,8 @@
+import { FlatCompat } from "@eslint/eslintrc";
+import prettierConfig from "eslint-config-prettier";
+import prettier from "eslint-plugin-prettier";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,19 +12,24 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
-    ...compat.extends(
-        "next/core-web-vitals", // Next.js built-in rules for performance and best practices
-        "next/typescript", // Next.js TypeScript-specific lint rules
-        "plugin:prettier/recommended", // Enables `eslint-config-prettier` + `eslint-plugin-prettier`
-    ),
-    ...compat.config({
-        extends: ["next", "prettier"],
-        rules: {
-            "no-console": "warn", // Warning for console.log
-            quotes: ["error", "double"], // Enforce double quotes
-            "prettier/prettier": "error", // Prettier errors show up in ESLint output
+    // Next.js rules (via compat para configs legadas)
+    ...compat.extends("next/core-web-vitals", "next/typescript"),
+
+    // Prettier como flat config nativo (evita referência circular)
+    prettierConfig,
+    {
+        plugins: {
+            prettier,
         },
-    }),
+        rules: {
+            "prettier/prettier": "error",
+            "no-console": "warn",
+            quotes: ["error", "double"],
+            "@typescript-eslint/no-unused-vars": "warn",
+        },
+    },
+
+    // Ignores
     {
         ignores: ["node_modules/**", ".next/**", "out/**", "build/**", "next-env.d.ts"],
     },

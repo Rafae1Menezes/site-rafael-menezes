@@ -1,9 +1,9 @@
-import { Thumbnail } from "../Thumbnail";
-import { Tag } from "../Tag";
-import Link from "next/link";
-import { Article, ArticleTag } from "@/src/types/article";
 import { articleColorMap } from "@/content/colors";
+import { Article } from "@/src/types/article";
 import { getLocale } from "next-intl/server";
+import Link from "next/link";
+import { Tag } from "../Tag";
+import { Thumbnail } from "../Thumbnail";
 
 export const ArticleCard = async ({ article }: { article: Article }) => {
     const locale = await getLocale();
