@@ -20,7 +20,7 @@ export const ArticleCard = async ({ article }: { article: Article }) => {
                 "focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             )}
         >
-            <div className="flex cursor-pointer items-center gap-3 py-3 pl-3">
+            <div className="flex cursor-pointer items-center gap-3 px-3 py-3">
                 <Thumbnail tag={article.tag} />
                 <div className="min-w-0 flex-1">
                     <div className="mb-0.5 flex items-center gap-1.5">
@@ -28,7 +28,7 @@ export const ArticleCard = async ({ article }: { article: Article }) => {
                             {article.tag}
                         </Tag>
                     </div>
-                    <p className="truncate text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
+                    <p className="line-clamp-2 text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
                     <p className="mt-0.5 text-[11px] text-zinc-500">
                         {article.readTime} read · {article.year}
                     </p>
