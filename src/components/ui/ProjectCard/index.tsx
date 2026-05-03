@@ -1,34 +1,38 @@
 import { projectColorMap } from "@/content/colors";
 import { Project } from "@/src/types/project";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Card } from "../Card";
 import { Tag } from "../Tag";
 
 export const ProjectCard = async ({ project }: { project: Project }) => {
     const locale = await getLocale();
+    const t = await getTranslations("projects");
 
     return (
         <Link
             href={`/${locale}/projects/${project.slug}`}
+            aria-label={t("projectCardLabel", { title: project.title, type: project.type, year: project.year })}
             className="group focus-visible:ring-primary-500 block rounded-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         >
             <Card classNames="transition-all duration-300 ease-out hover:-translate-y-1.5">
                 <div className="mb-4 flex items-start justify-between gap-3">
-                    <Tag size="sm" color={projectColorMap[project.type]}>
+                    <Tag size="sm" color={projectColorMap[project.type]} aria-hidden="true">
                         {project.type}
                     </Tag>
-                    <span className="mt-0.5 text-xs text-zinc-500">{project.year}</span>
+                    <span aria-hidden="true" className="mt-0.5 text-xs text-zinc-500">
+                        {project.year}
+                    </span>
                 </div>
                 <h3 className="mb-2 text-base leading-snug font-semibold text-zinc-900">{project.title}</h3>
-                <p className="flex-1 text-sm leading-relaxed text-zinc-500">{project.description}</p>
-                <div className="mt-5 flex flex-wrap gap-1.5">
+                <p className="flex-1 text-sm leading-relaxed text-zinc-600">{project.description}</p>
+                <ul aria-label={t("techStackLabel")} className="mt-5 flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
-                        <Tag key={tag} size="xs">
-                            {tag}
-                        </Tag>
+                        <li key={tag}>
+                            <Tag size="xs">{tag}</Tag>
+                        </li>
                     ))}
-                </div>
+                </ul>
             </Card>
         </Link>
     );

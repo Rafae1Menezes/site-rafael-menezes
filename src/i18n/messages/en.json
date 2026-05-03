@@ -19,25 +19,43 @@
         "resilience": "Resilience",
         "viewMyWork": "View my work",
         "downloadCV": "Download CV",
-        "scrollToExplore": "Scroll to explore"
+        "scrollToExplore": "Scroll to explore",
+        "downloadCVLabel": "Download resume as PDF, opens in a new tab",
+        "photoAlt": "Illustration of Rafael Menezes, Senior Frontend Engineer",
+        "skillsLabel": "Main technologies and skills"
     },
     "projects": {
         "title": "Portfolio",
         "subtitle": "My work",
-        "loadMore": "Load more"
+        "loadMore": "Load more",
+        "projectsListLabel": "Projects list",
+        "loadMoreLabel": "Load {count} more projects",
+        "projectCardLabel": "Project: {title} · {type} · {year}",
+        "techStackLabel": "Technologies used"
     },
     "articles": {
         "title": "Insights",
         "subtitle": "Articles",
-        "loadMore": "Load more"
+        "loadMore": "Load more",
+        "articlesListLabel": "Articles list",
+        "loadMoreLabel": "Load {count} more articles",
+        "readTimeLabel": "{readTime} read · {year}",
+        "articleCardLabel": "{title} · {tag} · {readTime} read · {year}"
     },
     "career": {
         "title": "Work",
-        "subtitle": "Experience"
+        "subtitle": "Experience",
+        "timelineLabel": "Professional timeline",
+        "companyLabel": "Company:",
+        "roleLabel": "Role:",
+        "periodLabel": "Period:"
     },
     "education": {
         "title": "Academic",
         "subtitle": "Background",
+        "institutionLabel": "Institution",
+        "periodLabel": "Period",
+        "formationsListLabel": "Academic formations",
         "architecture": {
             "title": "Postgraduate",
             "course": "Distributed Software Architecture",
@@ -61,6 +79,8 @@
         "specialist": "Specialist",
         "advanced": "Advanced",
         "intermediary": "Intermediate",
+        "skillsGroupsLabel": "Skill groups",
+        "levelLabel": "Level:",
         "core": {
             "title": "Core",
             "subtitle": "Technologies I’ve been using daily for years"
@@ -92,14 +112,21 @@
     "about": {
         "title": "Biography",
         "subtitle": "About",
+        "locationLabel": "Location:",
         "p1": "I'm a software engineer who enjoys building things that actually work in the real world.",
         "p2": "I like solving complex problems, but what really motivates me is understanding how systems behave in production. Working in fintech taught me a lot about reliability, responsibility, and staying calm when things go wrong.",
         "p3": "Outside of code, I’m curious by nature. I enjoy learning, exploring new ideas, and improving how I think",
-        "basedInBrazil": "Based in Brasil"
+        "basedInBrazil": "Based in Brasil",
+        "photoAlt": "Photo of Rafael Menezes"
     },
     "contact": {
         "title": "Contact",
         "subtitle": "Let's talk",
-        "description": "I'm open to conversations about challenging projects, technical leadership roles, or collaborations on high-impact financial products."
+        "description": "I'm open to conversations about challenging projects, technical leadership roles, or collaborations on high-impact financial products.",
+        "contactLinksLabel": "Contact links",
+        "navLabel": "Footer navigation"
+    },
+    "footer": {
+        "navLabel": "Footer navigation"
     }
 }

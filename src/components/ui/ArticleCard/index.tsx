@@ -1,17 +1,24 @@
 import { articleColorMap } from "@/content/colors";
 import { Article } from "@/src/types/article";
 import { cn } from "@/src/utils/cn";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Tag } from "../Tag";
 import { Thumbnail } from "../Thumbnail";
 
 export const ArticleCard = async ({ article }: { article: Article }) => {
     const locale = await getLocale();
+    const t = await getTranslations("articles");
 
     return (
         <Link
             href={`/${locale}/articles/${article.slug}`}
+            aria-label={t("articleCardLabel", {
+                title: article.title,
+                tag: article.tag,
+                readTime: article.readTime,
+                year: article.year,
+            })}
             className={cn(
                 "block rounded-2xl",
                 "transition-[background,box-shadow,transform] duration-200 ease-out",
@@ -20,17 +27,22 @@ export const ArticleCard = async ({ article }: { article: Article }) => {
                 "focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
             )}
         >
-            <div className="flex cursor-pointer items-center gap-3 px-3 py-3">
-                <Thumbnail tag={article.tag} />
+            <div className="flex items-center gap-3 px-3 py-3">
+                <Thumbnail tag={article.tag} aria-hidden="true" />
                 <div className="min-w-0 flex-1">
-                    <div className="mb-0.5 flex items-center gap-1.5">
+                    <div aria-hidden="true" className="mb-0.5 flex items-center gap-1.5">
                         <Tag size="xs" color={articleColorMap[article.tag as keyof typeof articleColorMap] ?? "default"}>
                             {article.tag}
                         </Tag>
                     </div>
-                    <p className="line-clamp-2 text-[13px] leading-snug font-semibold text-zinc-900">{article.title}</p>
-                    <p className="mt-0.5 text-[11px] text-zinc-500">
-                        {article.readTime} read · {article.year}
+                    <p aria-hidden="true" className="line-clamp-2 text-[13px] leading-snug font-semibold text-zinc-900">
+                        {article.title}
+                    </p>
+                    <p aria-hidden="true" className="mt-0.5 text-[11px] text-zinc-600">
+                        {t("readTimeLabel", {
+                            readTime: article.readTime,
+                            year: article.year,
+                        })}
                     </p>
                 </div>
             </div>

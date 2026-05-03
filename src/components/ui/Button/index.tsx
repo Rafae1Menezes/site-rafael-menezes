@@ -25,6 +25,7 @@ type ButtonProps = {
     trailingIcon?: ReactNode;
     className?: string;
     disabled?: boolean;
+    "aria-label"?: string;
 } & (ButtonAsButton | ButtonAsLink);
 
 export const Button = ({ children, variant = "secondary", className = "", disabled = false, ...props }: ButtonProps) => {
@@ -46,6 +47,7 @@ export const Button = ({ children, variant = "secondary", className = "", disabl
                 target={props.target}
                 rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
                 className={classes}
+                aria-label={props["aria-label"]}
             >
                 {children}
             </a>
@@ -53,7 +55,13 @@ export const Button = ({ children, variant = "secondary", className = "", disabl
     }
 
     return (
-        <button type={props.type ?? "button"} onClick={props.onClick} disabled={disabled} className={classes}>
+        <button
+            type={props.type ?? "button"}
+            onClick={props.onClick}
+            disabled={disabled}
+            className={classes}
+            aria-label={props["aria-label"]}
+        >
             {children}
         </button>
     );

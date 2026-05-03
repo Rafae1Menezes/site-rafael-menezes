@@ -9,9 +9,13 @@ export const Projects = async () => {
     const projects = getAllProjects();
 
     return (
-        <section id="my-work" className="w-full scroll-mt-10 bg-zinc-50 py-12 sm:scroll-mt-14">
+        <section
+            id="my-work"
+            aria-labelledby="projects-heading"
+            className="w-full scroll-mt-10 bg-zinc-50 py-12 sm:scroll-mt-14"
+        >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title={t("title")} subtitle={t("subtitle")} />
+                <Header title={t("title")} subtitle={t("subtitle")} headingId="projects-heading" />
 
                 <ProjectsGroup>
                     {projects.map((project) => (

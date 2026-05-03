@@ -17,19 +17,27 @@ export const HeroSection = async () => {
     const tags = ["React", "TypeScript", "Node", t("performance"), t("security"), t("architecture"), t("resilience")];
 
     return (
-        <section className="relative flex min-h-dvh w-full items-center overflow-hidden bg-[#FEFDFD] pt-24 pb-30 sm:min-h-full lg:py-40">
+        <section
+            aria-labelledby="hero-heading"
+            className="relative flex min-h-dvh w-full items-center overflow-hidden bg-[#FEFDFD] pt-24 pb-30 sm:min-h-full lg:py-40"
+        >
             <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="sm:gap:10 grid grid-cols-1 items-center sm:gap-0 lg:grid-cols-[auto_1fr] lg:gap-0">
                     <div className="relative z-10 order-2 flex flex-col items-center gap-6 lg:order-1">
-                        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm">
-                            <span className="h-2 w-2 rounded-full bg-emerald-500"></span>
-
+                        <div
+                            aria-hidden="true"
+                            className="inline-flex w-fit items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/60 px-4 py-1.5 backdrop-blur-sm"
+                        >
+                            <span className="h-2 w-2 rounded-full bg-emerald-500" />
                             <span className="rounded-sm text-xs font-medium tracking-wide text-emerald-700 uppercase">
                                 {t("position")}
                             </span>
                         </div>
 
-                        <h1 className="text-center text-4xl leading-tight font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl">
+                        <h1
+                            id="hero-heading"
+                            className="text-center text-4xl leading-tight font-bold tracking-tight text-zinc-900 sm:text-5xl lg:text-6xl"
+                        >
                             {t.rich("title", {
                                 br: () => <br />,
                                 highlight: (chunks) => <span className="text-emerald-600">{chunks}</span>,
@@ -40,16 +48,18 @@ export const HeroSection = async () => {
                             {t("description")}
                         </p>
 
-                        <div className="flex flex-wrap justify-center gap-2">
+                        <ul aria-label={t("skillsLabel")} className="flex flex-wrap justify-center gap-2">
                             {tags.map((tag) => (
-                                <Tag key={tag}>{tag}</Tag>
+                                <li key={tag}>
+                                    <Tag>{tag}</Tag>
+                                </li>
                             ))}
-                        </div>
+                        </ul>
 
-                        <div className="t flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0">
+                        <div className="flex w-full flex-wrap items-center justify-center gap-3 pt-2 sm:pt-0">
                             <Button as="link" href="#my-work" className="w-full sm:w-50">
                                 {t("viewMyWork")}
-                                <ArrowRight size={20} />
+                                <ArrowRight size={20} aria-hidden="true" />
                             </Button>
 
                             <Button
@@ -58,9 +68,10 @@ export const HeroSection = async () => {
                                 variant="primary"
                                 className="w-full sm:w-50"
                                 target="_blank"
+                                aria-label={t("downloadCVLabel")}
                             >
                                 {t("downloadCV")}
-                                <Download size={20} />
+                                <Download size={20} aria-hidden="true" />
                             </Button>
                         </div>
                     </div>
@@ -69,7 +80,7 @@ export const HeroSection = async () => {
                         <div className="relative flex w-full justify-center lg:block">
                             <Image
                                 src={foto}
-                                alt="Hero illustration"
+                                alt={t("photoAlt")}
                                 priority
                                 className="hidden h-auto w-full max-w-sm sm:block sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:translate-x-0"
                             />
@@ -77,7 +88,11 @@ export const HeroSection = async () => {
                     </div>
                 </div>
             </div>
-            <div className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-gray-600">
+
+            <div
+                aria-hidden="true"
+                className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 text-gray-600"
+            >
                 <span className="text-xs tracking-widest uppercase">{t("scrollToExplore")}</span>
                 <ChevronDown className="h-4 w-4 animate-bounce" />
             </div>

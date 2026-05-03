@@ -9,9 +9,13 @@ export const ArticlesSection = async () => {
     const articles = getAllArticles();
 
     return (
-        <section id="articles" className="w-full scroll-mt-10 bg-[#FEFEFE] py-12 sm:scroll-mt-14">
+        <section
+            id="articles"
+            aria-labelledby="articles-heading"
+            className="w-full scroll-mt-10 bg-[#FEFEFE] py-12 sm:scroll-mt-14"
+        >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title={t("title")} subtitle={t("subtitle")} />
+                <Header title={t("title")} subtitle={t("subtitle")} headingId="articles-heading" />
                 <ArticlesGroup>
                     {articles.map((article) => (
                         <ArticleCard key={article.id} article={article} />

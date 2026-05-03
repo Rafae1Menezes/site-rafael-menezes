@@ -19,25 +19,43 @@
         "architecture": "Arquitetura",
         "viewMyWork": "Veja meu trabalho",
         "downloadCV": "Baixar Currículo",
-        "scrollToExplore": "Role para explorar"
+        "scrollToExplore": "Role para explorar",
+        "downloadCVLabel": "Baixar currículo em PDF, abre em nova aba",
+        "photoAlt": "Ilustração de Rafael Menezes, Senior Frontend Engineer",
+        "skillsLabel": "Principais tecnologias e habilidades"
     },
     "projects": {
         "title": "Portfolio",
         "subtitle": "Meu Trabalho",
-        "loadMore": "Carregar mais"
+        "loadMore": "Carregar mais",
+        "projectsListLabel": "Lista de projetos",
+        "loadMoreLabel": "Carregar mais {count} projetos",
+        "projectCardLabel": "Projeto: {title} · {type} · {year}",
+        "techStackLabel": "Tecnologias utilizadas"
     },
     "articles": {
         "title": "Insights",
         "subtitle": "Artigos",
-        "loadMore": "Carregar mais"
+        "loadMore": "Carregar mais",
+        "articlesListLabel": "Lista de artigos",
+        "loadMoreLabel": "Carregar mais {count} artigos",
+        "readTimeLabel": "{readTime} de leitura · {year}",
+        "articleCardLabel": "{title} · {tag} · {readTime} de leitura · {year}"
     },
     "career": {
         "title": "Experiência",
-        "subtitle": "Profissional"
+        "subtitle": "Profissional",
+        "timelineLabel": "Trajetória profissional",
+        "companyLabel": "Empresa:",
+        "roleLabel": "Cargo:",
+        "periodLabel": "Período:"
     },
     "education": {
         "title": "Acadêmico",
         "subtitle": "Formação",
+        "institutionLabel": "Instituição",
+        "periodLabel": "Período",
+        "formationsListLabel": "Formações acadêmicas",
         "architecture": {
             "title": "Pós-graduação",
             "course": "Arquitetura de Software Distribuído",
@@ -60,6 +78,8 @@
         "specialist": "Especialista",
         "advanced": "Avançado",
         "intermediary": "Intermediário",
+        "skillsGroupsLabel": "Grupos de habilidades",
+        "levelLabel": "Nível:",
         "core": {
             "title": "Core",
             "subtitle": "Tecnologias que uso diariamente há anos"
@@ -91,14 +111,21 @@
     "about": {
         "title": "Biografia",
         "subtitle": "Sobre",
+        "locationLabel": "Localização:",
         "p1": "Sou um engenheiro de software que gosta de construir coisas que realmente funcionam no mundo real.",
         "p2": "Gosto de resolver problemas complexos, mas o que realmente me motiva é entender como os sistemas se comportam em produção. Trabalhar com fintech me ensinou muito sobre confiabilidade, responsabilidade e manter a calma quando as coisas dão errado.",
         "p3": "Fora do código, sou naturalmente curioso. Gosto de aprender, explorar novas ideias e melhorar a forma como penso.",
-        "basedInBrazil": "Baseado no Brasil"
+        "basedInBrazil": "Baseado no Brasil",
+        "photoAlt": "Foto de Rafael Menezes"
     },
     "contact": {
         "title": "Contato",
         "subtitle": "Vamos conversar",
-        "description": "Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou colaborações em produtos financeiros de alto impacto."
+        "description": "Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou colaborações em produtos financeiros de alto impacto.",
+        "contactLinksLabel": "Links de contato",
+        "navLabel": "Navegação do rodapé"
+    },
+    "footer": {
+        "navLabel": "Navegação do rodapé"
     }
 }

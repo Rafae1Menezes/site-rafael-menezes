@@ -37,15 +37,21 @@ export const EducationSection = async () => {
     const t = await getTranslations("education");
 
     return (
-        <section id="education" className="w-full scroll-mt-10 bg-white py-12 sm:scroll-mt-14">
+        <section
+            id="education"
+            aria-labelledby="education-heading"
+            className="w-full scroll-mt-10 bg-white py-12 sm:scroll-mt-14"
+        >
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title={t("title")} subtitle={t("subtitle")} />
+                <Header title={t("title")} subtitle={t("subtitle")} headingId="education-heading" />
 
-                <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-3">
+                <ol aria-label={t("formationsListLabel")} className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-3">
                     {formations.map((item) => (
-                        <EducationCard key={item.id} entry={item} />
+                        <li key={item.id}>
+                            <EducationCard entry={item} />
+                        </li>
                     ))}
-                </div>
+                </ol>
             </div>
         </section>
     );
