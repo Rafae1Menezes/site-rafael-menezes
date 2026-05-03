@@ -81,7 +81,6 @@ export const HeroSection = async () => {
                             <Image
                                 src={foto}
                                 alt={t("photoAlt")}
-                                priority
                                 className="hidden h-auto w-full max-w-sm sm:block sm:max-w-md lg:w-[120%] lg:max-w-none lg:-translate-x-10 xl:translate-x-0"
                             />
                         </div>
