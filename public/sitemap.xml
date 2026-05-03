@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.w3.org/2005/sitemap">
+
+  <!-- Páginas principais -->
+  <url>
+    <loc>https://seudominio.com/pt</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://seudominio.com/en</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Projetos -->
+  <url>
+    <loc>https://seudominio.com/pt/projetos/nome-do-projeto</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://seudominio.com/en/projects/project-name</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artigos -->
+  <url>
+    <loc>https://seudominio.com/pt/artigos/nome-do-artigo</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://seudominio.com/en/articles/article-name</loc>
+    <lastmod>2025-01-01</lastmod>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>
