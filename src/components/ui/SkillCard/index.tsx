@@ -1,24 +1,15 @@
 import { Color } from "@/content/colors";
+import { Skill, SkillGroup } from "@/src/types/skill";
 import { Card } from "../Card";
 import { Tag } from "../Tag";
 
-type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
-
-type Skill = {
-    name: string;
-    level: SkillLevel;
-};
-
-type SkillGroup = {
-    category: string;
-    description: string;
-    skills: Skill[];
-};
-
-const levelColorMap: Record<SkillLevel, Color> = {
+const levelColorMap: Record<string, Color> = {
     Especialista: "green",
-    Avançado: "zinc",
+    Specialist: "green",
+    Avançado: "default",
+    Advanced: "default",
     Intermediário: "default",
+    Intermediary: "default",
 };
 
 const SkillRow = ({ skill }: { skill: Skill }) => {

@@ -1,9 +1,12 @@
 import { Header } from "@/src/components/layout/Header";
 import { MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import foto from "./foto.png";
 
 export const AboutSection = async () => {
+    const t = await getTranslations("about");
+
     return (
         <section id="about" className="w-full scroll-mt-10 bg-[#FEFEFE] py-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -11,21 +14,13 @@ export const AboutSection = async () => {
                     <div className="w-full max-w-2xl text-center lg:text-left">
                         <Header title="Biografia" subtitle="About" />
                         <div className="flex flex-col gap-5">
-                            <p>
-                                I&apos;m a software engineer focused on building secure, scalable and high-performance systems.
-                                I enjoy solving complex problems, designing clean architectures and delivering impactful
-                                products.
-                            </p>
-                            <p>
-                                Over the years, I&apos;ve worked across different domains — from fintech and security to
-                                developer tools and platform engineering.
-                            </p>
-                            <p>Over the years, I&apos;ve worked across different domains.</p>
-
+                            <p>{t("p1")}</p>
+                            <p>{t("p2")}</p>
+                            <p>{t("p3")}</p>
                             <div className="flex items-center justify-center gap-2 lg:justify-start lg:gap-3">
                                 <MapPin size={32} className="text-primary-700 shrink-0" />
                                 <div>
-                                    <div className="text-primary-700 font-bold">Based in Brasil</div>
+                                    <div className="text-primary-700 font-bold">{t("basedInBrazil")}</div>
                                     <div className="text-sm text-neutral-500 lg:text-left">Manhuaçu - MG</div>
                                 </div>
                             </div>

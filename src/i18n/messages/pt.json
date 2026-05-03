@@ -1,14 +1,4 @@
 {
-    "hero": {
-        "seniorFrontend": "Senior Frontend",
-        "engineer": "Engenheiro",
-        "description": "Desenvolvimento de aplicações web escaláveis ​​e de alto desempenho para sistemas financeiros complexos. Especializado em React e TypeScript, com vasta experiência em plataformas de segurança crítica utilizadas por milhões de usuários.",
-        "performance": "Performance",
-        "security": "Segurança",
-        "architecture": "Arquitetura",
-        "viewMyWork": "Veja meu trabalho",
-        "downloadCV": "Baixar CV"
-    },
     "links": {
         "home": "Início",
         "about": "Sobre",
@@ -18,5 +8,97 @@
         "education": "Formação",
         "stack": "Stack",
         "contact": "Contato"
+    },
+    "hero": {
+        "position": "Engenheiro de Software Sênior",
+        "title": "Criar experiências <br></br> digitais  escaláveis  <br></br><highlight>com impacto.</highlight>",
+        "description": "Desenvolvo aplicações web de alta performance com código limpo, arquitetura sólida e experiências de usuário excepcionais.",
+        "performance": "Performance",
+        "security": "Segurança",
+        "resilience": "Resiliência",
+        "architecture": "Arquitetura",
+        "viewMyWork": "Veja meu trabalho",
+        "downloadCV": "Baixar Currículo",
+        "scrollToExplore": "Role para explorar"
+    },
+    "projects": {
+        "title": "Portfolio",
+        "subtitle": "Meu Trabalho",
+        "loadMore": "Carregar mais"
+    },
+    "articles": {
+        "title": "Insights",
+        "subtitle": "Artigos",
+        "loadMore": "Carregar mais"
+    },
+    "career": {
+        "title": "Experiência",
+        "subtitle": "Profissional"
+    },
+    "education": {
+        "title": "Acadêmico",
+        "subtitle": "Formação",
+        "architecture": {
+            "title": "Pós-graduação",
+            "course": "Arquitetura de Software Distribuído",
+            "description": "Foco em sistemas distribuídos, escalabilidade, microsserviços e boas práticas de arquitetura."
+        },
+        "engineer": {
+            "title": "Pós-graduação",
+            "course": "Engenharia de Software",
+            "description": "Ênfase em processos de desenvolvimento, qualidade de software e métodos ágeis."
+        },
+        "design": {
+            "title": "Bacharelado",
+            "course": "Artes e Design",
+            "description": "Formação em design visual, criatividade e comunicação visual aplicada a projetos digitais."
+        }
+    },
+    "skills": {
+        "title": "Tecnologias",
+        "subtitle": "Stack",
+        "specialist": "Especialista",
+        "advanced": "Avançado",
+        "intermediary": "Intermediário",
+        "core": {
+            "title": "Core",
+            "subtitle": "Tecnologias que uso diariamente há anos"
+        },
+        "architecture": {
+            "title": "Arquitetura",
+            "subtitle": "Padrões e decisões de escala"
+        },
+        "performance": {
+            "title": "Performance & Qualidade",
+            "subtitle": "Entrega confiável e rápida",
+            "accessibility": "Acessibilidade"
+        },
+        "data": {
+            "title": "Dados & APIs",
+            "subtitle": "Integração e estado"
+        },
+        "security": {
+            "title": "Segurança",
+            "subtitle": "Experiência em plataformas críticas",
+            "authentication": "Autenticação & Auth flows",
+            "fraud": "Prevenção de fraudes"
+        },
+        "design": {
+            "title": "Design & Produto",
+            "subtitle": "Onde o frontend encontra o design"
+        }
+    },
+    "about": {
+        "title": "Biografia",
+        "subtitle": "Sobre",
+        "p1": "Sou um engenheiro de software que gosta de construir coisas que realmente funcionam no mundo real.",
+        "p2": "Gosto de resolver problemas complexos, mas o que realmente me motiva é entender como os sistemas se comportam em produção. Trabalhar com fintech me ensinou muito sobre confiabilidade, responsabilidade e manter a calma quando as coisas dão errado.",
+        "p3": "Fora do código, sou naturalmente curioso. Gosto de aprender, explorar novas ideias e melhorar a forma como penso.",
+        "basedInBrazil": "Baseado no Brasil"
+    },
+    "contact": {
+        "title": "Contato",
+        "subtitle": "Vamos conversar",
+        "description": "Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou colaborações em produtos financeiros de alto impacto."
     }
 }

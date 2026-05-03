@@ -1,5 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { Header } from "../../layout/Header";
 import { Button } from "../../ui/Button";
 import logos from "./logos.png";
 
@@ -46,7 +48,9 @@ const links = [
     },
 ];
 
-export const ContactSection = () => {
+export const ContactSection = async () => {
+    const t = await getTranslations("contact");
+
     return (
         <section id="contact" className="w-full scroll-mt-10 bg-[#FEFEFE] pb-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -64,12 +68,8 @@ export const ContactSection = () => {
 
                         <div className="relative flex flex-col items-center gap-8 sm:flex-row sm:items-start">
                             <div className="flex-1 text-center sm:text-left">
-                                <p className="mb-2 text-xs font-medium tracking-widest text-zinc-500 uppercase">Contato</p>
-                                <h2 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900">Vamos conversar</h2>
-                                <p className="mb-8 max-w-md text-sm leading-relaxed text-zinc-500">
-                                    Estou aberto a conversas sobre projetos desafiadores, posições de liderança técnica ou
-                                    colaborações em produtos financeiros de alto impacto.
-                                </p>
+                                <Header title={t("title")} subtitle={t("subtitle")} />
+                                <p className="mb-8 max-w-md text-sm leading-relaxed text-zinc-500">{t("description")}</p>
 
                                 {/* Links */}
                                 <div className="flex flex-col flex-wrap gap-3 sm:flex-row">

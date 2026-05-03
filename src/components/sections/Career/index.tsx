@@ -1,8 +1,11 @@
 import { CAREER } from "@/content/career";
 import { Header } from "@/src/components/layout/Header";
 import { CareerCard } from "@/src/components/ui/CareerCard";
+import { getTranslations } from "next-intl/server";
 
-export const CareerSection = () => {
+export const CareerSection = async () => {
+    const t = await getTranslations("career");
+
     return (
         <section
             id="career"
@@ -18,7 +21,7 @@ export const CareerSection = () => {
             </svg>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title="Trajetória" subtitle="Carreira" />
+                <Header title={t("title")} subtitle={t("subtitle")} />
 
                 <div className="relative md:hidden">
                     <div className="absolute top-0 bottom-0 left-3 w-px bg-zinc-200" />

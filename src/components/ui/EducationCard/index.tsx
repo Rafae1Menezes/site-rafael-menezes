@@ -1,4 +1,5 @@
 import { Calendar, MapPin } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Card } from "../Card";
 import { Tag } from "../Tag";
 
@@ -12,7 +13,9 @@ type EducationEntry = {
     description: string;
 };
 
-export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
+export const EducationCard = async ({ entry }: { entry: EducationEntry }) => {
+    const t = await getTranslations("education");
+
     const Icon = entry.icon;
     return (
         <Card classNames="transition-all duration-300 ease-out hover:-translate-y-1.5">
@@ -24,11 +27,11 @@ export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
                 <div className="bg-primary-50 flex h-11 w-11 items-center justify-center rounded-xl">
                     <Icon size={20} className="text-primary-600" />
                 </div>
-                <Tag>{entry.badge}</Tag>
+                <Tag>{t(entry.badge)}</Tag>
             </div>
 
             {/* Title */}
-            <h3 className="mb-4 text-lg leading-snug font-bold text-[#0d2b1e]">{entry.title}</h3>
+            <h3 className="mb-4 text-lg leading-snug font-bold text-[#0d2b1e]">{t(entry.title)}</h3>
 
             {/* Meta */}
             <div className="mb-4 space-y-1.5">
@@ -43,7 +46,7 @@ export const EducationCard = ({ entry }: { entry: EducationEntry }) => {
             </div>
 
             {/* Description */}
-            <p className="mb-3 flex-1 text-sm leading-relaxed text-gray-500">{entry.description}</p>
+            <p className="mb-3 flex-1 text-sm leading-relaxed text-gray-500">{t(entry.description)}</p>
         </Card>
     );
 };

@@ -1,10 +1,12 @@
 "use client";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { Button } from "../Button";
 
 const PAGE_SIZE = 5;
 
 export const ArticlesGroup = ({ children }: { children: React.ReactNode[] }) => {
+    const t = useTranslations("articles");
     const [visible, setVisible] = useState(PAGE_SIZE);
     const hasMore = visible < children.length;
 
@@ -20,7 +22,7 @@ export const ArticlesGroup = ({ children }: { children: React.ReactNode[] }) => 
 
             {hasMore && (
                 <div className="mt-10 flex justify-center">
-                    <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>Load more</Button>
+                    <Button onClick={() => setVisible((v) => v + PAGE_SIZE)}>{t("loadMore")}</Button>
                 </div>
             )}
         </>

@@ -1,4 +1,5 @@
 import { Layers, User } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Header } from "../../layout/Header";
 import { EducationCard } from "../../ui/EducationCard";
 
@@ -6,37 +7,39 @@ const formations = [
     {
         id: 1,
         icon: Layers,
-        badge: "Pós-graduação",
-        title: "Arquitetura de Software Distribuído",
+        badge: "architecture.title",
+        title: "architecture.course",
         institution: "PUC - MG",
-        period: "20XX – 20XX",
-        description: "Foco em sistemas distribuídos, escalabilidade, microsserviços e boas práticas de arquitetura.",
+        period: "2024 – 2025",
+        description: "architecture.description",
     },
     {
         id: 2,
         icon: Layers,
-        badge: "Pós-graduação",
-        title: "Engenharia de Software",
+        badge: "engineer.title",
+        title: "engineer.course",
         institution: "PUC - MG",
-        period: "20XX – 20XX",
-        description: "Ênfase em processos de desenvolvimento, qualidade de software e métodos ágeis.",
+        period: "2022 – 2023",
+        description: "engineer.description",
     },
     {
         id: 3,
         icon: User,
-        badge: "Bacharelado",
-        title: "Arte e Design",
+        badge: "design.title",
+        title: "design.course",
         institution: "Universidade Federal de Juiz de Fora",
-        period: "20XX – 20XX",
-        description: "Formação em design visual, criatividade e comunicação visual aplicada a projetos digitais.",
+        period: "2009 – 2011",
+        description: "design.description",
     },
 ];
 
-export function EducationSection() {
+export const EducationSection = async () => {
+    const t = await getTranslations("education");
+
     return (
         <section id="education" className="w-full scroll-mt-10 bg-white py-12 sm:scroll-mt-14">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <Header title="Acadêmico" subtitle="Formação" />
+                <Header title={t("title")} subtitle={t("subtitle")} />
 
                 <div className="mb-6 grid grid-cols-1 gap-5 md:grid-cols-3">
                     {formations.map((item) => (
@@ -46,4 +49,4 @@ export function EducationSection() {
             </div>
         </section>
     );
-}
+};

@@ -1,8 +1,6 @@
-export type SkillLevel = "Especialista" | "Avançado" | "Intermediário";
-
 export type Skill = {
     name: string;
-    level: SkillLevel;
+    level: string;
 };
 
 export type SkillGroup = {

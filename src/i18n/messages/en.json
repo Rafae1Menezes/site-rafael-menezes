@@ -1,14 +1,4 @@
 {
-    "hero": {
-        "seniorFrontend": "Senior Frontend",
-        "engineer": "Engineer",
-        "description": "Building scalable, high-performance web applications for complex financial systems. Specialized in React & TypeScript, with deep experience in security-critical platforms used by millions of users.",
-        "performance": "Performance",
-        "security": "Security",
-        "architecture": "Architecture",
-        "viewMyWork": "View my work",
-        "downloadCV": "Download CV"
-    },
     "links": {
         "home": "Home",
         "about": "About",
@@ -18,5 +8,98 @@
         "education": "Education",
         "stack": "Stack",
         "contact": "Contact"
+    },
+    "hero": {
+        "position": "Senior Software Engineer",
+        "title": "Building scalable <br></br> digital experiences <br></br> <highlight>with impact.</highlight>",
+        "description": "I design and build high-performance web applications with clean code, solid architecture and exceptional user experiences.",
+        "performance": "Performance",
+        "security": "Security",
+        "architecture": "Architecture",
+        "resilience": "Resilience",
+        "viewMyWork": "View my work",
+        "downloadCV": "Download CV",
+        "scrollToExplore": "Scroll to explore"
+    },
+    "projects": {
+        "title": "Portfolio",
+        "subtitle": "My work",
+        "loadMore": "Load more"
+    },
+    "articles": {
+        "title": "Insights",
+        "subtitle": "Articles",
+        "loadMore": "Load more"
+    },
+    "career": {
+        "title": "Work",
+        "subtitle": "Experience"
+    },
+    "education": {
+        "title": "Academic",
+        "subtitle": "Background",
+        "architecture": {
+            "title": "Postgraduate",
+            "course": "Distributed Software Architecture",
+            "description": "Focused on distributed systems, scalability, microservices, and software architecture best practices."
+        },
+        "engineer": {
+            "title": "Postgraduate",
+            "course": "Software Engineering",
+            "description": "Emphasis on development processes, software quality, and agile methodologies."
+        },
+        "design": {
+            "title": "Bachelor's Degree",
+            "course": "Arts and Design",
+            "description": "Background in visual design, creativity, and visual communication applied to digital projects."
+        }
+    },
+
+    "skills": {
+        "title": "Technologies",
+        "subtitle": "Stack",
+        "specialist": "Specialist",
+        "advanced": "Advanced",
+        "intermediary": "Intermediate",
+        "core": {
+            "title": "Core",
+            "subtitle": "Technologies I’ve been using daily for years"
+        },
+        "architecture": {
+            "title": "Architecture",
+            "subtitle": "Patterns and scaling decisions"
+        },
+        "performance": {
+            "title": "Performance & Quality",
+            "subtitle": "Reliable and fast delivery",
+            "accessibility": "Accessibility"
+        },
+        "data": {
+            "title": "Data & APIs",
+            "subtitle": "Integration and state management"
+        },
+        "security": {
+            "title": "Security",
+            "subtitle": "Experience with critical platforms",
+            "authentication": "Authentication & auth flows",
+            "fraud": "Fraud prevention"
+        },
+        "design": {
+            "title": "Design & Product",
+            "subtitle": "Where frontend meets design"
+        }
+    },
+    "about": {
+        "title": "Biography",
+        "subtitle": "About",
+        "p1": "I'm a software engineer who enjoys building things that actually work in the real world.",
+        "p2": "I like solving complex problems, but what really motivates me is understanding how systems behave in production. Working in fintech taught me a lot about reliability, responsibility, and staying calm when things go wrong.",
+        "p3": "Outside of code, I’m curious by nature. I enjoy learning, exploring new ideas, and improving how I think",
+        "basedInBrazil": "Based in Brasil"
+    },
+    "contact": {
+        "title": "Contact",
+        "subtitle": "Let's talk",
+        "description": "I'm open to conversations about challenging projects, technical leadership roles, or collaborations on high-impact financial products."
     }
 }
