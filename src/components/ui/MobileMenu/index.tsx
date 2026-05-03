@@ -46,7 +46,7 @@ export const MobileMenu = ({ navItems }: { navItems: Array<{ label: string; anch
                     isOpen ? "opacity-100" : "pointer-events-none opacity-0",
                 )}
             >
-                <nav aria-label="Menu mobile">
+                <nav aria-label="Menu mobile" className="flex flex-col items-center gap-6">
                     {navItems.map((item, index) => (
                         <Link
                             key={item.label}

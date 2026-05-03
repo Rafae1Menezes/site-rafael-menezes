@@ -83,6 +83,7 @@ export const ContactSection = async () => {
                                             href={link.href}
                                             target="_blank"
                                             aria-label={`${link.label} — ${link.value}, abre em nova aba`}
+                                            className="w-full"
                                         >
                                             <span aria-hidden="true" className="text-zinc-700">
                                                 {link.icon}

@@ -1,0 +1,6 @@
+export default function robots() {
+    return {
+        rules: { userAgent: "*", allow: "/" },
+        sitemap: "https://seudominio.com/sitemap.xml", // @TODO
+    };
+}

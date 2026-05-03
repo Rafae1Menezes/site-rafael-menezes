@@ -21,7 +21,7 @@ export const Navbar = async () => {
                         <Link
                             href={`/${locale}`}
                             aria-label="Rafael Menezes — ir para página inicial"
-                            className="focus-visible:ring-primary-500 rounded-lg text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+                            className="rounded-lg text-black"
                         >
                             <span aria-hidden="true" className="flex items-center gap-1 text-xl font-semibold">
                                 <Image src={logo} width={34} height={16} alt="" />
@@ -29,20 +29,22 @@ export const Navbar = async () => {
                             </span>
                         </Link>
 
-                        <div className="hidden items-center gap-4 md:flex" role="list">
+                        <ul className="m-0 hidden list-none items-center gap-4 p-0 md:flex">
                             {LINKS.map((item) => (
-                                <Link
-                                    key={item.label}
-                                    href={`/${locale}${item.anchor}`}
-                                    role="listitem"
-                                    className="highlightLink focus-visible:ring-primary-500 relative rounded-lg py-0.5 text-sm text-gray-600 transition-colors hover:text-gray-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                                >
-                                    {t(item.label)}
-                                </Link>
+                                <li key={item.label}>
+                                    <Link
+                                        href={`/${locale}${item.anchor}`}
+                                        className="highlightLink relative rounded-lg py-0.5 text-sm text-gray-600 transition-colors hover:text-gray-900"
+                                    >
+                                        {t(item.label)}
+                                    </Link>
+                                </li>
                             ))}
 
-                            <SwitchLanguage />
-                        </div>
+                            <li>
+                                <SwitchLanguage />
+                            </li>
+                        </ul>
 
                         <MobileMenu navItems={LINKS} />
                     </div>

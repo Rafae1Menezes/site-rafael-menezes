@@ -28,48 +28,48 @@ export const CareerSection = async () => {
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <Header title={t("title")} subtitle={t("subtitle")} headingId="career-heading" />
 
-                <ol aria-label={t("timelineLabel")} className="relative md:hidden">
+                <div className="relative md:hidden">
                     <div aria-hidden="true" className="absolute top-0 bottom-0 left-3 w-px bg-zinc-200" />
-
-                    <div className="flex flex-col gap-6 pl-10">
+                    <ol aria-label={t("timelineLabel")} className="flex flex-col gap-6 pl-10">
                         {CAREER.map((entry) => (
                             <li key={entry.id} className="relative">
                                 <div
                                     aria-hidden="true"
-                                    className="absolute top-5 -left-8 z-10 h-2.5 w-2.5 rounded-full border-2"
+                                    className="bg-primary-300 border-primary-400 absolute top-5 -left-8 z-10 h-2.5 w-2.5 rounded-full border-2"
                                 />
                                 <CareerCard entry={entry} />
                             </li>
                         ))}
-                    </div>
-                </ol>
+                    </ol>
+                </div>
 
-                <ol aria-label={t("timelineLabel")} aria-hidden="true" className="relative mx-auto hidden max-w-4xl md:block">
+                <div className="relative mx-auto hidden max-w-4xl md:block">
                     <div
                         aria-hidden="true"
                         className="bg-secondary-400 absolute top-0 bottom-0 left-1/2 w-px -translate-x-1/2"
                     />
-
-                    {CAREER.map((entry, i) => {
-                        const isLeft = i % 2 === 0;
-                        return (
-                            <li
-                                key={entry.id}
-                                className={`-mb-17.5 flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
-                            >
-                                <div
-                                    className={`flex w-[calc(50%-28px)] shrink-0 py-4 ${isLeft ? "justify-end" : "justify-start"}`}
+                    <ol aria-label={t("timelineLabel")}>
+                        {CAREER.map((entry, i) => {
+                            const isLeft = i % 2 === 0;
+                            return (
+                                <li
+                                    key={entry.id}
+                                    className={`-mb-17.5 flex items-center ${isLeft ? "flex-row" : "flex-row-reverse"}`}
                                 >
-                                    <CareerCard entry={entry} />
-                                </div>
-                                <div aria-hidden="true" className="flex w-14 shrink-0 justify-center">
-                                    <div className="bg-primary-300 border-primary-400 z-10 h-2.5 w-2.5 rounded-full border-2" />
-                                </div>
-                                <div className="w-[calc(50%-28px)] shrink-0" />
-                            </li>
-                        );
-                    })}
-                </ol>
+                                    <div
+                                        className={`flex w-[calc(50%-28px)] shrink-0 py-4 ${isLeft ? "justify-end" : "justify-start"}`}
+                                    >
+                                        <CareerCard entry={entry} />
+                                    </div>
+                                    <div aria-hidden="true" className="flex w-14 shrink-0 justify-center">
+                                        <div className="bg-primary-300 border-primary-400 z-10 h-2.5 w-2.5 rounded-full border-2" />
+                                    </div>
+                                    <div className="w-[calc(50%-28px)] shrink-0" />
+                                </li>
+                            );
+                        })}
+                    </ol>
+                </div>
             </div>
         </section>
     );
